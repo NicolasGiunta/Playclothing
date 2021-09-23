@@ -1,21 +1,29 @@
 https://github.com/NicolasGiunta/grupo_4_Playclothing.git
 
-Producto: Venta camisetas / buzos
-Audiencia objetivo: Orientado a hombres y mujeres entre 15 y 30 años que busquen distinguirse.  
-¿Cómo ajustaremos nuestra oferta a nuestra audiencia objetivo?: Desarrollaremos diseños originales y modernos de forma limitada que no podrás encontrar en otro lugar. 
+Producto: Venta online de camisetas / camisas / buzos. Diseños únicos.
+Audiencia objetivo: Orientado a hombres y mujeres entre 15 y 30 años que busquen distinguirse. Entre sus intereses están el diseño, arte y la cultura.
+¿Cómo ajustaremos nuestra oferta a nuestra audiencia objetivo?: Desarrollaremos diseños originales y modernos de forma limitada. ¡No los encontrarás en otro lugar!
 Integrantes:
-Somos un equipo de programadores conformado por Diana Polanco, Julian Galante, Nicolas Giunta y Alejandro Rodriguez con base en Colombia y Argentina. Buscamos destacarnos en el mundo de la programacion creando sitios innovadores e intuitivos
-cada uno incluye su descripción 
+Somos un equipo de programadores, con base en Colombia y Argentina, conformado por Diana Polanco, Julian Galante, Nicolas Giunta y Alejandro Rodriguez. Buscamos destacarnos en el mundo de la programacion creando sitios innovadores e intuitivos.
+
 
 Alejandro Rodriguez - practicante de MTB - amante de la tecnologia - experto en finanzas
 
 Nicolas Giunta - estudiante de fullstack
 
-Nuestros Referentes:
+Diana Polanco - Programadora en construcción - estudiante de fullstack - administradora de empresas
+
+Nuestros Referentes para el sitio web:
 https://www.cutsclothing.com/account
 https://bolivia-divina.com/
 https://aynotdead.com/
 
-Páginas llamativas visualmente, facilidad para navegar..
+Características:
+   Páginas llamativas visualmente. 
+   Información clara sobre los productos: Fotos con descripciones, opciones de talla y color. Información sobre envío y políticas de devolución.
+   Facilidad para navegar y para encontrar los productos.
+   Responsive.
+   Alternativas seguras de pago.
 
 
+ 
