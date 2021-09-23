@@ -6,7 +6,10 @@ Audiencia objetivo: Orientado a hombres y mujeres entre 15 y 30 años que busque
 Integrantes:
 Somos un equipo de programadores conformado por Diana Polanco, Julian Galante, Nicolas Giunta y Alejandro Rodriguez con base en Colombia y Argentina. Buscamos destacarnos en el mundo de la programacion creando sitios innovadores e intuitivos
 cada uno incluye su descripción 
+
 Alejandro Rodriguez - practicante de MTB - amante de la tecnologia - experto en finanzas
+
+Nicolas Giunta - estudiante de fullstack
 
 Nuestros Referentes:
 https://www.cutsclothing.com/account
