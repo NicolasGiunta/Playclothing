@@ -6,12 +6,13 @@ Audiencia objetivo: Orientado a hombres y mujeres entre 15 y 30 años que busque
 Integrantes:
 Somos un equipo de programadores, con base en Colombia y Argentina, conformado por Diana Polanco, Julian Galante, Nicolas Giunta y Alejandro Rodriguez. Buscamos destacarnos en el mundo de la programacion creando sitios innovadores e intuitivos.
 
-
 Alejandro Rodriguez - practicante de MTB - amante de la tecnologia - experto en finanzas
 
 Nicolas Giunta - estudiante de fullstack
 
 Diana Polanco - Programadora en construcción - estudiante de fullstack - administradora de empresas
+
+Julián Galante - Programador en construcción - Músico.
 
 Nuestros Referentes para el sitio web:
 https://www.cutsclothing.com/account
@@ -19,11 +20,8 @@ https://bolivia-divina.com/
 https://aynotdead.com/
 
 Características:
-   Páginas llamativas visualmente. 
-   Información clara sobre los productos: Fotos con descripciones, opciones de talla y color. Información sobre envío y políticas de devolución.
-   Facilidad para navegar y para encontrar los productos.
-   Responsive.
-   Alternativas seguras de pago.
-
-
- 
+Páginas llamativas visualmente.
+Información clara sobre los productos: Fotos con descripciones, opciones de talla y color. Información sobre envío y políticas de devolución.
+Facilidad para navegar y para encontrar los productos.
+Responsive.
+Alternativas seguras de pago.
