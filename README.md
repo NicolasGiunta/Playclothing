@@ -25,3 +25,5 @@ Información clara sobre los productos: Fotos con descripciones, opciones de tal
 Facilidad para navegar y para encontrar los productos.
 Responsive.
 Alternativas seguras de pago.
+
+papapapap
