@@ -1,0 +1,58 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+banner div {
+  background-color: black;
+  color:white;
+  width: 100%;
+  text-align:center;
+}
+header {
+  background-color:white;
+  display: flex;
+  flex-direction: row;
+  display: flex;
+justify-content: space-around;
+align-items: flex-end;
+ 
+}
+
+.logo {
+  width: 30%;
+  display: flex;
+  justify-content: left;
+}
+
+main{background-color: white;
+    color: black;
+   
+}
+
+footer{
+ border: 2px solid gray;
+  background-color:black;
+
+} 
+h5{
+  width: 50%;
+}
+}
+.fa-bars{
+color: gray;
+}
+.iconos{
+  color:gray;
+  
+  
+}
+h4{
+  text-align:center;
+}
+
+barra{
+  margin-left:42%;
+  
+}
