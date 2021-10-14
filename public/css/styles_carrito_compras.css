@@ -1,0 +1,199 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+
+#foto1 {
+  width: 20%;
+  float: left;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 8vh;
+  border-bottom: dotted 1px silver;
+  font-size: 12%;
+}
+
+.titulo {
+  margin-top: 5%;
+  margin-left: 5.8%;
+  font-size: 1vh;
+}
+
+.cruz {
+  margin-top: 5%;
+  font-size: 2vh;
+  margin-right: 7%;
+}
+
+/* product */
+.producto1 {
+  border-bottom: dotted 1px silver;
+  height: 50vh;
+}
+
+.product {
+  width: 65%;
+  margin-left: 35%;
+  height: 20vh;
+  margin-top: 2%;
+}
+
+.foto_tacho {
+  height: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+
+h2 {
+  font-size: 80%;
+}
+
+.tacho {
+  display: flex;
+  margin-right: 3.95vh;
+  font-size: 60%;
+  color: silver;
+}
+
+#foto1 {
+  width: 25%;
+  height: 20vh;
+  float: left;
+  margin-left: 6%;
+}
+
+.descripcion {
+  height: 35%;
+  margin-top: 1%;
+  color: silver;
+  font-size: 65%;
+}
+
+.cantidad_total {
+  height: 20%;
+  display: flex;
+  font-size: 80%;
+}
+
+.precio_total {
+  height: 45%;
+  font-size: 80%;
+}
+
+.cantidad_precio {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cantidad_total p {
+  margin-top: -2%;
+}
+
+.menos {
+  font-size: 1vh;
+  padding-right: 1vh;
+  padding-top: 0.4vh;
+}
+
+.mas {
+  font-size: 1vh;
+  padding-left: 1vh;
+  padding-top: 0.4vh;
+}
+
+.precio_total {
+  margin-right: 11%;
+}
+
+/* footer */
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 50%;
+  height: 4vh;
+  padding-top: 0.5%;
+  margin-left: 5.8%;
+}
+
+#total-finalizar {
+  font-size: 2vh;
+}
+
+.total p {
+  font-size: 2vh;
+  margin-right: 7%;
+}
+
+.footer {
+  margin-top: 2%;
+}
+
+.button {
+  color: white;
+  background-color: black;
+  border-radius: none;
+  border: none;
+  text-align: center;
+  width: 89%;
+  height: 5vh;
+  margin-left: 5%;
+}
+
+@media (min-width: 361px) {
+  #foto1 {
+    height: 25vh;
+  }
+  .tacho {
+    margin-right: 5.5vh;
+  }
+}
+@media (min-width: 769px) {
+  .titulo {
+    margin-top: 1.5%;
+    margin-left: 5.8%;
+  }
+
+  .cruz {
+    margin-top: 1.5%;
+    margin-right: 7%;
+  }
+  #foto1 {
+    width: 17%;
+    height: 45vh;
+  }
+  .product {
+    width: 71%;
+    margin-left: 25%;
+    height: 30vh;
+    margin-top: 2%;
+  }
+  .cantidad_precio {
+    width: 96%;
+  }
+  .precio_total {
+    margin-left: 89%;
+  }
+  .descripcion {
+    font-size: 80%;
+  }
+  .button {
+    width: 87.8%;
+    margin-left: 5.8%;
+  }
+  .mas,
+  .menos {
+    padding-top: 0.8vh;
+  }
+}

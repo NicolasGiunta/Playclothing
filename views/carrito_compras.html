@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!--traigo el css-->
+    <link rel="stylesheet" href="./css/styles_carrito_compras.css" />
+    <!--traigo los iconos-->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+
+    <!--traigo las fuentes-->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+
+    <!--lo hago responsive-->
+    <meta name="viewport" content="width=device-wid ht, initial-scale=1" />
+  </head>
+  <body>
+    <!-- header -->
+    <div class="header">
+      <div class="titulo"><h1>Carrito</h1></div>
+      <div class="cruz"><i class="fas fa-times"></i></div>
+    </div>
+    <!-- producto 1 -->
+    <div class="producto1">
+      <img
+        id="foto1"
+        src="./image/carrito_compras/REMERA-CROP-JANE-NEGRA-PORTADA.jpeg"
+        alt="remera"
+      />
+      <div class="product">
+        <!-- <div class="informacion-producto"> -->
+        <div class="foto_tacho">
+          <h2>Polo Kendall</h2>
+          <div class="tacho"><i id="tacho" class="fas fa-trash-alt"></i></div>
+        </div>
+        <div class="descripcion">
+          <p>Color:</p>
+          <p>Talla:</p>
+        </div>
+        <div class="cantidad_precio">
+          <div class="cantidad_total">
+            <i class="fas menos fa-minus"></i>
+            <p>1</p>
+            <i class="fas mas fa-plus"></i>
+          </div>
+          <div class="precio_total">
+            <p>$XXXXXX</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+    <div class="finalizar-compra">
+      <div class="total">
+        <h1 id="total-finalizar">Total</h1>
+        <p id="precio-finalizar">XXXXXXXX</p>
+      </div>
+    </div>
+    <button class="button">Finalizar Compra</button>
+  </body>
+</div>
+</html>
