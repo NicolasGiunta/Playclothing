@@ -1,0 +1,99 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+h1{
+    font-size: 36px;
+    padding: 0 15px;
+}
+
+h5{
+    font-size: 18px;
+    padding: 0 15px;
+}
+
+
+
+.create-form {
+    padding: 0 15px;
+}
+
+.checkbox{
+    font-size: 13px;
+    justify-content: space-between;
+    display: flex;
+}
+
+.control-formulario label{
+    margin-bottom: 15px;
+    display: block
+}
+
+.control{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 7px 15px;
+}
+
+.sr_button{
+    padding: 2px 0;
+    color: #000!important;
+    font-weight: bolder;
+}
+
+.button-log {
+    font-size: 13px;
+    line-height: 16px;
+    display: inline-block;
+    padding: 12px 30px;
+    max-width: 100%;
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 5px;
+    color: #fff;
+    background: #000;
+    border: 1px solid #000;
+}
+
+.Policy{
+    font-size: .85em;
+    line-height: 1.5em;
+    margin-top: 30px;
+    max-width: 500px;
+    opacity: 0.5;
+}
+
+.tablet {
+    font-family: 'Roboto', sans-serif;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+}
+
+.caja1{
+    display: block;
+
+}
+.caja2{
+    display: block;
+
+}
+
+/*@media (max-width: 425px){
+    .tablet {
+        display: block;
+        flex-wrap: wrap;
+    }
+}*/
+
+@media (min-width: 768px) { 
+    .tablet{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .caja1, .caja2{
+        width: 49%;
+        align-items: stretch;
+    }
+}
