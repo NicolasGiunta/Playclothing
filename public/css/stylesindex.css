@@ -1,0 +1,706 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  display:block;
+}
+
+header {
+  position: relative;
+}
+
+i{
+  font-size: 1.3rem;
+  color:#303028;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+i, a:hover{
+  cursor: pointer;
+}
+
+.banner{
+  background-color: black;
+  height: 30px;
+  overflow: hidden;
+  display: block;
+  margin: auto;
+
+}
+
+
+.lista{
+  color:black;
+  text-align: center;
+  line-height: 30px;
+  animation: animacion 10s 0.5s infinite;
+}
+
+.lista li{
+  font-size: 0.9rem;
+  list-style: none;
+  border-bottom: solid 20px black;
+}
+
+@keyframes animacion {
+  0% {
+    transform: translateY(15%);
+  }
+
+  10%{
+    transform: translateY(0%);
+    color: white;
+  }
+
+  20% {
+    transform: translateY(0%);
+    color: white;
+  }
+
+  30%{
+    transform: translateY(-15%);
+    color:black;
+  } 
+
+  40% {
+    transform: translateY(-33.5%);
+    color: white;  
+  }
+  
+  55%{
+    transform: translateY(-33.5%);
+    color:white;
+  }
+
+  65%{
+    transform: translateY(-50%);
+    color: black;
+  }
+
+  75%{
+    transform: translateY(-67%);
+    color: white
+  }
+
+  90%{
+    transform: translateY(-67%);
+    color:white;
+  }
+
+  100%{
+    transform: translateY(-85%);
+  }
+
+}
+
+header section{
+  display: flex;
+  width: 100%;
+  margin: auto;
+  padding: 15px 12px 15px 10px;
+}
+
+.checkbox-menu i{
+  margin: 10px 5px;
+
+}
+
+nav{
+  visibility: hidden;
+  height: 0;
+  position: absolute;
+  background-color: transparent;
+  color: transparent;
+  transition: visibility, background-color, height 1.5s;
+
+  
+}
+
+
+nav li{
+  width: 100%;
+  list-style: none;
+  text-decoration: none;
+  border-bottom: none;
+  padding:20px;
+  transition: all 1s 0.1s;
+}
+
+nav li a{
+  text-decoration: none;
+  color: transparent;
+  font-size: 0px;
+  transition: color, font-size 1s;
+
+}
+
+#checkbox-menu{
+  display: none;
+}
+
+#checkbox-menu:checked ~ nav li{
+  border-bottom: rgb(221, 218, 218) 0.5px solid;
+  width: 100%;
+}
+
+#checkbox-menu:checked ~ nav li a{
+  text-decoration: none;
+  color: black;
+  font-size: 0.9rem;
+}
+
+#checkbox-menu:checked ~ nav{
+  visibility: visible;
+  z-index: 1;
+  top: 99%;
+  width: 50%;
+  padding: 5px 0px 15px 0px;
+  background-color:white;
+  left: 0;
+  border-top: 0.5px black solid;
+  padding: 10px 0px;
+  height:50vh;
+}
+
+
+.logo{
+  width: 130px;
+}
+
+header .logo{
+  margin: 0 10px; 
+}
+
+
+header .iconos{
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  font-weight: lighter;
+  align-items: center;
+}
+
+.iconos i{
+  padding: 0 0 0 10px;
+}
+
+
+#checkbox-search{
+  display: none;
+}
+
+.buscador{
+ position: absolute;
+ visibility: hidden;
+ top: 95%;
+ width: 0%;
+ height: 30px;
+ z-index:1;
+ padding: 5px;
+ background-color: none;
+ transition-property: width, visibility;
+ transition-duration:1s  
+}
+
+.buscador .barra{
+ position: relative;
+}
+
+
+.barra input{
+  border:none;
+  width: 0%;
+  outline: none;
+  visibility: hidden;
+  background-color:none;
+  font-size: 0px;
+  
+}
+
+.checkbox-salir i{
+  position: absolute;
+  right:0px;
+  top: 2px;
+  margin: auto 0;
+  background-color: none;
+  transition: background-color 1;
+}
+
+
+.checkbox-search:checked ~ .buscador i{
+  background-color:white;
+}
+
+.checkbox-search:checked ~ .buscador input{
+  visibility: visible;
+  font-size: 0.9rem;
+  width: 100%;
+}
+ 
+.checkbox-search:checked ~ .buscador{
+  border: rgb(221, 218, 218) 0.5px solid;
+  background-color:white;
+  visibility: visible;
+  right: 0;
+  width: 100%;
+  height: 50px;
+  padding: 15px 10px;
+}
+
+
+
+.mujer{
+  position: relative;
+}
+
+.mujer a{
+  display: block;
+  margin: auto;
+  margin-bottom: -2px;
+}
+
+.mujer img{
+  width: 100%;   
+  height: 100%;
+}
+
+.mujer h3{
+  position: absolute;
+  width: 100%;
+  top: 42%;
+  text-align: center;
+  font-size: 2.5rem;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.075);
+  
+}
+
+.hombre{
+  position: relative;
+
+}
+
+.hombre a{
+  display: block;
+  margin: auto;
+}
+
+.hombre img{
+  width: 100%;   
+}
+
+.hombre h3{
+  position: absolute;
+  width: 100%;
+  top: 42%;
+  text-align: center;
+  font-size: 2.5rem;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.075);
+  
+}
+
+
+
+.newsletter{
+  min-width: 80%;
+  text-align: center;
+  display: block;
+  margin: auto;
+  padding: 20px;
+}
+
+.newsletter .item1{
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #303028;
+  padding: 0 0 18px 0;
+}
+
+.newsletter .item2{
+ font-size: 0.9rem;
+ font-weight: normal;
+ color: #3b3b31;
+ padding: 0 0 10px 0;
+ 
+}
+
+.formularios{
+  font-size: 0.8rem;
+  font-weight: normal;
+  color: #3b3b31;
+}
+
+.form1{
+  margin-bottom:  4px;
+}
+
+.form1 label{
+   padding: 0 5px 0 0;
+   
+}
+
+.form2{
+  padding: 5px 0;
+  width:100%;
+  margin: auto;
+  position: relative;
+}
+
+.form2 input{
+  width: 100%;
+  height: 40px;
+  font-size: 0.7rem;
+  padding: 0 8px;
+  border: rgb(221, 218, 218) 0.2px solid;
+}
+
+
+button{
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right:0;
+  top: 30%;
+  padding: 1px 8px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  
+
+}
+
+footer .secciones{
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  padding: 4vmin;
+}
+
+footer section{
+  padding: 10px 0px 15px 0;
+}
+
+footer .logo{
+  margin-bottom: 10px;
+}
+
+footer h5{
+  font-size:1rem;
+}
+
+footer p{
+  font-size:0.8rem;
+}
+
+footer p:hover{
+  text-decoration: underline;
+}
+
+footer .redes{
+  display:block;
+}
+
+.copyright {
+  border-top:black 0.5px solid;
+  padding: 5px;
+  text-align:center;
+  font-size: 0.65rem;
+}
+
+@media (max-width: 319px) {
+
+  i{
+    font-size: 1rem;
+  }
+
+  header section{
+    padding: 10px 10px 12px 5px;
+  }
+  
+}
+
+
+@media (min-height: 730px) and (max-width: 425px) {
+
+  .banner{
+    height: 35px;
+  }
+  
+  .lista li{
+    font-size: 0.9rem;
+  }
+  
+  
+  @keyframes animacion {
+    0% {
+      transform: translateY(17%);
+    }
+  
+    10%{
+      transform: translateY(1%);
+      color: white;
+    }
+  
+    20% {
+      transform: translateY(1%);
+      color: white;
+    }
+  
+    30%{
+      transform: translateY(-13%);
+      color:black;
+    } 
+  
+    40% {
+      transform: translateY(-30.5%);
+      color: white;  
+    }
+    
+    55%{
+      transform: translateY(-30.5%);
+      color:white;
+    }
+  
+    65%{
+      transform: translateY(-48%);
+      color: black;
+    }
+  
+    75%{
+      transform: translateY(-64%);
+      color: white
+    }
+  
+    90%{
+      transform: translateY(-64%);
+      color:white;
+    }
+  
+    100%{
+      transform: translateY(-83%);
+    }
+  
+  }
+  
+  
+}
+
+@media (min-width: 426px) {
+
+  
+header section{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    padding: 20px 25px 20px 15px;
+  }
+
+.logo{
+  width: 170px;
+}
+
+header .logo{
+  order: -1;
+  margin-right: 20px;
+  }  
+    
+
+nav {
+    visibility: visible;
+    width: 100%;
+    position: relative;
+    flex-grow: 1;
+    padding: 0 0 17px 0;    
+    
+  }
+
+nav ul{
+    display: flex;
+
+  }
+
+nav li{
+    align-self: center;
+    width: 100%;
+    padding: 0 20px 0px 0;
+    background-color: white;
+   
+
+  }
+
+nav li a{
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  font-weight: bold;
+  }
+
+
+.checkbox-menu{
+   display: none;
+   }
+
+.iconos i{
+    padding: 0 0 0 15px;
+  }
+  
+
+.banners{
+    display: flex;
+  }
+  
+.mujer {
+  width:50%;
+  height:50%;
+  position: relative;
+}
+
+.mujer img, .hombre img{
+  width:100%;
+  
+}
+
+
+
+.hombre{
+  width:50%;
+  position: relative;
+}
+
+.form2{
+  max-width:70%;
+
+}
+
+footer .secciones{
+  display: flex;
+  padding: 15px 20px 35px;
+}
+
+footer .logo{
+    display: block;
+    width: 150px;
+    height: 43px;
+    
+  }
+
+  footer section{
+    flex-grow: 0.25;
+    padding: 15px 0;
+  }
+
+  footer section h5{
+    padding: 0 0 8px 0;
+  }
+
+  footer section p{
+    padding: 0 0 5px 0;
+  }
+
+ .section1{
+   padding-left: 35px;
+
+}
+
+
+}
+
+@media (min-width:768px) {
+
+  .mujer h3{
+    top: 45%;
+    font-size: 2.9rem;
+    
+  }
+  
+  
+  .hombre h3{
+    top: 45%;
+    font-size: 2.9rem;
+    
+  }
+
+  .newsletter{
+    width: 60%;
+
+  }
+
+  .newsletter .item1{
+    text-align: center;
+    margin: auto;
+    padding: 0 0 23px 0;
+  }
+
+  .form2{
+    max-width:60%;
+  
+  }
+  
+}
+
+@media (min-width:1023px) {
+
+  .banner{
+    height: 32px;
+  }
+  
+  .lista li{
+    font-size: 0.9rem;
+  }
+  .iconos i{
+    padding: 0 0 0 20px;
+  }
+
+  .mujer h3{
+    top: 45%;
+    font-size: 2.9rem;
+    
+  }
+  
+  
+  .hombre h3{
+    top: 45%;
+    font-size: 2.9rem;
+    
+  }
+
+  .newsletter{
+    width: 60%;
+
+  }
+
+  .newsletter .item1{
+    text-align: center;
+    width: 40%;
+    margin: auto;
+    padding: 0 0 23px 0;
+  }
+
+  .form2{
+    max-width:60%;
+  
+  }
+
+  .section1{
+    padding-left: 80px;
+  }
+
+  footer h5{
+    font-size:1.2rem;
+  }
+  
+  footer p{
+    font-size:0.9rem;
+  }
+  
+}
