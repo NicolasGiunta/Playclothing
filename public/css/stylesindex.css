@@ -10,9 +10,6 @@ body {
   display:block;
 }
 
-header {
-  position: relative;
-}
 
 i{
   font-size: 1.3rem;
@@ -26,6 +23,17 @@ a{
 
 i, a:hover{
   cursor: pointer;
+}
+
+header{
+position: fixed;
+z-index: 1;
+width: 100%;
+}
+
+.contenedor {
+  position: relative;
+  background-color:white;
 }
 
 .banner{
@@ -139,18 +147,40 @@ nav li a{
   text-decoration: none;
   color: transparent;
   font-size: 0px;
-  transition: color, font-size 1s;
+  transition: all 1s;
 
+}
+
+nav .fa-times{
+  position: absolute;
+  font-size:0px;
+  visibility: hidden;
+  background-color: none;
+  transition: color 1.8s;
+  color: transparent;
 }
 
 #checkbox-menu{
   display: none;
 }
 
+#checkbox-menu:checked ~ nav .fa-times{
+  visibility: visible;
+  position: absolute;
+  top: 0px;
+  right:0;
+  padding-top: 5px;
+  padding-right: 10px;
+  font-size: 1.3rem;
+  color:#303028;
+}
+
+
 #checkbox-menu:checked ~ nav li{
   border-bottom: rgb(221, 218, 218) 0.5px solid;
   width: 100%;
 }
+
 
 #checkbox-menu:checked ~ nav li a{
   text-decoration: none;
@@ -161,7 +191,7 @@ nav li a{
 #checkbox-menu:checked ~ nav{
   visibility: visible;
   z-index: 1;
-  top: 99%;
+  top: 100%;
   width: 50%;
   padding: 5px 0px 15px 0px;
   background-color:white;
@@ -170,6 +200,7 @@ nav li a{
   padding: 10px 0px;
   height:50vh;
 }
+
 
 
 .logo{
@@ -198,23 +229,23 @@ header .iconos{
   display: none;
 }
 
+
 .buscador{
  position: absolute;
  visibility: hidden;
  top: 95%;
+ right: 0px;
  width: 0%;
  height: 30px;
  z-index:1;
  padding: 5px;
  background-color: none;
- transition-property: width, visibility;
- transition-duration:1s  
+ transition: width, background-color 1.5s;
 }
 
 .buscador .barra{
- position: relative;
-}
-
+  position: relative;
+ }
 
 .barra input{
   border:none;
@@ -223,6 +254,7 @@ header .iconos{
   visibility: hidden;
   background-color:none;
   font-size: 0px;
+  padding-left: 20px;
   
 }
 
@@ -232,12 +264,38 @@ header .iconos{
   top: 2px;
   margin: auto 0;
   background-color: none;
-  transition: background-color 1;
+  color: none;
+  visibility: hidden;
+  font-size:0;
+  transition: color, font-size 1s;
+}
+
+
+.buscador button {
+  position: absolute;
+  left: 0px;
+  padding: 0 3px 0px 0px;
+  top: 15%;
+}
+
+.buscador button i {
+  padding: 0px;
+  font-size: 1rem;
+  
+
+}
+
+.checkbox-search:checked ~ button {
+  left: 0px;
+  color: red;
 }
 
 
 .checkbox-search:checked ~ .buscador i{
   background-color:white;
+  color:#303028;
+  visibility: visible;
+  font-size: 1rem;
 }
 
 .checkbox-search:checked ~ .buscador input{
@@ -254,6 +312,7 @@ header .iconos{
   width: 100%;
   height: 50px;
   padding: 15px 10px;
+  transition: width 1.8s;
 }
 
 
@@ -523,6 +582,10 @@ nav {
     padding: 0 0 17px 0;    
     
   }
+
+nav .fa-times{
+  display: none
+}
 
 nav ul{
     display: flex;
