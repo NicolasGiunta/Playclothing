@@ -32,13 +32,13 @@
             <section>
                 <!--menu de navegación-->
                 <div>
-                    <input type="checkbox" id="checkbox-menu">
+                    <input type="checkbox" class="checkbox-menu" id="checkbox-menu">
                     <label for="checkbox-menu" class="checkbox-menu"><i class="fas fa-bars"></i></label>
                     <nav>
-                        <label for="checkbox-menu" class="checkbox-menu"><i class="fas fa-times"></i></label>
-                        <ul>
-                            <li><a href="/producto">Hombre</a></li>
-                            <li><a href="/producto">Mujer</a></li>
+                        <label for="checkbox-menu" class="checkbox-menu-salir"><i class="fas fa-times"></i></label>
+                        <ul class="categorias">
+                            <li class="categoria1"><a href="/producto">Hombre</a></li>
+                            <li class="categoria2"><a href="/producto">Mujer</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -66,6 +66,7 @@
             </section>
         </div>
     </header>
+    
     <main>
         <!--banners por categoría-->
         <section class="banners">
@@ -76,7 +77,6 @@
                     <h3>Mujer</h3>
                 </a>
             </div>
-
             <div class="hombre">
                 <a href="/producto">
                     <img src="image/home/hombre/hombre1.jpg" alt="">
