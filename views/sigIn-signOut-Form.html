@@ -16,6 +16,55 @@
     </head>
     <body>
      <header>
+                             
+        <div class="contenedor">
+
+            <!--banner animado-->
+            <div class="banner">
+                <ul class=lista>
+                    <li>¡Envío GRATIS a todo el país!</li>
+                    <li>10% OFF en tu primera compra</li>
+                    <li>Nueva colección ¡Muy pronto!</li>
+                </ul>
+            </div>
+
+            <section>
+                <!--menu de navegación-->
+                <div>
+                    <input type="checkbox" class="checkbox-menu" id="checkbox-menu">
+                    <label for="checkbox-menu" class="checkbox-menu"><i class="fas fa-bars"></i></label>
+                    <nav>
+                        <label for="checkbox-menu" class="checkbox-menu-salir"><i class="fas fa-times"></i></label>
+                        <ul class="categorias">
+                            <li class="categoria1"><a href="/producto">Hombre</a></li>
+                            <li class="categoria2"><a href="/producto">Mujer</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!--logo cabezote-->
+                <a href="/" class="logo"><img class="logo" src="image/logo.jpg" alt="Logo"></a>
+
+                <!--iconos del header-->
+                <div class="iconos">
+                    <!--usuario/cuenta-->
+                    <a href="/cuenta" class=""><i class="fas fa-user-alt"></i></a>
+                    <!--barra de busqueda-->
+                    <input type="checkbox" id="checkbox-search" class="checkbox-search">
+                    <label for="checkbox-search"><i class="fas fa-search"></i></label>
+                    <div class="buscador">
+                        <form action="" class="barra">
+                            <input type="search" placeholder="¿Qué buscas?" autocomplete="on">
+                            <button type="submit" name="buscar"><i class="fas fa-search"></i></button>
+                            <label for="checkbox-search" class="checkbox-salir"><i class="fas fa-times"></i></label>
+                        </form>
+                    </div>
+                    <!--lleva al carrito-->
+                    <a href="/carrito"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+            </section>
+        </div>
+
 
      </header>
      <main>
@@ -59,6 +108,36 @@
      </main>
 
      <footer>
+                            <!--todo el footer SIN la barra de copyright -->
+        <div class="secciones">
+
+            <!--logo del footer-->
+            <a href="/"><img class="logo" src="image/logo.jpg" alt="Logo"></a>
+
+            <!--secciones para navegar-->
+            <section class="section1">
+                <h5>Nosotros</h5>
+                <p><a href="">Términos y condiciones</a></p>
+                <p><a href="">Políticas de privacidad</a></p>
+            </section>
+
+            <section class="section2">
+                <h5>Ayuda</h5>
+                <p><a href="">Preguntas frecuentes</a></p>
+                <p><a href="">Contacto</a></p>
+            </section>
+
+            <section class="redes">
+                <h5>Follow us</h5>
+                <p><a href="https://www.instagram.com/" target="_blank">Instagram</a></p>
+                <p><a href="https://www.facebook.com/" target="_blank">Facebook</a></p>
+            </section>
+        </div>
+
+        <!--barrita de copyright -->
+        <p class="copyright">Copyright © 2021</p>
+
+
 
      </footer>
 
