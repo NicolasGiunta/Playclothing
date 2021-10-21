@@ -5,6 +5,14 @@
     font-family:'Roboto', sans-serif;
 }
 
+h6{
+ font-weight: bold;
+ font-size: 100%;
+ margin-left: 10px;
+ border-bottom: 25px;
+align-items: stretch;
+}
+
 /*HEADER*/
 header{
   width: 100%;
