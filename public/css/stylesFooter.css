@@ -1,0 +1,99 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+
+  footer .secciones{
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 4vmin;
+  }
+  
+  footer section{
+    padding: 10px 0px 15px 0;
+  }
+  
+  footer .logo{
+    margin-bottom: 10px;
+  }
+  
+  footer h5{
+    font-size:1rem;
+  }
+  
+  footer p{
+    font-size:0.8rem;
+  }
+  
+  footer p:hover{
+    text-decoration: underline;
+  }
+  
+  footer .redes{
+    display:block;
+  }
+  
+  footer .copyright {
+    border-top:black 0.5px solid;
+    padding: 5px;
+    text-align:center;
+    font-size: 0.65rem;
+  }
+  
+  
+  
+  @media (min-width: 426px) {
+  
+  
+  footer .secciones{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px 35px;
+   }
+  
+  footer .logo{
+      display: block;
+      width: 150px;
+      height: 43px;  
+   }
+  
+  footer section{
+      flex-grow: 0.25;
+      padding: 15px 0;
+   }
+  
+  footer section h5{
+      padding: 0 0 8px 0;
+    }
+  
+   footer section p{
+      padding: 0 0 5px 0;
+   }
+  
+   footer .section1{
+     padding-left: 35px;
+    }
+  }
+  
+    
+  @media (min-width:1023px) {
+  
+    footer .section1{
+      padding-left: 80px;
+    }
+  
+    footer h5{
+      font-size:1.2rem;
+    }
+    
+    footer p{
+      font-size:0.9rem;
+    }
+    
+  }
