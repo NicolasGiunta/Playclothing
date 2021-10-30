@@ -1,0 +1,39 @@
+!DOCTYPE html>
+<html lang="en">
+    
+<!--traigo el head-->
+    <%- include ('./partials/head') %>
+    
+<!--traigo el css-->
+    <link rel="stylesheet" href="/css/StylesProductDetail.css">
+
+<body>
+    
+    <!--HEADER-->
+    <%- include ('./partials/header') %>
+
+<main>
+    <div>
+
+    <% let listaDeProductosMujer = listaDeProductos.filter(element => element.sexo == "Mujer") %>
+
+
+
+    <% for (let i = 0; i < listaDeProductosMujer.length; i++){ %>     
+        <img src=<%= listaDeProductosMujer[i].imagen%> >
+        <h4><%= listaDeProductosMujer[i].nombreDelProducto%></h4>
+        <h6>$<%= listaDeProductosMujer[i].precio%></h6>
+
+
+
+        <% } %> 
+    </div>
+
+
+</main>
+
+<!--FOOTER-->
+<%- include ('./partials/footer') %>
+
+</body>
+</html>

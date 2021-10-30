@@ -45,6 +45,7 @@ main{
     color: black;
    margin-bottom: 10px;
    margin-top: 150px;
+   display: flex;
 }
 
 
