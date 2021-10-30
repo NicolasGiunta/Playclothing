@@ -25,3 +25,8 @@ Información clara sobre los productos: Fotos con descripciones, opciones de tal
 Facilidad para navegar y para encontrar los productos.
 Responsive.
 Alternativas seguras de pago.
+
+Trello:
+https://trello.com/b/psou7tSx/sprint-2
+https://trello.com/b/7L3RVW90/sprint-3
+
