@@ -5,7 +5,7 @@
     <%- include ('./partials/head') %>
     
 <!--traigo el css-->
-    <link rel="stylesheet" href="/css/StylesProductDetail.css">
+    <link rel="stylesheet" href="/css/stylesHombre.css">
 
 <body>
     
@@ -20,7 +20,7 @@
 
 
     <% for (let i = 0; i < listaDeProductosHombre.length; i++){ %>     
-        <img src=<%= listaDeProductosHombre[i].imagen%> >
+         <a href="/producto/hombre/producto1"> <img src=<%= listaDeProductosHombre[i].imagen%> > </a>
         <h4><%= listaDeProductosHombre[i].nombreDelProducto%></h4>
         <h6>$<%= listaDeProductosHombre[i].precio%></h6>
 
