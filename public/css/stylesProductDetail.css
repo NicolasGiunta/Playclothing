@@ -20,20 +20,7 @@ body {
   display:block;
 }
 
-main .lista li{
-  font-size: 0.9rem;
-  list-style: none;
-  border-bottom: solid 20px black;
-}
 
-
-main .lista{
-  margin: auto;
-  color:black;
-  text-align: center;
-  line-height: 30px;
-  animation: animacion 10s 0.5s infinite;
-}
 
 
 
@@ -59,10 +46,7 @@ main h4{
   margin-left: 10px;
 }
 
-main barra{
-  margin-left:42%;
-  
-}
+
 
 main article p{
   margin-left: 10px;
@@ -77,12 +61,6 @@ main label{
 margin-left: 10px;
 }
 
-main select{
-  margin-left: 10px;
-  width: 80%;
-  height: 20px;
-  text-align: center;
-}
 
 main button{
     margin-left: 20px;
