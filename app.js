@@ -21,13 +21,7 @@ app.use("/cuenta", usersRoutes);
 
 app.use("/carrito",shopRoutes);
 
-app.get("/registro", (req, res) => {
-  res.sendFile(path.join(__dirname, "/views/register_form.html"));
-});
 
-app.post("/micuenta", (req, res) => {
-  res.sendFile(path.join(__dirname, "/views/index.html"));
-});
 
 app.listen(PUERTO, () => {
   console.log("Andando sin problema");

@@ -1,78 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8"> <!--por default-->
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"><!--por default-->
-        <meta name="viewport" content="width=device-width,initial-scale=1"><!--por default-->
-        <title>cuenta</title><!--nombre uqe se va a ver en la pestaña del navegador-->
-        <!-- ícono en el navegador-->
-        <link rel="icon" href="image/LogoP.PNG">  
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet"><!--Fuentes a usar traida de google fonts este caso Roboto-->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"><!--link de los iconos a usar-->
-        <link href="/css/normalize.css" rel="normalize">
+        <%- include ('./partials/head') %>
+
         <link href="./css/stylesForm.css" rel="stylesheet">
     </head>
     <body>
-     <header>
-                             
-        <div class="contenedor">
-
-            <!--banner animado-->
-            <div class="banner">
-                <ul class=lista>
-                    <li>¡Envío GRATIS a todo el país!</li>
-                    <li>10% OFF en tu primera compra</li>
-                    <li>Nueva colección ¡Muy pronto!</li>
-                </ul>
-            </div>
-
-            <section>
-                <!--menu de navegación-->
-                <div>
-                    <input type="checkbox" class="checkbox-menu" id="checkbox-menu">
-                    <label for="checkbox-menu" class="checkbox-menu"><i class="fas fa-bars"></i></label>
-                    <nav>
-                        <label for="checkbox-menu" class="checkbox-menu-salir"><i class="fas fa-times"></i></label>
-                        <ul class="categorias">
-                            <li class="categoria1"><a href="/producto">Hombre</a></li>
-                            <li class="categoria2"><a href="/producto">Mujer</a></li>
-                        </ul>
-                    </nav>
-                </div>
-
-                <!--logo cabezote-->
-                <a href="/" class="logo"><img class="logo" src="image/logo.jpg" alt="Logo"></a>
-
-                <!--iconos del header-->
-                <div class="iconos">
-                    <!--usuario/cuenta-->
-                    <a href="/cuenta" class=""><i class="fas fa-user-alt"></i></a>
-                    <!--barra de busqueda-->
-                    <input type="checkbox" id="checkbox-search" class="checkbox-search">
-                    <label for="checkbox-search"><i class="fas fa-search"></i></label>
-                    <div class="buscador">
-                        <form action="" class="barra">
-                            <input type="search" placeholder="¿Qué buscas?" autocomplete="on">
-                            <button type="submit" name="buscar"><i class="fas fa-search"></i></button>
-                            <label for="checkbox-search" class="checkbox-salir"><i class="fas fa-times"></i></label>
-                        </form>
-                    </div>
-                    <!--lleva al carrito-->
-                    <a href="/carrito"><i class="fas fa-shopping-cart"></i></a>
-                </div>
-            </section>
-        </div>
-
-
-     </header>
+    <!--HEADER-->
+    <%- include ('./partials/header') %>
      <main>
         <h1>Mi cuenta</h1>
         <div class="tablet">
         <div class="caja1"><h5> Iniciar sesion</h5>
         
-            <form action="micuenta" method="post" class="create-form">
+            <form action="miCuenta" method="post" class="create-form">
             <div class="control-formulario">
             <p>
                 <label for="email" >Email *</label>
@@ -98,7 +39,7 @@
             </div>     
             <div>
                 <p> 
-                    <a class="checkbox" href="/registro">¿No tienes cuenta? Creala</a>
+                    <a class="checkbox" href="/cuenta/registro">¿No tienes cuenta? Creala</a>
                 </p>
             </div>
 
@@ -107,38 +48,9 @@
        </div>
      </main>
 
-     <footer>
-                            <!--todo el footer SIN la barra de copyright -->
-        <div class="secciones">
 
-            <!--logo del footer-->
-            <a href="/"><img class="logo" src="image/logo.jpg" alt="Logo"></a>
+    <!--FOOTER-->
+    <%- include ('./partials/footer') %>
 
-            <!--secciones para navegar-->
-            <section class="section1">
-                <h5>Nosotros</h5>
-                <p><a href="">Términos y condiciones</a></p>
-                <p><a href="">Políticas de privacidad</a></p>
-            </section>
-
-            <section class="section2">
-                <h5>Ayuda</h5>
-                <p><a href="">Preguntas frecuentes</a></p>
-                <p><a href="">Contacto</a></p>
-            </section>
-
-            <section class="redes">
-                <h5>Follow us</h5>
-                <p><a href="https://www.instagram.com/" target="_blank">Instagram</a></p>
-                <p><a href="https://www.facebook.com/" target="_blank">Facebook</a></p>
-            </section>
-        </div>
-
-        <!--barrita de copyright -->
-        <p class="copyright">Copyright © 2021</p>
-
-
-
-     </footer>
 
     </body>
