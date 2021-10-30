@@ -5,7 +5,7 @@
     font-family:'Roboto', sans-serif;
 }
 
-h6{
+main h6{
  font-weight: bold;
  font-size: 100%;
  margin-left: 10px;
@@ -20,14 +20,14 @@ body {
   display:block;
 }
 
-.lista li{
+main .lista li{
   font-size: 0.9rem;
   list-style: none;
   border-bottom: solid 20px black;
 }
 
 
-.lista{
+main .lista{
   margin: auto;
   color:black;
   text-align: center;
@@ -49,39 +49,41 @@ main{
 
 
 
-.fa-bars{
+main .fa-bars{
 color: gray;
 }
 
-h4{
+main h4{
   text-align:left;
   margin-left: 10px;
 }
 
-barra{
+main barra{
   margin-left:42%;
   
 }
 
-article p{
+main article p{
   margin-left: 10px;
   border-bottom:25px;
   align-items: stretch;
 }
-.buzo{
+main .buzo{
   width:425px;
 }
 
-label{
+main label{
 margin-left: 10px;
 }
-select{
+
+main select{
   margin-left: 10px;
   width: 80%;
   height: 20px;
   text-align: center;
 }
-button{
+
+main button{
     margin-left: 20px;
     margin-top: 10px;
     transition: all 400ms;
@@ -92,29 +94,30 @@ button{
     margin-top: 30px;
     
    }
-   button:hover{
+  
+main button:hover{
         box-shadow: 0px 0px 1px 1px rgb(156, 154, 154);
         
    }
 
 
 
-.navegacion{
+main .navegacion{
   list-style: none;
 
 }
-.menu a{
+main .menu a{
   text-decoration:none ;
 }
-.menu > li{
+main .menu > li{
   display: relative;
   padding: 5px;
   list-style: none;
 }
-.menu li:hover{
+main .menu li:hover{
 transition: all .3s;
 }
-.submenu{
+main .submenu{
   opacity: 0;
   transition: 400ms;
   text-decoration: none;
@@ -123,19 +126,19 @@ transition: all .3s;
 }
 
 
-.menu:hover .submenu{
+main .menu:hover .submenu{
 visibility: visible;
 opacity: 1;
 }
 
- descripcion {
+main descripcion {
     margin-bottom: 10px;
   }
 
-  .color{
+main .color{
     margin-bottom: 10px;
 }
-.talle{
+main .talle{
     margin-bottom: 20px;
 }
 
@@ -145,29 +148,29 @@ opacity: 1;
   
   
   
-  article {
+ main article {
   
     display: flex;
   }
-  h4{
+ main  h4{
     text-align:right;
     margin-right: 10px;
   }
   
-  select{
+ main select{
     display: flex;
-width: 80%;
-height: 20px;
-text-align: center;
-  }
+    width: 80%;
+    height: 20px;
+  text-align: center;
+}
 
   
    
-   descripcion p{
+ main descripcion p{
      margin:10px 0px ;
    }
 
-   button{
+  main button{
     margin-left: 18px;
     margin-top: 10px;
     transition: all 400ms;
@@ -178,32 +181,34 @@ text-align: center;
     margin-top: 30px;
     
    }
-   button:hover{
+
+  main button:hover{
         box-shadow: 0px 0px 1px 1px rgb(156, 154, 154);
   }
-h4{
+main h4{
   text-align: start;
   font-size: 30px;
 }
 
 
- .color{
+main .color{
     margin-top: 30px;
     margin-bottom: 30px;
      
  }
- .talle{
+main .talle{
      margin-bottom: 30px;
      
  }
- button1{
+main button1{
      
 border-top: solid black 1px;
 border-bottom: black solid 1px;
 margin-top: 0px;
 margin-bottom: 0px;
  }
- button2{
+
+main button2{
     
 border-top: solid black 1px;
 border-bottom: black solid 1px;
@@ -211,92 +216,18 @@ margin-top: 0px;
 margin-bottom: 0px;
 }
 
-.buzo{
+main .buzo{
     width:50%;
     height: 50%;
 }
 
-.submenu{
+main .submenu{
     text-align: ju;
 }
-article p{
+main article p{
   margin-left: 10px;
   border-bottom:25px;
   align-items: stretch;
 }
-header .logo{
-  width: 170px;
- }
 
- header section{
-  display: flex;
-  justify-items: center;
-  align-items: center;
-  padding: 20px 25px 20px 15px;
-}
-
-header .checkbox-menu{
-  display: none;
-}
-
-header .checkbox-menu:checked ~ nav{
-  height: 0;
-  border-top: none;
-  display: flex
-}
-
-header .checkbox-menu:checked ~ nav li{
-border-bottom: none;
-padding: 0px 20px 0px 0px;  
-}
-
-header .checkbox-menu:checked ~ nav li a{
-border-bottom: none;
-}
-
-header .logo{
-  order: -1;
-  margin-right: 20px;
- }  
-
-header nav {
-    visibility: visible;
-    width: 100%;
-    position: relative;
-    flex-grow: 1;
-    padding: 0 0 17px 0;       
- }
-
-header nav .fa-times{
-  display: none
- }
-
-header nav ul{
-    display: flex;
- }
-
-header nav li{
-    align-self: center;
-    width: 100%;
-    padding: 0 20px 0px 0;
-    background-color: white;
- }
-
-header .categorias .categoria1 a, .categorias .categoria2 a{
-  text-decoration: none;
-  color: black ;
-  font-size: 1rem;
-  font-weight: bold;
- }
-
-header .iconos i{
-    padding: 0 0 0 15px;
- }
-  
-header .banners{
-    display: flex;
-  }
-  
-
-  
 }
