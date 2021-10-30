@@ -45,7 +45,9 @@ let listaDeProductos = [
 const productsController = {
     index: function (req, res) {
         res.render('productDetail', {'listaDeProductos': listaDeProductos})
-}
+},
+
+
 
 }
 
