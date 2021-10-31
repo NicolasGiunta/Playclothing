@@ -21,12 +21,6 @@ body {
 }
 
 
-
-
-
-
-
-
 main{
   background-color: white;
     color: black;
@@ -34,7 +28,6 @@ main{
    margin-top: 150px;
    display: flex;
 }
-
 
 
 main .fa-bars{
@@ -47,14 +40,14 @@ main h4{
 }
 
 
-
 main article p{
   margin-left: 10px;
   border-bottom:25px;
   align-items: stretch;
 }
 main .buzo{
-  width:425px;
+  width:100%;
+
 }
 
 main label{
@@ -77,38 +70,8 @@ main button{
 main button:hover{
         box-shadow: 0px 0px 1px 1px rgb(156, 154, 154);
         
-   }
-
-
-
-main .navegacion{
-  list-style: none;
-
-}
-main .menu a{
-  text-decoration:none ;
-}
-main .menu > li{
-  display: relative;
-  padding: 5px;
-  list-style: none;
-}
-main .menu li:hover{
-transition: all .3s;
-}
-main .submenu{
-  opacity: 0;
-  transition: 400ms;
-  text-decoration: none;
-  list-style: none;
-  
 }
 
-
-main .menu:hover .submenu{
-visibility: visible;
-opacity: 1;
-}
 
 main descripcion {
     margin-bottom: 10px;
@@ -121,27 +84,48 @@ main .talle{
     margin-bottom: 20px;
 }
 
+
+.acordeon input{
+  display: none;
+}
+.acordeon__titulo{
+  display: block;
+  padding: 4px;
+  border-top: solid black 1px;
+  border-bottom: solid black 1px;
+  font-weight: bold;
+  text-align: center;
+  margin-right: 6px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+
+.acordeon__contenido{
+  height: 0;
+  overflow: hidden;
+  transition: all 0.8s ;
+}
+
+.acordeon input:checked ~ .acordeon__contenido{
+  height: auto;
+  margin-bottom: 5px;
+}
+
+
+
 @media (min-width:426px) {
   
-
-  
-  
-  
- main article {
+  main article {
   
     display: flex;
   }
- main  h4{
+  main  h4{
     text-align:right;
     margin-right: 10px;
   }
   
- main select{
-    display: flex;
-    width: 80%;
-    height: 20px;
-  text-align: center;
-}
+ 
 
   
    
@@ -164,46 +148,31 @@ main .talle{
   main button:hover{
         box-shadow: 0px 0px 1px 1px rgb(156, 154, 154);
   }
-main h4{
+
+  main h4{
   text-align: start;
   font-size: 30px;
 }
 
 
-main .color{
+  main .color{
     margin-top: 30px;
     margin-bottom: 30px;
      
  }
-main .talle{
+  main .talle{
      margin-bottom: 30px;
      
  }
-main button1{
-     
-border-top: solid black 1px;
-border-bottom: black solid 1px;
-margin-top: 0px;
-margin-bottom: 0px;
- }
 
-main button2{
-    
-border-top: solid black 1px;
-border-bottom: black solid 1px;
-margin-top: 0px;
-margin-bottom: 0px;
+
+  main .buzo{
+width: 50%;
+
 }
 
-main .buzo{
-    width:50%;
-    height: 50%;
-}
 
-main .submenu{
-    text-align: ju;
-}
-main article p{
+  main article p{
   margin-left: 10px;
   border-bottom:25px;
   align-items: stretch;
