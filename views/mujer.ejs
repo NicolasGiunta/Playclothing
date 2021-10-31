@@ -5,7 +5,7 @@
     <%- include ('./partials/head') %>
     
 <!--traigo el css-->
-    <link rel="stylesheet" href="/css/StylesProductDetail.css">
+    <  <link rel="stylesheet" href="/css/stylesHombre.css">
 
 <body>
     
@@ -13,19 +13,19 @@
     <%- include ('./partials/header') %>
 
 <main>
-    <div>
+    <div class=productos>
 
     <% let listaDeProductosMujer = listaDeProductos.filter(element => element.sexo == "Mujer") %>
 
 
 
     <% for (let i = 0; i < listaDeProductosMujer.length; i++){ %>     
-        <img src=<%= listaDeProductosMujer[i].imagen%> >
+        <div class='imagenYdescripcion'><img class='foto' src=<%= listaDeProductosMujer[i].imagen%> >
         <h4><%= listaDeProductosMujer[i].nombreDelProducto%></h4>
         <h6>$<%= listaDeProductosMujer[i].precio%></h6>
 
 
-
+    </div>
         <% } %> 
     </div>
 

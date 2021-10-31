@@ -1,3 +1,62 @@
-body{
-    background-color: red;
+main{
+  height: 60%;
+}
+
+.productos{
+  margin-top: 22%;
+  display: flex;
+}
+
+.foto {
+  height: 78%;
+  width: 100%;
+}
+
+h4, h6 {
+  font-weight: 600;
+  padding: 4px;
+  padding-left: 10px;
+}
+
+h4{
+  font-size: 80%;
+  padding-top: 8px;
+}
+
+h6{
+  font-size: 65%;
+}
+
+
+/* @media (min-width:426px){
+main{
+  height: 40px;
+}
+.productos{
+  margin-top: 12%;
+}
+} */
+
+@media (min-width: 426px) {
+  main{
+    height: 70%}
+  .productos{
+      margin-top: 13%;
+}
+}
+@media (min-width:1023px) {
+  h4{
+    font-size: 20px;
+  }
+  h6{
+    font-size: 15px;
+  }
+  main{
+    height: 200%}
+    .productos{margin-top: 8.5%} 
+    .foto {
+      height: 85%;
+    }
+    
+   
 }
