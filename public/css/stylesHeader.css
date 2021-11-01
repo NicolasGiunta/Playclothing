@@ -366,7 +366,7 @@
   }
   
   
-  @media (min-width: 426px) {
+  @media (min-width: 768px) {
   
   header section{
       display: flex;
@@ -387,11 +387,12 @@
   
   .checkbox-menu:checked ~ nav li{
     border-bottom: none;
-    padding: 0px 20px 0px 0px;  
+    padding: 0px 20px 15px 0px;  
    }
   
   .checkbox-menu:checked ~ nav li a{
     border-bottom: none;
+    font-size: 1.3rem;
    }
   
   .logo{
@@ -408,7 +409,7 @@
       width: 100%;
       position: relative;
       flex-grow: 1;
-      padding: 0 0 17px 0;       
+      padding: 0 0 28px 0;       
    }
   
   nav .fa-times{
@@ -429,7 +430,7 @@
   .categorias .categoria1 a, .categorias .categoria2 a{
     text-decoration: none;
     color: black ;
-    font-size: 1rem;
+    font-size: 1.3rem;
     font-weight: bold;
    }
   
@@ -454,11 +455,5 @@
       padding: 0 0 0 20px;
     }
   
-  .categorias .categoria1 a, .categorias .categoria2 a {
-      text-decoration: none;
-      color: black;
-      font-size: 1.3rem;
-      font-weight: bold;
-   }
-  
+ 
   }
