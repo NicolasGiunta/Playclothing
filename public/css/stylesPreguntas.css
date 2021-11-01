@@ -32,11 +32,15 @@
  }
 
 
- .preguntas h6 {
+ .preguntas__titulo {
     color: #303028;
     font-size: 1rem;
     font-weight: normal;
     padding-left: 0.5rem;
+ }
+
+ .preguntas__titulo:hover {
+     cursor: pointer;
  }
 
 
