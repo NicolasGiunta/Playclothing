@@ -1,6 +1,4 @@
-main{
-  height: 60%;
-}
+
 
 .productos{
   margin-top: 22%;
@@ -38,9 +36,9 @@ main{
 } */
 
 @media (min-width: 426px) {
-  main{
-    height: 70%}
-  .productos{
+ 
+    
+ main .productos{
       margin-top: 13%;
 }
 }
@@ -51,8 +49,7 @@ main{
   h6{
     font-size: 15px;
   }
-  main{
-    height: 200%}
+  main
     .productos{margin-top: 8.5%} 
     .foto {
       height: 85%;
