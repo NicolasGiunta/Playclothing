@@ -6,8 +6,6 @@ router.get("/", usersController.login);
 
 router.get("/registro", usersController.registro);
 
-router.post("/miCuenta", (req, res) =>{
-    res.redirect("/")
-});
+router.post("/registro", usersController.create);
 
 module.exports = router;
