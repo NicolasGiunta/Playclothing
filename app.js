@@ -6,6 +6,9 @@ const productRoutes = require("./routes/productsRoutes");
 const mainRoutes = require("./routes/mainRoutes");
 const usersRoutes = require("./routes/usersRoutes");
 const shopRoutes = require("./routes/shopRoutes")
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
+
 
 app.use(express.static("public"));
 

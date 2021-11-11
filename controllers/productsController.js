@@ -1,64 +1,46 @@
-let listaDeProductos = [
-{
-  sexo: 'Hombre',
-  nombreDelProducto: 'Buzo Charlatans',
-  imagen: "../image/productos/hombre/buzo-hombre.jpg",
-  descripcion:'Buzo rustico, Cuello y cintura de rib, Estampa en manga y frente, Manga larga',
-  categoria: 'Buzo',
-  colores: 'Negro Blanco',
-  tallas: 'S M L XL',
-  precio: 12.500
-},
+const express = require('express')
+const fs = require('fs');
+const path = require('path');
 
-{
-    sexo: 'Hombre',
-    nombreDelProducto:'Camisa Hallucinogenic',
-    imagen: "../image/productos/hombre/camisaHombre.jpeg",
-    descripcion: 'Camisa manga corta, estampado de hongos',
-    categoria:'Camisa',
-    colores: 'Roja Naranja',
-    tallas: 'S M L XL',
-    precio: 9.880
-  },
-  
-  {
-    sexo: 'Mujer',
-    nombreDelProducto:'buzo Calder sun',
-    imagen: "../image/productos/mujeres/buzoMujer.jpeg",
-    descripcion: 'Buzo de rústico, Calce clásico, Escote redondo con puños',
-    categoria:'Buzo',
-    colores: 'Azul',
-    tallas: 'S M L XL',
-    precio: 9.880
-  },
-  
-  {
-    sexo: 'Mujer',
-    nombreDelProducto:'Remera Ml Flores',
-    imagen: "../image/productos/mujeres/remeraMujer.jpeg",
-    descripcion: 'Remera con estampado frontal',
-    categoria:'Remera',
-    colores: 'Blanca',
-    tallas: 'S M L XL',
-    precio: 4.880
-  }
-  
-]
+const productsFilePath = path.join(__dirname, '../data/products.json');
+const listaDeProductos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+// const uuid = require('uuid/v4')
 
 
 const productsController = {
     producto: function (req, res) {
-        res.render('productDetail', {'listaDeProductos': listaDeProductos})
+        res.render('productDetail', {listaDeProductos})
 },
     mujer: function (req, res) {
-      res.render('mujer', {'listaDeProductos': listaDeProductos})
+      res.render('mujer', {listaDeProductos})
 },
     hombre: function (req, res) {
-  res.render('hombre', {'listaDeProductos': listaDeProductos})
+  res.render('hombre', {listaDeProductos})
    
+},
+create: function (req, res){
+  res.render('product-create')
+},
+store: function (req, res){
+  const nuevoProducto = {
+    // id: uuid(),
+    sexo: req.body.sexo,
+        nombreDelProducto: req.body.nombre,
+        imagen: req.file.filename,
+        descripcion: req.body.description,
+        categoria: req.body.categoria,
+        colores: req.body.colores,
+        tallas: req.body.tallas,
+        precio: req.body.precio
+        }
+        listaDeProductos.push(nuevoProducto)
+        const productoJSON = JSON.stringify(listaDeProductos)
+        fs.writeFileSync(productsFilePath, productoJSON)
+        res.redirect("/")
+      }
 }
-}
+
 
 
 module.exports = productsController;
