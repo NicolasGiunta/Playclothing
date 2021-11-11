@@ -20,6 +20,12 @@ const productsController = {
     producto: function (req, res) {
       let id = req.params.id
       let producto = listaDeProductos.find(element=> element.id == id)
+
+      if (producto.sexo=="Hombre"){
+        res.render('')
+      }
+
+
         res.render('productDetail', {producto})
 },
     mujer: function (req, res) {
