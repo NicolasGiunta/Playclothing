@@ -6,6 +6,10 @@ const productRoutes = require("./routes/productsRoutes");
 const mainRoutes = require("./routes/mainRoutes");
 const usersRoutes = require("./routes/usersRoutes");
 const shopRoutes = require("./routes/shopRoutes")
+const methodOverride = require ("method-override");
+
+
+app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 

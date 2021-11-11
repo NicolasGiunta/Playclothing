@@ -15,12 +15,15 @@
 <br>
 <main>
 <article>
-    <img class="buzo" src="/image/productos/hombre/buzo-hombre.jpg" alt="buzo">
+    <img class="buzo" src="<%= producto.imagen %>" alt="imagen">
+
+
 
 <descripcion>
-<h4><%= listaDeProductos[0].nombreDelProducto%></h4>
-<h6>$<%= listaDeProductos[0].precio%></h6>
-<p><%= listaDeProductos[0].descripcion%></p>
+<h4><%= producto.nombreDelProducto%></h4>
+<h6>$<%= producto.precio%></h6>
+<p><%= producto.descripcion%></p>
+<p><%= producto.imagen %></p>
 
 
 <div class="color">

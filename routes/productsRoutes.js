@@ -28,6 +28,9 @@ router.get('/hombre', productController.hombre)
 
 router.get('/create', productController.create)
 
+router.get('/:id/edit', productController.edit)
+router.put('/:id', upload.single('imagen'), productController.update)
+
 
 
 
