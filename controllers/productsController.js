@@ -5,12 +5,22 @@ const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const listaDeProductos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-// const uuid = require('uuid/v4')
+const nuevoId = () => {
+  let ultimo = 0;
+  listaDeProductos.forEach(product => {
+      if (product.id > ultimo) {
+          ultimo = product.id;
+      }
+  });
+  return ultimo + 1;
+}
 
 
 const productsController = {
     producto: function (req, res) {
-        res.render('productDetail', {listaDeProductos})
+      let id = req.params.id
+      let producto = listaDeProductos.find(element=> element.id == id)
+        res.render('productDetail', {producto})
 },
     mujer: function (req, res) {
       res.render('mujer', {listaDeProductos})
@@ -23,12 +33,13 @@ create: function (req, res){
   res.render('product-create')
 },
 store: function (req, res){
-  const nuevoProducto = {
-    // id: uuid(),
+   if(req.file){
+    const nuevoProducto = {
+    id: nuevoId(),
     sexo: req.body.sexo,
         nombreDelProducto: req.body.nombre,
-        imagen: req.file.filename,
-        descripcion: req.body.description,
+        imagen: "/image/productos/" + req.file.filename,
+        descripcion: req.body.descripcion,
         categoria: req.body.categoria,
         colores: req.body.colores,
         tallas: req.body.tallas,
@@ -39,8 +50,43 @@ store: function (req, res){
         fs.writeFileSync(productsFilePath, productoJSON)
         res.redirect("/")
       }
+    else{
+      res.redirect('/create')
+    }
+  }, 
+edit: (req, res) => {
+  let id = req.params.id
+  let productoAEditar = listaDeProductos.find(element=> element.id == id);		
+  res.render('edit', {producto: productoAEditar})
+},
+update: (req, res) => {
+  if(req.file){
+  listaDeProductos.forEach((element)  => {
+    if (element.id == req.params.id){
+      element.nombreDelProducto = req.body.name,
+      element.imagen= req.file.filename,
+              element.descripcion = req.body.descripcion;
+              element.categoria= req.body.categoria,
+              element.colores= req.body.colores,
+              element.tallas= req.body.tallas,
+              element.precio = req.body.precio;
+
+              const productosJSON = JSON.stringify(listaDeProductos)
+              fs.writeFileSync(productsFilePath, productosJSON)
+              res.redirect('/');
+    }
+    else{
+      res.render('edit')
+    }
+    
+  })
+
+
+
 }
 
+}
 
+}
 
 module.exports = productsController;
