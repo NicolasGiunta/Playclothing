@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "sexo": "Hombre",
+        "sexo": "hombre",
         "nombreDelProducto": "Buzo Charlatans",
         "imagen": "/image/productos/buzo-hombre.jpg",
         "descripcion": "Buzo rustico, Cuello y cintura de rib, Estampa en manga y frente, Manga larga",
@@ -12,7 +12,7 @@
     },
     {
         "id": 2,
-        "sexo": "Hombre",
+        "sexo": "hombre",
         "nombreDelProducto": "Camisa Hallucinogenic",
         "imagen": "/image/productos/camisaHombre.jpeg",
         "descripcion": "Camisa manga corta, estampado de hongos",
@@ -23,7 +23,7 @@
     },
     {
         "id": 3,
-        "sexo": "Mujer",
+        "sexo": "mujer",
         "nombreDelProducto": "buzo Calder sun",
         "imagen": "/image/productos/buzoMujer.jpeg",
         "descripcion": "Buzo de rústico, Calce clásico, Escote redondo con puños",
@@ -34,7 +34,7 @@
     },
     {
         "id": 4,
-        "sexo": "Mujer",
+        "sexo": "mujer",
         "nombreDelProducto": "Remera Ml Flores",
         "imagen": "/image/productos/remeraMujer.jpeg",
         "descripcion": "Remera con estampado frontal",
@@ -44,28 +44,28 @@
         "precio": 4.88
     },
     {
-        "sexo": "Hombre",
+        "sexo": "hombre",
         "imagen": "/image/productos/1636655825830-.JPG",
         "colores": "azuk",
         "precio": "800"
     },
     {
         "id": 5,
-        "sexo": "Mujer",
+        "sexo": "mujer",
         "imagen": "/image/productos/1636656524190-.JPG",
         "colores": "sdad",
         "precio": "324234"
     },
     {
         "id": 6,
-        "sexo": "Hombre",
+        "sexo": "hombre",
         "imagen": "/image/productos/1636656617910-.JPG",
         "colores": "dsadsa",
         "precio": ""
     },
     {
         "id": 7,
-        "sexo": "Hombre",
+        "sexo": "hombre",
         "imagen": "/image/productos/1636656674154-.JPG",
         "colores": "",
         "precio": "30000"
@@ -79,7 +79,7 @@
     },
     {
         "id": 9,
-        "sexo": "Hombre",
+        "sexo": "hombre",
         "imagen": "/image/productos/1636660651055-.jpg",
         "descripcion": "aaaaaaa",
         "colores": "aaaaa",

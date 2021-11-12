@@ -15,7 +15,7 @@
 <main>
     <div class=productos>
 
-    <% let listaDeProductosHombre = listaDeProductos.filter(element => element.sexo == "Hombre") %>
+    <% let listaDeProductosHombre = listaDeProductos.filter(element => element.sexo == "hombre") %>
 
     <% for (let i = 0; i < listaDeProductosHombre.length; i++){ %>     
          <div class='imagenYdescripcion'><a href="/producto/hombre/<%= listaDeProductosHombre[i].id  %>"> <img class='foto' src=<%= listaDeProductosHombre[i].imagen%> > </a>

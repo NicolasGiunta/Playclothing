@@ -18,8 +18,9 @@ let storage = multer.diskStorage({
 const upload = multer ({storage:storage})
 
 
-router.get('/hombre/:id', productController.producto)
-router.get('/mujer/:id', productController.producto)
+router.get('/hombre/:id', productController.detalle)
+router.get('/mujer/:id', productController.detalle)
+
 
 router.get('/mujer', productController.mujer)
 router.post('/', upload.single('imagen'), productController.store)
