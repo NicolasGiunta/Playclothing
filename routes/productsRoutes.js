@@ -32,6 +32,8 @@ router.get('/create', productController.create)
 router.get('/:id/edit', productController.edit)
 router.put('/:id', upload.single('imagen'), productController.update)
 
+router.delete('/:id', productController.destroy)
+
 
 
 

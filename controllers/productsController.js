@@ -41,8 +41,6 @@ const productsController = {
       res.render('productDetail', { producto })
     }
 
-  console.log(url)
-  console.log(urlFinal)
     
   },
 
@@ -56,7 +54,7 @@ const productsController = {
       const nuevoProducto = {
         id: nuevoId(),
         sexo: req.body.sexo,
-        nombreDelProducto: req.body.nombre,
+        nombreDelProducto: req.body.nombreDelProducto,
         imagen: "/image/productos/" + req.file.filename,
         descripcion: req.body.descripcion,
         categoria: req.body.categoria,
@@ -84,8 +82,9 @@ const productsController = {
     if (req.file) {
       listaDeProductos.forEach((element) => {
         if (element.id == req.params.id) {
-          element.nombreDelProducto = req.body.name,
-            element.imagen = req.file.filename,
+          element.sexo = req.body.sexo,
+          element.nombreDelProducto = req.body.nombreDelProducto,
+            element.imagen = "/image/productos/" + req.file.filename,
             element.descripcion = req.body.descripcion;
           element.categoria = req.body.categoria,
             element.colores = req.body.colores,
@@ -106,7 +105,16 @@ const productsController = {
 
     }
 
-  }
+  },
+
+    destroy: (req,res) =>{
+      let productosRestantes = listaDeProductos.filter(element => element.id != req.params.id)
+
+      const productosJSON = JSON.stringify(productosRestantes)
+      fs.writeFileSync(productsFilePath, productosJSON)
+      res.redirect('/');
+    }
+  
 
 }
 

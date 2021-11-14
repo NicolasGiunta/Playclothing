@@ -59,16 +59,11 @@
     {
         "id": 6,
         "sexo": "hombre",
-        "imagen": "/image/productos/1636656617910-.JPG",
-        "colores": "dsadsa",
-        "precio": ""
-    },
-    {
-        "id": 7,
-        "sexo": "hombre",
-        "imagen": "/image/productos/1636656674154-.JPG",
-        "colores": "",
-        "precio": "30000"
+        "imagen": "/image/productos/1636908259399-.jpeg",
+        "colores": "azul",
+        "precio": "5",
+        "descripcion": "caqui",
+        "nombreDelProducto": "pantalon caqui"
     },
     {
         "id": 8,
@@ -84,5 +79,31 @@
         "descripcion": "aaaaaaa",
         "colores": "aaaaa",
         "precio": ""
+    },
+    {
+        "id": 10,
+        "sexo": "mujer",
+        "imagen": "/image/productos/1636906713398-.png",
+        "descripcion": "caqui",
+        "colores": "rojo",
+        "precio": "5052"
+    },
+    {
+        "id": 11,
+        "sexo": "mujer",
+        "nombreDelProducto": "muñeco",
+        "imagen": "/image/productos/1636907883845-.jpg",
+        "descripcion": "12cm",
+        "colores": "rojo",
+        "precio": "1"
+    },
+    {
+        "id": 12,
+        "sexo": "hombre",
+        "nombreDelProducto": "muñeco",
+        "imagen": "/image/productos/1636907945351-.jpg",
+        "descripcion": "12cm",
+        "colores": "rojo",
+        "precio": "2"
     }
 ]

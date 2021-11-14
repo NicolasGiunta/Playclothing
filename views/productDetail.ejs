@@ -27,7 +27,7 @@
 <h4><%= producto.nombreDelProducto%></h4>
 <h6>$<%= producto.precio%></h6>
 <p><%= producto.descripcion%></p>
-<p><%= producto.imagen %></p>
+
 
 
 <div class="color">
@@ -68,30 +68,12 @@
                         Los productos deberán encontrarse en el mismo estado en que fueron remitidos, 
                         sin haber sido utilizados, y con el embalaje y etiquetas originales en buen estado.</p>
                 </div>
+                <div class="button"><a href= "/producto/<%= producto.id %>/edit"><button class="button-log" type="submit" >Editar</button></a>  
+            </div>                 
+            <div class="button">                     <form action="/producto/<%= producto.id %>?_method=DELETE" method="POST" >
+                    <button class="button-log" type="submit" >Eliminar</button></form></div>
             </div>
-               <!-- <ul class="menu">
-                    <li><a><button1>Envios</button1></a>
-                        <ul class="submenu">
-                            <li>El envio se realiza a través del correo Andreani, a domicilio o sucursal, o retiro en nuestros locales.</li>
-
-                </ul>
-            </li>
-            
-
-       
-            <nav class="navegacion">
-                <ul class="menu">
-                    <li><a><button2>Cambios y devoluciones</button2></a>
-                        <ul class="submenu">
-                            <li>Podrás realizar un cambio hasta 30 días después de haber recibido tu compra. Los productos deberán encontrarse en el mismo estado en que fueron remitidos, sin haber sido utilizados, y con el embalaje y etiquetas originales en buen estado.</li>
-
-                </ul>
-            </li>
-            </nav>
- 
-</descripcion>
-</article>
-   -->
+               
 </main>
 
 <!--FOOTER-->

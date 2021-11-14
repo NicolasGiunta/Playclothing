@@ -12,7 +12,7 @@
         <main>
             <h1>Editar Producto</h1>
             <div class="tablet">
-                <div class="caja2"><h5> Editar producto</h5>
+                <div class="caja2"><h5> Editar producto: <%= producto.nombreDelProducto %> </h5>
 
                     <form action="/producto/<%= producto.id %>?_method=PUT" method="POST" class="create-form" enctype="multipart/form-data">
                         <div class="control-formulario">
@@ -42,10 +42,10 @@
                         <div class="control-formulario">
                             <p>
                             <p>Sexo:</p>
-                                <label for="Mujer" >mujer</label>
-                                <input type="radio" id="Mujer" name="sexo" class="control" value="Mujer">
-                                <label for="Hombre" >hombre</label>
-                                <input type="radio" id="Hombre" name="sexo" class="control" value="Hombre">
+                                <label for="mujer" >mujer</label>
+                                <input type="radio" id="mujer" name="sexo" class="control" value="mujer">
+                                <label for="hombre" >hombre</label>
+                                <input type="radio" id="hombre" name="sexo" class="control" value="hombre">
                             </p>
                         </div>
 
