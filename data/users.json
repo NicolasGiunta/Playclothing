@@ -1,1 +1,34 @@
-[{"id":1,"nombre":"a","apellido":"a","categoria":"administrador","email":"asdasdasdas@hotmail.com","sexo":"mujer"},{"id":2,"nombre":"a","apellido":"a","categoria":"administrador","email":"aaa@aa.com","sexo":"mujer"}]
+[
+ {
+  "id": 1,
+  "nombre": "a",
+  "apellido": "a",
+  "categoria": "administrador",
+  "email": "asdasdasdas@hotmail.com",
+  "sexo": "mujer"
+ },
+ {
+  "id": 2,
+  "nombre": "a",
+  "apellido": "a",
+  "categoria": "administrador",
+  "email": "aaa@aa.com",
+  "sexo": "mujer"
+ },
+ {
+  "name": "algo",
+  "mail": "lalala@lalala.com"
+ },
+ {
+  "name": "algo",
+  "mail": "lalala@lalala.com"
+ },
+ {
+  "id": "user-cg54z7xxkwmusuyf",
+  "name": "algo",
+  "mail": "lalala@lalala.com"
+ },
+ {
+  "id": "user-cg54z839kwmv8u9v"
+ }
+]

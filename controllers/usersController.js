@@ -1,23 +1,8 @@
 const path = require('path');
 const fs = require('fs');
 const UsersFilePath = path.join(__dirname, '../data/users.json');
-let usuarios;
 const listaUsuarios = fs.readFileSync(UsersFilePath, 'utf-8');  
-if (listaUsuarios == ""){
-  usuarios=[];
-}else{
-  usuarios=JSON.parse(listaUsuarios)
-}
-
-const nuevoId = () => {
-  let ultimo = 0;
-  usuarios.forEach(usuario => {
-    if (usuario.id > ultimo) {
-      ultimo = usuario.id;
-    }
-  });
-  return ultimo + 1;
-}
+const UserModel = require('../models/User')
 
 
 const usersController = {
