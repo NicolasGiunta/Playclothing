@@ -2,7 +2,22 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const { body } = require('express-validator')
+const multer = require ('multer')
 const usersController = require("../controllers/usersController");
+
+
+let storage = multer.diskStorage({
+    destination: function (req, res, cb) {
+      let folder = path.join(__dirname, '../public/image/users');
+      cb(null, folder);
+    },
+    filename: function (req, file, cb) {
+      cb(null, Date.now() + "-" + path.extname(file.originalname));
+    }
+   })
+   
+const upload = multer ({storage:storage})
+
 
 const validations = [
     body('nombre').notEmpty().withMessage('Escribe tu nombre'),
@@ -13,11 +28,26 @@ const validations = [
         if (value !== req.body.password) {
           throw new Error('Las contraseñas no coinciden');
         }
-
         // Indicates the success of this synchronous custom validator
         return true
       }),
-    body('sexo').notEmpty().withMessage('Elige un sexo')
+    body('sexo').notEmpty().withMessage('Elige un sexo'),
+    body('imagen').custom((value, { req }) => {
+        let file = req.file;
+        let acceptedExtensions = ['.jpg', '.png', '.gif'];
+
+        if (!file) {
+            throw new Error('Tienes que subir una imagen')
+        }
+        else {
+            let originalName = path.extname(file.originalname)
+            if(!acceptedExtensions.includes(originalName)) {
+                throw new Error(`El formato permitido de imágenes es ${acceptedExtensions}`)
+            }
+        }
+        return true
+    })
+
 ]
 
 const validationsLogin = [
@@ -27,10 +57,10 @@ const validationsLogin = [
 
 
 
-router.get('/', userController.login);
-router.post('/', validationsLogin, userController.loginProcess)
+router.get('/', usersController.login);
+router.post('/', validationsLogin, usersController.loginProcess)
 
 router.get("/registro", usersController.registro);
-router.post("/registro", validations, usersController.create);
+router.post("/registro", upload.single('imagen'), validations, usersController.create);
 
 module.exports = router;
