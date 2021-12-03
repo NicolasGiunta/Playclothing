@@ -25,7 +25,6 @@ res.render('register_form', {errors: errors.mapped(), old: req.body})
     categoria:req.body.categoria,
     email:req.body.email,
     sexo:req.body.sexo,
-    password: req.body.password,
     password: bcryptjs.hashSync(req.body.password, 10),
     imagen: req.file.filename
     }
@@ -45,15 +44,16 @@ login: function (req, res) {
 },
 
 loginProcess: function(req, res){
+  let errors = validationResult(req);
   if(!errors.isEmpty()){
-    res.render('register_form', {errors: errors.mapped(), old: req.body})
+    res.render('sigIn-signOut-Form', {errors: errors.mapped(), old: req.body})
     }else{
 let email = req.body.email;
 let userToLogin =UserModel.findByEmail('email', email)
       if (userToLogin == undefined){
-res.render('register_form', {errors: {email: {msg: "este mail no se encuentra registrado"}}})
+res.render('sigIn-signOut-Form', {errors: {email: {msg: "este mail no se encuentra registrado"}}})
       } else if (!bcryptjs.compareSync(req.body.password, userToLogin.password)){
-        res.render('register_form', {errors: {password: {msg: "las credenciales no coinciden"}}})
+        res.render('sigIn-signOut-Form', {errors: {password: {msg: "las credenciales no coinciden"}}})
       }
       else {
         delete userToLogin.password;

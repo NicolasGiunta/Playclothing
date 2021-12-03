@@ -15,7 +15,7 @@
         <div class="caja2">
           <h5>Crear cuenta</h5>
 
-          <form action="/cuenta/Registro" method="post" class="create-form">
+          <form action="/cuenta/Registro" method="post"  class="create-form" enctype="multipart/form-data">
             <div class="control-formulario">
               <p>
                 <label for="nombre">Nombre</label>
@@ -24,7 +24,13 @@
                   id="nombre"
                   name="nombre"
                   class="nombre"
-                />
+                  value=<%= locals.old && old.nombre ? old.nombre : " " %>
+                >
+                <% if (locals.errors && errors.nombre){  %>
+                  <div  style="color:rgb(255,0,0);">
+                    <%= errors.nombre.msg %> 
+                  </div>
+                  <% } %> 
               </p>
             </div>
 
@@ -36,7 +42,14 @@
                   id="apellido"
                   name="apellido"
                   class="apellido"
-                />
+                  value=<%= locals.old && old.apellido ? old.apellido : " " %>
+                >
+                <% if (locals.errors && errors.apellido){  %>
+                  <div  style="color:rgb(255,0,0);">
+                    <%= errors.apellido.msg   %> 
+                  </div>
+                  <% } %> 
+
               </p>
             </div>
 
@@ -48,7 +61,15 @@
                   id="reg_email"
                   name="email"
                   class="control"
-                />
+                  value=<%= locals.old && old.email ? old.email : " " %>
+                  >
+
+                  <% if (locals.errors && errors.email){  %>
+                    <div  style="color:rgb(255,0,0);">
+                      <%= errors.email.msg   %> 
+                    </div>
+                    <% } %> 
+
               </p>
             </div>
 
@@ -57,37 +78,68 @@
                 <label for="contraseña">Contraseña</label>
                 <input
                   type="password"
-                  id="contraseña"
-                  name="contraseña"
+                  id="password"
+                  name="password"
                   class="control"
-                />
+                >
+                
+                <% if (locals.errors && errors.password){  %>
+                  <div  style="color:rgb(255,0,0);">
+                    <%= errors.password.msg   %> 
+                  </div>
+                  <% } %> 
+
+
               </p>
             </div>
             <div class="control-formulario">
               <p>
-                <label for="confirmarContraseña">Confirmar contraseña</label>
+                <label for="confirmPassword" > Confirmar contraseña </label>
                 <input
                   type="password"
-                  id="confirmarContraseña"
-                  name="confirmarContraseña"
+                  id="confirmPassword"
+                  name="confirmPassword"
                   class="control"
-                />
+                >
+
+                <% if (locals.errors && errors.confirmPassword){  %>
+                  <div  style="color:rgb(255,0,0);">
+                    <%= errors.confirmPassword.msg   %> 
+                  </div>
+                  <% } %> 
+
               </p>
             </div>
             <div class="control-formulario">
                 <p>
                 <p>Sexo:</p>
                     <label for="mujer" >Mujer</label>
-                    <input type="radio" id="mujer" name="sexo" class="control" value="mujer">
+                    <input type="radio" id="mujer" name="sexo" class="control" value="mujer" <%= locals.old && (old.sexo === "mujer") ? "selected" : "" %> >
                     <label for="hombre" >Hombre</label>
-                    <input type="radio" id="hombre" name="sexo" class="control" value="hombre">
+                    <input type="radio" id="hombre" name="sexo" class="control" value="hombre" <%= locals.old && (old.sexo === "hombre") ? "selected" : "" %>>
+                
+                    <% if (locals.errors && errors.sexo){  %>
+                      <div  style="color:rgb(255,0,0);">
+                        <%= errors.sexo.msg   %> 
+                      </div>
+                      <% } %> 
+
                 </p>
             </div>
+
+
+
             <div class="col-12 col-md-6">
               <label for="imagen" class="control-formulario">imagen</label>
               <input type="file" id="imagen" name="imagen" class="control-formulario">
           <div class="col-12">
 
+            <% if (locals.errors && errors.imagen){  %>
+              <div  style="color:rgb(255,0,0);">
+                <%= errors.imagen.msg   %> 
+              </div>
+              <% } %> 
+            
             
             <div>
               <p class="Policy">

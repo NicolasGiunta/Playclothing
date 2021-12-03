@@ -30,5 +30,14 @@
  },
  {
   "id": "user-cg54z839kwmv8u9v"
+ },
+ {
+  "id": "user-48uyt25pgkwprd9g7",
+  "nombre": "Diana",
+  "apellido": "Polanco",
+  "email": "dianaPolanco@gmail.com",
+  "sexo": "mujer",
+  "password": "$2b$10$eeU5KoYDN0ziwqwVk6MrQOfQKVQF1heoDKMEllzjJXqbmhenAlVEu",
+  "imagen": "1638497939145-.jpg"
  }
 ]
