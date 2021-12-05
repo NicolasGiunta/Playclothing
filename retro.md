@@ -41,4 +41,12 @@
   
 <numero>**4.** **Hacer menos - Dejar de hacer:** Procrastinar.
   
+   ## Retrospectiva del Sprint 5:
+
+<numero>**1.** **Comenzar a hacer:** pulir las vistas, css, etc.
+
+<numero>**2.** **Hacer más:** calendarios a largo plazo.
   
+<numero>**3.** **Continuar haciendo:** mejorar la eficacia del codigo.
+  
+<numero>**4.** **Hacer menos - Dejar de hacer:** reuniones sin planificar previamente que se hará.

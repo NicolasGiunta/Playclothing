@@ -16,5 +16,59 @@
   "sexo": "mujer",
   "password": "$2b$10$bDrsve6WSHUx9NiBd1cU5uHvAAjzUQC71EBdfSrtvdtRQQ8s0DItu",
   "imagen": "1638727744563-.jpg"
+ },
+ {
+  "id": "user-cg54zu1akwtmetxl",
+  "nombre": "julian",
+  "apellido": "galante",
+  "email": "galante.julian@gmail.com",
+  "sexo": "hombre",
+  "password": "$2b$10$j9u6dhw5Sh6EaMMIqoUnXOJrWIG5BY9kc1PmpDg5RTPQUYLFt.pau",
+  "imagen": "../public/image/logo.jpg"
+ },
+ {
+  "id": "user-cg54zu6vkwtml43h",
+  "nombre": "nico",
+  "apellido": "gomez",
+  "email": "nico@gmail.com",
+  "sexo": "hombre",
+  "password": "$2b$10$zG1CMxDK/MliiJ8F2U4TY.Rg0P8OHjbXpDuBOtF6QOUmWgzP/dFPa",
+  "imagen": "/image/logo.jpg"
+ },
+ {
+  "id": "user-cg54zubikwtmvcvn",
+  "nombre": "manu",
+  "apellido": "zapato",
+  "email": "manu@gmail.com",
+  "sexo": "mujer",
+  "password": "$2b$10$4GjvyV8RZbKlGQUXCtNGZurwDzlLr1s5bHsWcfXm8TKqPdSfZUjIG",
+  "imagen": "/image/logo.jpg"
+ },
+ {
+  "id": "user-cg54zue6kwtmxo7o",
+  "nombre": "noelia",
+  "apellido": "noelia",
+  "email": "noelia@gmail.com",
+  "sexo": "mujer",
+  "password": "$2b$10$5nuRgjp/TUEHfryt1rWTKeE2dHDj2k2RGOeB/ARio1n.MxWeSQcyi",
+  "imagen": "1638732358221-.png"
+ },
+ {
+  "id": "user-cg54zuzykwtnuljk",
+  "nombre": "rogelio",
+  "apellido": "rogelio",
+  "email": "rogelio@gmail.com",
+  "sexo": "hombre",
+  "password": "$2b$10$1oUPouGaK0FjJMrK12BSl.8q200qFyuzrDHP4VQABFlGkvTD5nUDa",
+  "imagen": "userDefault.png"
+ },
+ {
+  "id": "user-cg54zv1dkwtnwvb2",
+  "nombre": "rogelia",
+  "apellido": "rogelia",
+  "email": "rogelia@gmail.com",
+  "sexo": "mujer",
+  "password": "$2b$10$tnGJiKvoun9/vdUbTDq4t.5EgRjuxdxZWQUF3wjE4MVC3cnGs0ngm",
+  "imagen": "1638734000323-.png"
  }
 ]

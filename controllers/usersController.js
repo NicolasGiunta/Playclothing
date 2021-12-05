@@ -15,7 +15,6 @@ const usersController = {
   //para guardar la infor de un usuario nuevo y que lo eenvie al home
   create:  function (req, res) {
 let errors = validationResult(req);
-
 if(!errors.isEmpty()){
 res.render('register_form', {errors: errors.mapped(), old: req.body})
 }else{
@@ -26,11 +25,11 @@ res.render('register_form', {errors: errors.mapped(), old: req.body})
     email:req.body.email,
     sexo:req.body.sexo,
     password: bcryptjs.hashSync(req.body.password, 10),
-    imagen: req.file.filename
+    imagen: req.file === undefined ? "userDefault.png" : req.file.filename
     }
 
     let email = req.body.email;
-
+console.log(userData)
 if(UserModel.findByEmail('email', email) != undefined){
 res.render('register_form', {errors: {email: {msg: "este mail ya se encuentra registrado"}}})
 }else{
@@ -66,13 +65,16 @@ res.render('sigIn-signOut-Form', {errors: {email: {msg: "este mail no se encuent
       }
       }
 },
+cuenta: function(req, res){
+  let userLogged = req.session.userLogged;
+  res.render('miCuenta', {userLogged})
+},
 logout: function(req, res){
 res.clearCookie('recordarme')
 req.session.destroy();
 return res.redirect('/')
 }
 }
-
 
 
 module.exports = usersController;

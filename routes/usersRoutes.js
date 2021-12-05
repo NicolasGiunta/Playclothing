@@ -4,7 +4,8 @@ const path = require('path');
 const { body } = require('express-validator')
 const multer = require ('multer')
 const usersController = require("../controllers/usersController");
-
+const userGuestMiddleware = require('../middlewares/userGuest')
+const userLoggedDenied = require('../middlewares/userLoggedDenied')
 
 let storage = multer.diskStorage({
     destination: function (req, res, cb) {
@@ -31,22 +32,22 @@ const validations = [
         // Indicates the success of this synchronous custom validator
         return true
       }),
-    body('sexo').notEmpty().withMessage('Elige un sexo'),
-    body('imagen').custom((value, { req }) => {
-        let file = req.file;
-        let acceptedExtensions = ['.jpg', '.png', '.gif'];
+    body('sexo').notEmpty().withMessage('Elige un sexo')
+    // body('imagen').custom((value, { req }) => {
+    //     let file = req.file;
+    //     let acceptedExtensions = ['.jpg', '.png', '.gif'];
 
-        if (!file) {
-            throw new Error('Tienes que subir una imagen')
-        }
-        else {
-            let originalName = path.extname(file.originalname)
-            if(!acceptedExtensions.includes(originalName)) {
-                throw new Error(`El formato permitido de imágenes es ${acceptedExtensions}`)
-            }
-        }
-        return true
-    })
+    //     if (!file) {
+    //         throw new Error('Tienes que subir una imagen')
+    //     }
+    //     else {
+    //         let originalName = path.extname(file.originalname)
+    //         if(!acceptedExtensions.includes(originalName)) {
+    //             throw new Error(`El formato permitido de imágenes es ${acceptedExtensions}`)
+    //         }
+    //     }
+    //     return true
+    // })
 
 ]
 
@@ -57,12 +58,14 @@ const validationsLogin = [
 
 
 
-router.get('/', usersController.login);
+router.get('/', userLoggedDenied, usersController.login);
 router.post('/', validationsLogin, usersController.loginProcess)
 
-router.get("/registro", usersController.registro);
+router.get("/registro", userLoggedDenied, usersController.registro);
 router.post("/registro", upload.single('imagen'), validations, usersController.create);
 
-router.get('/logout', usersController.logout)
+router.get('/micuenta',userGuestMiddleware, upload.single('imagen'), usersController.cuenta);
+router.get('/logout', usersController.logout);
+
 
 module.exports = router;

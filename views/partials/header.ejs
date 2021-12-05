@@ -34,7 +34,7 @@
             <div class="iconos">
                 <!--usuario/cuenta-->
                 <% if (locals.isLogged) { %>
-                    <a href=""><b><%= locals.userLogged.nombre %> </b></a>
+                    <a href="/cuenta/micuenta"><b><%= locals.userLogged.nombre %> </b></a>
                     <a href="/cuenta/logout">Logout</a> 
                     <% } else { %>
                 <a href="/cuenta" class=""><i class="fas fa-user-alt"></i></a>
