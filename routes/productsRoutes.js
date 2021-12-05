@@ -3,7 +3,8 @@ const router = express.Router();
 const productController = require('../controllers/productsController')
 const multer = require ('multer')
 const path = require('path')
-
+const admin = require('../middlewares/admin')
+const userGuest = require('../middlewares/userGuest')
 
 let storage = multer.diskStorage({
     destination: function (req, res, cb) {
@@ -27,9 +28,9 @@ router.post('/', upload.single('imagen'), productController.store)
 
 router.get('/hombre', productController.hombre)
 
-router.get('/create', productController.create)
+router.get('/create', userGuest, admin, productController.create)
 
-router.get('/:id/edit', productController.edit)
+router.get('/:id/edit', userGuest, admin, productController.edit)
 router.put('/:id', upload.single('imagen'), productController.update)
 
 router.delete('/:id', productController.destroy)

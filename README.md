@@ -12,7 +12,7 @@ Nicolas Giunta - estudiante de fullstack
 
 Diana Polanco - Programadora en construcción - estudiante de fullstack - administradora de empresas
 
-Julián Galante - Programador en construcción - Músico.
+Julián Galante - estudiante de programación web - Músico.
 
 Nuestros Referentes para el sitio web:
 https://www.cutsclothing.com/account

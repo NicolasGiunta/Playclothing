@@ -1,74 +1,32 @@
 [
- {
-  "id": "user-48uyt25pgkwprd9g7",
-  "nombre": "Diana",
-  "apellido": "Polanco",
-  "email": "dianaPolanco@gmail.com",
-  "sexo": "mujer",
-  "password": "$2b$10$eeU5KoYDN0ziwqwVk6MrQOfQKVQF1heoDKMEllzjJXqbmhenAlVEu",
-  "imagen": "1638497939145-.jpg"
- },
- {
-  "id": "user-87zmkthjskwtk6scs",
-  "nombre": "Carolina",
-  "apellido": "Rodriguez",
-  "email": "carolina@digital.com",
-  "sexo": "mujer",
-  "password": "$2b$10$bDrsve6WSHUx9NiBd1cU5uHvAAjzUQC71EBdfSrtvdtRQQ8s0DItu",
-  "imagen": "1638727744563-.jpg"
- },
- {
-  "id": "user-cg54zu1akwtmetxl",
-  "nombre": "julian",
-  "apellido": "galante",
-  "email": "galante.julian@gmail.com",
-  "sexo": "hombre",
-  "password": "$2b$10$j9u6dhw5Sh6EaMMIqoUnXOJrWIG5BY9kc1PmpDg5RTPQUYLFt.pau",
-  "imagen": "../public/image/logo.jpg"
- },
- {
-  "id": "user-cg54zu6vkwtml43h",
-  "nombre": "nico",
-  "apellido": "gomez",
-  "email": "nico@gmail.com",
-  "sexo": "hombre",
-  "password": "$2b$10$zG1CMxDK/MliiJ8F2U4TY.Rg0P8OHjbXpDuBOtF6QOUmWgzP/dFPa",
-  "imagen": "/image/logo.jpg"
- },
- {
-  "id": "user-cg54zubikwtmvcvn",
-  "nombre": "manu",
-  "apellido": "zapato",
-  "email": "manu@gmail.com",
-  "sexo": "mujer",
-  "password": "$2b$10$4GjvyV8RZbKlGQUXCtNGZurwDzlLr1s5bHsWcfXm8TKqPdSfZUjIG",
-  "imagen": "/image/logo.jpg"
- },
- {
-  "id": "user-cg54zue6kwtmxo7o",
-  "nombre": "noelia",
-  "apellido": "noelia",
-  "email": "noelia@gmail.com",
-  "sexo": "mujer",
-  "password": "$2b$10$5nuRgjp/TUEHfryt1rWTKeE2dHDj2k2RGOeB/ARio1n.MxWeSQcyi",
-  "imagen": "1638732358221-.png"
- },
- {
-  "id": "user-cg54zuzykwtnuljk",
-  "nombre": "rogelio",
-  "apellido": "rogelio",
-  "email": "rogelio@gmail.com",
-  "sexo": "hombre",
-  "password": "$2b$10$1oUPouGaK0FjJMrK12BSl.8q200qFyuzrDHP4VQABFlGkvTD5nUDa",
-  "imagen": "userDefault.png"
- },
- {
-  "id": "user-cg54zv1dkwtnwvb2",
-  "nombre": "rogelia",
-  "apellido": "rogelia",
-  "email": "rogelia@gmail.com",
-  "sexo": "mujer",
-  "password": "$2b$10$tnGJiKvoun9/vdUbTDq4t.5EgRjuxdxZWQUF3wjE4MVC3cnGs0ngm",
-  "imagen": "1638734000323-.png"
- }
+    {
+        "id": "user-cg54zvi6kwtontmw",
+        "nombre": "julian",
+        "apellido": "galante",
+        "email": "galante.julian@gmail.com",
+        "sexo": "hombre",
+        "password": "$2b$10$ghzTd.6D2Cz5iE0jJ.sROuq.cT.AyA5/71nkRAprSh1c4GR3tTh.q",
+        "imagen": "userDefault.png",
+        "perfil": "administrador"
+    },
+    {
+        "id": "user-cg54zvjrkwtop010",
+        "nombre": "nicolas",
+        "apellido": "giunta",
+        "email": "nicolas.giunta1@gmail.com",
+        "sexo": "hombre",
+        "password": "$2b$10$ltYxA2a81aXOosOfytCqBeVwgTbnOfjEq/T2GoD1WRHDY38sXgism",
+        "imagen": "userDefault.png",
+        "perfil": "administrador"
+    },
+    {
+        "id": "user-cg54zvkxkwtopu0m",
+        "nombre": "diana",
+        "apellido": "polanco",
+        "email": "dianacarolina.polanco@gmail.com",
+        "sexo": "mujer",
+        "password": "$2b$10$L96OcfhItBg.qFuEk8nMl.Qo8SkwVVok3sTAuocq5Ur/ShYhglIVS",
+        "imagen": "userDefault.png",
+        "perfil": "administrador"
+    }
 ]

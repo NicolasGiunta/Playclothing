@@ -7,6 +7,7 @@ const usersController = require("../controllers/usersController");
 const userGuestMiddleware = require('../middlewares/userGuest')
 const userLoggedDenied = require('../middlewares/userLoggedDenied')
 
+
 let storage = multer.diskStorage({
     destination: function (req, res, cb) {
       let folder = path.join(__dirname, '../public/image/users');
