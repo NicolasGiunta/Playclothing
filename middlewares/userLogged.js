@@ -11,11 +11,12 @@ let userSession = req.session.userLogged;
 if (userFromCookie){
     req.session.userLogged = userFromCookie;
 }
-if (req.session.userLogged){
+if (userSession){
     res.locals.isLogged = true;
     res.locals.userLogged = req.session.userLogged;
 
 }
+
 
 next()
 }

@@ -63,6 +63,6 @@ router.post('/', validationsLogin, usersController.loginProcess)
 router.get("/registro", usersController.registro);
 router.post("/registro", upload.single('imagen'), validations, usersController.create);
 
-router.get('/logout', usersController.logOut)
+router.get('/logout', usersController.logout)
 
 module.exports = router;

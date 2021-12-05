@@ -1,37 +1,5 @@
 [
  {
-  "id": 1,
-  "nombre": "a",
-  "apellido": "a",
-  "categoria": "administrador",
-  "email": "asdasdasdas@hotmail.com",
-  "sexo": "mujer"
- },
- {
-  "id": 2,
-  "nombre": "a",
-  "apellido": "a",
-  "categoria": "administrador",
-  "email": "aaa@aa.com",
-  "sexo": "mujer"
- },
- {
-  "name": "algo",
-  "mail": "lalala@lalala.com"
- },
- {
-  "name": "algo",
-  "mail": "lalala@lalala.com"
- },
- {
-  "id": "user-cg54z7xxkwmusuyf",
-  "name": "algo",
-  "mail": "lalala@lalala.com"
- },
- {
-  "id": "user-cg54z839kwmv8u9v"
- },
- {
   "id": "user-48uyt25pgkwprd9g7",
   "nombre": "Diana",
   "apellido": "Polanco",
@@ -39,5 +7,14 @@
   "sexo": "mujer",
   "password": "$2b$10$eeU5KoYDN0ziwqwVk6MrQOfQKVQF1heoDKMEllzjJXqbmhenAlVEu",
   "imagen": "1638497939145-.jpg"
+ },
+ {
+  "id": "user-87zmkthjskwtk6scs",
+  "nombre": "Carolina",
+  "apellido": "Rodriguez",
+  "email": "carolina@digital.com",
+  "sexo": "mujer",
+  "password": "$2b$10$bDrsve6WSHUx9NiBd1cU5uHvAAjzUQC71EBdfSrtvdtRQQ8s0DItu",
+  "imagen": "1638727744563-.jpg"
  }
 ]

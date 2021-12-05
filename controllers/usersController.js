@@ -50,7 +50,7 @@ loginProcess: function(req, res){
     }else{
 let email = req.body.email;
 let userToLogin =UserModel.findByEmail('email', email)
-      if (userToLogin == undefined){
+      if (userToLogin === undefined){
 res.render('sigIn-signOut-Form', {errors: {email: {msg: "este mail no se encuentra registrado"}}})
       } else if (!bcryptjs.compareSync(req.body.password, userToLogin.password)){
         res.render('sigIn-signOut-Form', {errors: {password: {msg: "las credenciales no coinciden"}}})
@@ -66,7 +66,7 @@ res.render('sigIn-signOut-Form', {errors: {email: {msg: "este mail no se encuent
       }
       }
 },
-logOut: function(res, res){
+logout: function(req, res){
 res.clearCookie('recordarme')
 req.session.destroy();
 return res.redirect('/')
