@@ -65,10 +65,12 @@ res.render('sigIn-signOut-Form', {errors: {email: {msg: "este mail no se encuent
         return res.redirect('/')
       }
       }
+},
+logOut: function(res, res){
+res.clearCookie('recordarme')
+req.session.destroy();
+return res.redirect('/')
 }
-
-
-
 }
 
 

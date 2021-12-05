@@ -6,6 +6,7 @@ const productRoutes = require("./routes/productsRoutes");
 const mainRoutes = require("./routes/mainRoutes");
 const usersRoutes = require("./routes/usersRoutes");
 const shopRoutes = require("./routes/shopRoutes");
+const userLoggedMiddleware = require('./middlewares/userLogged')
 const session = require('express-session')
 const cookieParser = require('cookie-parser')
 const methodOverride = require ("method-override");
@@ -28,6 +29,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 app.set("view engine", "ejs");
+app.use(userLoggedMiddleware)
 
 app.use("/", mainRoutes);
 

@@ -33,7 +33,12 @@
             <!--iconos del header-->
             <div class="iconos">
                 <!--usuario/cuenta-->
+                <% if (locals.isLogged) { %>
+                    <a href=""><b><%= locals.userLogged.nombre %> </b></a>
+                    <!-- <a href="/logout">   (logout)</a> -->
+                    <% } else { %>
                 <a href="/cuenta" class=""><i class="fas fa-user-alt"></i></a>
+                <% } %>
                 <!--barra de busqueda-->
                 <input type="checkbox" id="checkbox-search" class="checkbox-search">
                 <label for="checkbox-search"><i class="fas fa-search"></i></label>
