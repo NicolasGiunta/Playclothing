@@ -14,6 +14,7 @@ if (userFromCookie){
 if (userSession){
     res.locals.isLogged = true;
     res.locals.userLogged = req.session.userLogged;
+    console.log(res.locals.userLogged)
 
 }
 

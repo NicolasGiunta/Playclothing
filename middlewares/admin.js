@@ -1,6 +1,6 @@
 let admin = function (req, res, next){
     let adminLogged = req.session.userLogged
-    if(adminLogged.perfil=="administrador"){
+    if(adminLogged.isAdmin === true){
         next()
     }
     else{

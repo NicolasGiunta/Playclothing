@@ -1,83 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <!--traigo el head-->
 
 <head>
     <%- include ('./partials/head') %>
-    
-<!--traigo el css-->
-    <link rel="stylesheet" href="/css/StylesProductDetail.css">
-    
+
+        <!--traigo el css-->
+        <link rel="stylesheet" href="/css/StylesProductDetail.css">
+
 </head>
 
 <body>
-    
+
     <!--HEADER-->
     <%- include ('./partials/header') %>
 
-<br>
-<main>
-<article>
-    <img class="buzo" src="<%= producto.imagen %>" alt="imagen">
+        <br>
+        <main>
+            <article>
+                <img class="buzo" src="<%= producto.imagen %>" alt="imagen">
 
 
 
-<descripcion>
-<h4><%= producto.nombreDelProducto%></h4>
-<h6>$<%= producto.precio%></h6>
-<p><%= producto.descripcion%></p>
+                <descripcion>
+                    <h4>
+                        <%= producto.nombreDelProducto%>
+                    </h4>
+                    <h6>
+                        <% if(producto.precio >= 1000) { %>$<%=toThousand(producto.precio)%>
+                                <% } else { %>$<%= producto.precio%>
+                                        <% } %>
+                    </h6>
+                    <p>
+                        <%= producto.descripcion%>
+                    </p>
+                    <p>
+                        Color: <%= producto.color%>
+                    </p>
 
 
+                    <div class="talle">
+                        <label>Talle:</label>
+                        <% producto.tallas.forEach(elemento=> { %>
+                            <label>
+                                <input type="radio" name="talle" value="<%=elemento.id%>" required>
+                                <%=elemento.valor%>
+                            </label>
+                            <% }) %>
 
-<div class="color">
-<label>Color:</label>
-<label>
-    <input type="radio" name="color" value="blanco">Blanco
-</label>
-<label>
-    <input type="radio" name="color" value="negro">Negro
-</label>
-</div>
+                                <br>
+                                <button>Añadir al Carrito</button>
+                    </div>
+                    <br>
 
-<div class="talle">
-<label>Talle</label>
-<label>
-    <input type="radio" name="talle" value="XL" required>XL</label>
-    <label>
-        <input type="radio" name="talle" value="L" required>L</label>
-        <label>
-            <input type="radio" name="talle" value="M" required>M</label>
-            <br>
-            <button>Añadir al Carrito</button>
-        </div>
- <br>
 
-    
-            <div class="acordeon">
-                <div class="acordeon__item">
-                    <input type="checkbox" name="acordeon" id="item1">
-                    <label for="item1" class="acordeon__titulo">Envios</label>
-                    <p class="acordeon__contenido">El envio se realiza a través del correo Andreani,
-                         a domicilio o sucursal, o retiro en nuestros locales.</p>
-                </div>
-                <div class="acordeon__item">
-                    <input type="checkbox" name="acordeon" id="item2">
-                    <label for="item2" class="acordeon__titulo">Cambios y devoluciones</label>
-                    <p class="acordeon__contenido">Podrás realizar un cambio hasta 30 días después de haber recibido tu compra. 
-                        Los productos deberán encontrarse en el mismo estado en que fueron remitidos, 
-                        sin haber sido utilizados, y con el embalaje y etiquetas originales en buen estado.</p>
-                </div>
-                <div class="button"><a href= "/producto/<%= producto.id %>/edit"><button class="button-log" type="submit" >Editar</button></a>  
-            </div>                 
-            <div class="button">                     <form action="/producto/<%= producto.id %>?_method=DELETE" method="POST" >
-                    <button class="button-log" type="submit" >Eliminar</button></form></div>
-            </div>
-               
-</main>
+                    <div class="acordeon">
+                        <div class="acordeon__item">
+                            <input type="checkbox" name="acordeon" id="item1">
+                            <label for="item1" class="acordeon__titulo">Envios</label>
+                            <p class="acordeon__contenido">El envio se realiza a través del correo Andreani,
+                                a domicilio o sucursal, o retiro en nuestros locales.</p>
+                        </div>
+                        <div class="acordeon__item">
+                            <input type="checkbox" name="acordeon" id="item2">
+                            <label for="item2" class="acordeon__titulo">Cambios y devoluciones</label>
+                            <p class="acordeon__contenido">Podrás realizar un cambio hasta 30 días después de haber
+                                recibido tu compra.
+                                Los productos deberán encontrarse en el mismo estado en que fueron remitidos,
+                                sin haber sido utilizados, y con el embalaje y etiquetas originales en buen estado.</p>
+                        </div>
+                        <% if(locals.isLogged && userLogged.isAdmin === true) { %>
+                        <div class="button"><a href="/producto/<%= producto.id %>/edit"><button class="button-log"
+                                    type="submit">Editar</button></a>
+                        </div>
+                        <div class="button">
+                            <form action="/producto/<%= producto.id %>?_method=DELETE" method="POST">
+                                <button class="button-log" type="submit">Eliminar</button>
+                            </form>
+                        </div>
+                        <% } %>
+                    </div>
 
-<!--FOOTER-->
-<%- include ('./partials/footer') %>
+        </main>
+
+        <!--FOOTER-->
+        <%- include ('./partials/footer') %>
 
 </body>
+
 </html>

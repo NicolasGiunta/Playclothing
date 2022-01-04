@@ -272,6 +272,7 @@
   .checkbox-search:checked ~ .buscador i{
     color:#303028;
     visibility: visible;
+    background-color: white;
     font-size: 1rem;
   }
   

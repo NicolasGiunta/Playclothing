@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ('./partials/head') %>
+
+        <link href="/css/stylesForm.css" rel="stylesheet">
+</head>
+
+<body>
+    <!--HEADER-->
+    <%- include ('./partials/header') %>
+
+        <main>
+            <h1>Editar Producto</h1>
+            <div class="tablet">
+                <div class="caja2">
+                    <h5> Editar producto: <%= producto.nombreDelProducto %>
+                    </h5>
+
+                    <form action="/producto/<%= producto.id %>?_method=PUT" method="POST" class="create-form"
+                        enctype="multipart/form-data">
+                        <div class="control-formulario">
+                            <p>
+                                <label for="nombreDelProducto">Nombre del producto</label>
+                                <input type="text" id="nombreDelProducto" name="nombreDelProducto" class="control" value="<%= producto.nombreDelProducto %>" required>
+                            </p>
+                            <% if (locals.errors && errors.nombreDelProducto){  %>
+                                <div  style="color:rgb(255,0,0);">
+                                  <%= errors.nombreDelProducto.msg %> 
+                                </div>
+                                <% } %> 
+
+                                </p>
+                        </div>
+                        <div class="control-formulario">
+                            <p>
+                                <label for="descripcion">Descripción</label>
+                                <input type="text" id="descripcion" name="descripcion" class="control" value="<%= producto.descripcion%>">
+                            </p>
+                            <% if (locals.errors && errors.descripcion){  %>
+                                <div  style="color:rgb(255,0,0);">
+                                  <%= errors.descripcion.msg %> 
+                                </div>
+                                <% } %> 
+                        </div>
+                        <div class="control-formulario">
+                            <p>
+                                <label for="precio">Precio</label>
+                                <input type="number" id="precio" name="precio" class="control" value="<%= producto.precio%>">
+                            </p>
+                            <% if (locals.errors && errors.precio){  %>
+                                <div  style="color:rgb(255,0,0);">
+                                  <%= errors.precio.msg %> 
+                                </div>
+                                <% } %> 
+                        </div>
+                        <div class="control-formulario">
+                            <p>
+                                <label for="color">Colores</label>
+                                <input type="text" id="color" name="color" class="control" value="<%= producto.color%>">
+                            </p>
+                            <% if (locals.errors && errors.color){  %>
+                                <div  style="color:rgb(255,0,0);">
+                                  <%= errors.color.msg %> 
+                                </div>
+                                <% } %> 
+                        </div>
+                        <div class="control-formulario">
+                            <p>
+                            <p>Tallas:</p>
+                            <% tallas.forEach(talla=> { %>
+                                <label>
+                                    <%=talla.valor%>
+                                </label>
+                                <input type="checkbox" name="talla" class="control" value="<%=talla.id%>">
+
+                                <% }) %>
+
+                                    </p>
+                                    <% if (locals.errors && errors.talla){  %>
+                                        <div  style="color:rgb(255,0,0);">
+                                          <%= errors.talla.msg %> 
+                                        </div>
+                                        <% } %> 
+                        </div>
+
+                        <div class="control-formulario">
+                            <p>
+                            <p>Catgeoria:</p>
+                            <% categorias.forEach(categoria=> { %>
+                                <% if (categoria.id==producto.categoria_id) {%>
+                                    <label>
+                                        <%=categoria.nombre%>
+                                    </label>
+                                    <input type="radio" name="categoria" class="control" value="<%=categoria.id%>" checked>
+                                    <% } else {%>
+                                        <label>
+                                            <%=categoria.nombre%>
+                                        </label>
+                                        <input type="radio" name="categoria" class="control" value="<%=categoria.id%>">
+                                        <% } %>
+                                        <% }) %>
+                                            </p>
+                                            <% if (locals.errors && errors.categoria){  %>
+                                                <div  style="color:rgb(255,0,0);">
+                                                  <%= errors.categoria.msg %> 
+                                                </div>
+                                                <% } %> 
+                        </div>
+
+                        <div class="control-formulario">
+                            <p>
+                            <p>Tipo:</p>
+                            <% tipos.forEach(tipo=> { %>
+                                <% if (tipo.id==producto.tipo_id) {%>
+                                    <label>
+                                        <%=tipo.nombre%>
+                                    </label>
+                                    <input type="radio" name="tipo" class="control" value="<%=tipo.id%>" checked>
+                                    <% } else {%>
+                                        <label>
+                                            <%=tipo.nombre%>
+                                        </label>
+                                        <input type="radio" name="tipo" class="control" value="<%=tipo.id%>">
+                                        <% } %>
+                                            <% }) %>
+
+                                                </p>
+                                                <% if (locals.errors && errors.tipo){  %>
+                                                    <div  style="color:rgb(255,0,0);">
+                                                      <%= errors.tipo.msg %> 
+                                                    </div>
+                                                    <% } %> 
+                        </div>
+
+
+                        <div class="col-12 col-md-6">
+                            <label for="imagen" class="control-formulario">imagen</label>
+                            <input type="file" id="imagen" name="imagen" class="control-formulario">
+                            <div class="col-12">
+                                <% if (locals.errors && errors.imagen){  %>
+                                    <div  style="color:rgb(255,0,0);">
+                                      <%= errors.imagen.msg %> 
+                                    </div>
+                                    <% } %> 
+
+                                <div>
+                                    <p>
+                                        <button class="button-log" type="submit">Editar</button>
+                                    </p>
+                                </div>
+                    </form>
+                </div>
+
+
+            </div>
+
+        </main>
+        <!--FOOTER-->
+        <%- include ('./partials/footer') %>
+
+</body>

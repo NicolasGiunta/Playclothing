@@ -35,7 +35,6 @@
                 <!--usuario/cuenta-->
                 <% if (locals.isLogged) { %>
                     <a href="/cuenta/micuenta"><b><%= locals.userLogged.nombre %> </b></a>
-                    <a href="/cuenta/logout">Logout</a> 
                     <% } else { %>
                 <a href="/cuenta" class=""><i class="fas fa-user-alt"></i></a>
                 <% } %>
@@ -43,9 +42,9 @@
                 <input type="checkbox" id="checkbox-search" class="checkbox-search">
                 <label for="checkbox-search"><i class="fas fa-search"></i></label>
                 <div class="buscador">
-                    <form action="" class="barra">
-                        <input type="search" placeholder="¿Qué buscas?" autocomplete="on">
-                        <button type="submit" name="buscar"><i class="fas fa-search"></i></button>
+                    <form action="/producto" method="GET" class="barra">
+                        <input type="search" name="busqueda" placeholder="¿Qué buscas?" autocomplete="on">
+                        <button type="submit"><i class="fas fa-search"></i></button>
                         <label for="checkbox-search" class="checkbox-salir"><i class="fas fa-times"></i></label>
                     </form>
                 </div>

@@ -67,6 +67,7 @@ router.post("/registro", upload.single('imagen'), validations, usersController.c
 
 router.get('/micuenta',userGuestMiddleware, upload.single('imagen'), usersController.cuenta);
 router.get('/logout', usersController.logout);
+router.delete('/micuenta/:id', usersController.delete);
 
 
 module.exports = router;

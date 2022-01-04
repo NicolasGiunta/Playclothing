@@ -1,37 +1,48 @@
 !DOCTYPE html>
 <html lang="en">
-    
+
 <!--traigo el head-->
-    <%- include ('./partials/head') %>
-    
-<!--traigo el css-->
+<%- include ('./partials/head') %>
+
+    <!--traigo el css-->
     <link rel="stylesheet" href="/css/stylesHombre.css">
 
-<body>
-    
-    <!--HEADER-->
-    <%- include ('./partials/header') %>
+    <body>
 
-<main>
-    <div class=productos>
+        <!--HEADER-->
+        <%- include ('./partials/header') %>
 
-    <% let listaDeProductosHombre = listaDeProductos.filter(element => element.sexo == "hombre") %>
+            <main>
+                <div class=productos>
 
-    <% for (let i = 0; i < listaDeProductosHombre.length; i++){ %>     
-         <div class='imagenYdescripcion'><a href="/producto/hombre/<%= listaDeProductosHombre[i].id  %>"> <img class='foto' src=<%= listaDeProductosHombre[i].imagen%> > </a>
-        <h4><%= listaDeProductosHombre[i].nombreDelProducto%></h4>
-        <h6>$<%= listaDeProductosHombre[i].precio%></h6>
+                    <% let listaDeProductosHombre=productos.filter(element=> element.categoria_id == 1) %>
+
+                        <% for (let i=0; i < listaDeProductosHombre.length; i++){ %>
+                            <div class='imagenYdescripcion'><a
+                                    href="/producto/hombre/<%= listaDeProductosHombre[i].id  %>"> <img class='foto'
+                                        src=<%=listaDeProductosHombre[i].imagen%> > </a>
+                                <h4>
+                                    <%= listaDeProductosHombre[i].nombreDelProducto%>
+                                </h4>
+                                <h6>
+                                    <%if(listaDeProductosHombre[i].precio>= 1000) { %> $
+                                        <%=toThousand(listaDeProductosHombre[i].precio)%>
+                                            <% } else { %> $
+                                                    <%=listaDeProductosHombre[i].precio%>
+                                          <%  } %>
+                                </h6>
 
 
-    </div>
-        <% } %> 
-    </div>
+                            </div>
+                            <% } %>
+                </div>
 
 
-</main>
+            </main>
 
-<!--FOOTER-->
-<%- include ('./partials/footer') %>
+            <!--FOOTER-->
+            <%- include ('./partials/footer') %>
 
-</body>
+    </body>
+
 </html>

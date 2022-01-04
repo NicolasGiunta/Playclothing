@@ -13,5 +13,12 @@
 <div>
         <button class="button-log" type="submit" name='logout'><a href="/cuenta/logout">Logout</a></button>
 </div>
+
+<div>
+    <form action="/cuenta/micuenta/<%=userLogged.id%>?_method=DELETE" method="POST">
+        <button class="button-log" type="submit">Eliminar usuario</button>
+    </form>
+</div>
+
 </body>
 </html>

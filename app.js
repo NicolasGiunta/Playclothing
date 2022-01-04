@@ -44,5 +44,5 @@ app.use("/carrito",shopRoutes);
 
 
 app.listen(PUERTO, () => {
-  console.log("Andando sin problema");
+  console.log("Andando sin problema en puerto " + PUERTO);
 });

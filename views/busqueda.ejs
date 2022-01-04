@@ -1,0 +1,47 @@
+!DOCTYPE html>
+<html lang="en">
+
+<!--traigo el head-->
+<%- include ('./partials/head') %>
+
+    <!--traigo el css-->
+    <link rel="stylesheet" href="/css/stylesHombre.css">
+
+    <body>
+
+        <!--HEADER-->
+        <%- include ('./partials/header') %>
+
+            <main>
+                <div class=productos>
+
+
+                        <% for (let i=0; i < productos.length; i++){ %>
+                            <div class='imagenYdescripcion'><a
+                                    href="/producto/<%=productos[i].categoria.nombre%>/<%= productos[i].id  %>"> <img class='foto'
+                                        src=<%=productos[i].imagen%> > </a>
+                                <h4>
+                                    <%= productos[i].nombreDelProducto%>
+                                </h4>
+                                <h6>
+                                    <%if(productos[i].precio>= 1000) { %> $
+                                        <%=toThousand(productos[i].precio)%>
+                                            <% } else { %> $
+                                                    <%=productos[i].precio%>
+                                          <%  } %>
+                                </h6>
+
+
+                            </div>
+                            <% } %>
+                </div>
+
+
+            </main>
+
+            <!--FOOTER-->
+            <%- include ('./partials/footer') %>
+
+    </body>
+
+</html>
