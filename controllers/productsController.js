@@ -50,12 +50,12 @@ const productsController = {
 
     let producto = db.Producto.findByPk(id,
       {
-        include: [{ association: "tallas" }]
+        include: [{ association: "tallas" }, { association: "categoria" }]
       })
 
     let categorias = db.Categoria.findAll()
-  
-  
+
+
 
     Promise
       .all([producto, categorias])
@@ -177,24 +177,24 @@ const productsController = {
           producto_id: req.params.id
         }
       })
-      .then(function (){
-        db.Producto.update({
-        nombreDelProducto: req.body.nombreDelProducto,
-        imagen: "/image/productos/" + req.file.filename,
-        descripcion: req.body.descripcion,
-        categoria_id: req.body.categoria,
-        tipo_id: req.body.tipo,
-        color: req.body.color,
-        precio: req.body.precio
-      },
-      
-      {
-        where: {
-          id: req.params.id
-        }
-      })
+        .then(function () {
+          db.Producto.update({
+            nombreDelProducto: req.body.nombreDelProducto,
+            imagen: "/image/productos/" + req.file.filename,
+            descripcion: req.body.descripcion,
+            categoria_id: req.body.categoria,
+            tipo_id: req.body.tipo,
+            color: req.body.color,
+            precio: req.body.precio
+          },
 
-    })
+            {
+              where: {
+                id: req.params.id
+              }
+            })
+
+        })
         .then(productoEditado => {
           let tallas = req.body.talla
           console.log(tallas)
@@ -203,11 +203,11 @@ const productsController = {
               talla_id: talla,
               producto_id: req.params.id
             },
-            {
-              where:{
-                producto_id: req.params.id
-              }
-            })
+              {
+                where: {
+                  producto_id: req.params.id
+                }
+              })
           })
           return res.redirect("/")
 
@@ -218,40 +218,146 @@ const productsController = {
   },
 
   search: (req, res) => {
-    res.send(req.query.busqueda)
-   // db.Producto.findAll({
-    //where: {
-    //  nombreDelProducto: {[Op.like]: "%"+req.query.busqueda+"%"
-    //   }
-    // },
-    // {
-    //   include: [{association: "categoria"}]
-    // })
-    // .then(productos => {
-    //   res.render('busqueda', {productos})
-    // })
-    // .catch(error => res.send(error))
-    
+    // res.send(req.query.busqueda)
+
+    let busqueda = req.query.busqueda.toLowerCase()
+    let tipoId
+    let categoriaId
+
+
+    let tipos = db.Tipo.findAll()
+    let categorias = db.Categoria.findAll()
+    Promise
+      .all([tipos, categorias])
+      .then(([tipos, categorias]) => {
+        tipos.forEach(tipo => {
+          if (busqueda.includes(tipo.nombre.toLowerCase())) {
+            return tipoId = tipo.id
+          }
+
+        })
+
+        categorias.forEach(categoria => {
+          if(busqueda.includes(categoria.nombre)){
+            return categoriaId = categoria.id
+          }
+        })
+
+        if(categoriaId != undefined && tipoId == undefined){
+          let categoriaEncontrada = categorias.find(element => element.id == categoriaId);
+          let busquedaArray = busqueda.split(" ")
+          let index = busquedaArray.indexOf(categoriaEncontrada.nombre)
+          busquedaArray.splice(index, 1)
+          busqueda = busquedaArray.join(' ')
+          return db.Producto.findAll({
+            include: ['categoria'],
+            where: {
+              categoria_id: categoriaId,
+              [Op.or]: {
+                nombreDelProducto: sequelize.where(sequelize.fn('LOWER', sequelize.col('nombreDelProducto')), 'LIKE', "%" + busqueda + "%"),
+                descripcion: sequelize.where(sequelize.fn('LOWER', sequelize.col('descripcion')), 'LIKE', "%" + busqueda + "%"),
+                color: sequelize.where(sequelize.fn('LOWER', sequelize.col('color')), 'LIKE', "%" + busqueda + "%")
+              }
+            },
+            order: [
+              ['id', 'DESC']
+            ]
+          })
+        } 
+
+
+        else if(tipoId != undefined && categoriaId == undefined) {
+
+          let tipoEncontrada = tipos.find(element => element.id == tipoId);
+          let busquedaArray = busqueda.split(" ")
+          let index = busquedaArray.indexOf(tipoEncontrada.nombre.toLowerCase())
+          busquedaArray.splice(index, 1)
+          busqueda = busquedaArray.join(' ')
+          return db.Producto.findAll({
+            include: ['categoria'],
+            where: {
+              tipo_id: tipoId,
+              [Op.or]: {
+                nombreDelProducto: sequelize.where(sequelize.fn('LOWER', sequelize.col('nombreDelProducto')), 'LIKE', "%" + busqueda + "%"),
+                descripcion: sequelize.where(sequelize.fn('LOWER', sequelize.col('descripcion')), 'LIKE', "%" + busqueda + "%"),
+                color: sequelize.where(sequelize.fn('LOWER', sequelize.col('color')), 'LIKE', "%" + busqueda + "%")
+              }
+            },
+            order: [
+              ['id', 'DESC']
+            ]
+          })
+        }
+
+        else if(tipoId != undefined && categoriaId != undefined){
+          return db.Producto.findAll({
+            include: ['categoria'],
+            where: {
+              [Op.or]:{
+                [Op.and]:{
+                  tipo_id: tipoId,
+                  categoria_id: categoriaId
+                },
+              [Op.or]: {
+                nombreDelProducto: sequelize.where(sequelize.fn('LOWER', sequelize.col('nombreDelProducto')), 'LIKE', "%" + busqueda + "%"),
+                descripcion: sequelize.where(sequelize.fn('LOWER', sequelize.col('descripcion')), 'LIKE', "%" + busqueda + "%"),
+                color: sequelize.where(sequelize.fn('LOWER', sequelize.col('color')), 'LIKE', "%" + busqueda + "%")
+              }
+            }
+            }, order: [
+            ['id', 'DESC']
+          ]
+      })
+        }
+        else {
+          return db.Producto.findAll({
+            include: ['categoria'],
+            where: {
+              [Op.or]: {
+                nombreDelProducto: sequelize.where(sequelize.fn('LOWER', sequelize.col('nombreDelProducto')), 'LIKE', "%" + busqueda + "%"),
+                descripcion: sequelize.where(sequelize.fn('LOWER', sequelize.col('descripcion')), 'LIKE', "%" + busqueda + "%"),
+                color: sequelize.where(sequelize.fn('LOWER', sequelize.col('color')), 'LIKE', "%" + busqueda + "%")
+              }
+            }, order: [
+            ['id', 'DESC']
+          ]
+      })
+    }})
+      .then(productos => {
+
+        if (productos.length > 0) {
+          res.render('busqueda', { productos, toThousand })
+
+
+        }
+        else {
+          res.send("No se encontraron resultados")
+        }
+
+
+      }
+      )
+
   },
 
   destroy: (req, res) => {
 
     db.ProductoTalla.destroy({
       where: {
-          producto_id: req.params.id
+        producto_id: req.params.id
       }
-  })
-  
+    })
 
-  .then(function(borrado) {
-      db.Producto.destroy({
+
+      .then(function (borrado) {
+        db.Producto.destroy({
           where: {
-              id:req.params.id
+            id: req.params.id
           }
-  }) 
-  })
-  .catch(error => console.log(error));    
-  res.redirect('/');
+        })
+      })
+      .catch(error => console.log(error));
+    res.redirect('/');
   }
 
 

@@ -32,9 +32,8 @@
                                 <% } else { %>$<%= producto.precio%>
                                         <% } %>
                     </h6>
-                    <p>
-                        <%= producto.descripcion%>
-                    </p>
+                    <p><%=producto.descripcion%>.</p>
+                    <p>Categoría: <%=producto.categoria.nombre.charAt(0).toUpperCase() + producto.categoria.nombre.slice(1)%></p>
                     <p>
                         Color: <%= producto.color%>
                     </p>
