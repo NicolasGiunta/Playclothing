@@ -50,3 +50,16 @@
 <numero>**3.** **Continuar haciendo:** mejorar la eficacia del codigo.
   
 <numero>**4.** **Hacer menos - Dejar de hacer:** reuniones sin planificar previamente que se hará.
+  
+    ## Retrospectiva del Sprint 6:
+
+<numero>**1.** **Comenzar a hacer:** dismunir líneas de código, comentar el código.
+
+<numero>**2.** **Hacer más:** Investigar métodos alternativos.
+  
+<numero>**3.** **Continuar haciendo:** trabajo en equipo.
+  
+<numero>**4.** **Hacer menos - Dejar de hacer:** no dejarnos llevar por la frustración.
+  
+  
+  
