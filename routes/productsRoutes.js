@@ -45,6 +45,8 @@ const validations = [
 
 ]
 
+
+router.get('/', productController.search)
 router.get('/mujer', productController.mujer)
 router.get('/hombre', productController.hombre)
 router.get('/hombre/:id', productController.detalle)
@@ -52,12 +54,12 @@ router.get('/mujer/:id', productController.detalle)
 
 
 router.get('/create', userGuest, admin, productController.create)
-router.post('/', upload.single('imagen'), validations, productController.store)
+router.post('/create', upload.single('imagen'), validations, productController.store)
 
 router.get('/:id/edit', userGuest, admin, productController.edit)
 router.put('/:id', upload.single('imagen'), validations, productController.update)
 
-router.get('/', productController.search)
+
 
 router.delete('/:id', productController.destroy)
 

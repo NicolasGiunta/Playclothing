@@ -25,6 +25,18 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const productsController = {
 
+//   listado : function (req, res) {
+//     db.Producto.findAll({
+//       include: ['categoria'],
+//       order: [
+//         ['id', 'DESC']
+//       ]
+//   })
+//   .then(productos => {
+//       res.render('busqueda', { productos, toThousand })
+// })
+//   },
+
   mujer: function (req, res) {
     db.Producto.findAll()
       .then(productos => {
@@ -217,35 +229,51 @@ const productsController = {
 
   },
 
+
   search: (req, res) => {
     // res.send(req.query.busqueda)
 
+    if(req.query.busqueda){
+
     let busqueda = req.query.busqueda.toLowerCase()
+    let busquedaArray = busqueda.split(" ")
+    if (busquedaArray.includes('')) {
+      let filtro = busquedaArray.filter(function(e) {
+        return e != "";
+      })
+      busquedaArray = filtro
+    }
+
+    busqueda = busquedaArray.join(' ')
+
     let tipoId
     let categoriaId
 
 
     let tipos = db.Tipo.findAll()
     let categorias = db.Categoria.findAll()
+
     Promise
       .all([tipos, categorias])
       .then(([tipos, categorias]) => {
         tipos.forEach(tipo => {
+
           if (busqueda.includes(tipo.nombre.toLowerCase())) {
             return tipoId = tipo.id
+
           }
 
         })
 
         categorias.forEach(categoria => {
-          if(busqueda.includes(categoria.nombre)){
+          if (busqueda.includes(categoria.nombre)) {
             return categoriaId = categoria.id
           }
         })
 
-        if(categoriaId != undefined && tipoId == undefined){
+
+        if (categoriaId != undefined && tipoId == undefined) {
           let categoriaEncontrada = categorias.find(element => element.id == categoriaId);
-          let busquedaArray = busqueda.split(" ")
           let index = busquedaArray.indexOf(categoriaEncontrada.nombre)
           busquedaArray.splice(index, 1)
           busqueda = busquedaArray.join(' ')
@@ -263,13 +291,11 @@ const productsController = {
               ['id', 'DESC']
             ]
           })
-        } 
+        }
 
 
-        else if(tipoId != undefined && categoriaId == undefined) {
-
+        else if (tipoId != undefined && categoriaId == undefined) {
           let tipoEncontrada = tipos.find(element => element.id == tipoId);
-          let busquedaArray = busqueda.split(" ")
           let index = busquedaArray.indexOf(tipoEncontrada.nombre.toLowerCase())
           busquedaArray.splice(index, 1)
           busqueda = busquedaArray.join(' ')
@@ -289,25 +315,43 @@ const productsController = {
           })
         }
 
-        else if(tipoId != undefined && categoriaId != undefined){
-          return db.Producto.findAll({
-            include: ['categoria'],
-            where: {
-              [Op.or]:{
-                [Op.and]:{
-                  tipo_id: tipoId,
-                  categoria_id: categoriaId
-                },
-              [Op.or]: {
-                nombreDelProducto: sequelize.where(sequelize.fn('LOWER', sequelize.col('nombreDelProducto')), 'LIKE', "%" + busqueda + "%"),
-                descripcion: sequelize.where(sequelize.fn('LOWER', sequelize.col('descripcion')), 'LIKE', "%" + busqueda + "%"),
-                color: sequelize.where(sequelize.fn('LOWER', sequelize.col('color')), 'LIKE', "%" + busqueda + "%")
-              }
-            }
-            }, order: [
-            ['id', 'DESC']
-          ]
-      })
+        else if (tipoId != undefined && categoriaId != undefined) {
+          let tipoEncontrada = tipos.find(element => element.id == tipoId);
+          let indexTipo = busquedaArray.indexOf(tipoEncontrada.nombre.toLowerCase())
+          busquedaArray.splice(indexTipo, 1)
+          let categoriaEncontrada = categorias.find(element => element.id == categoriaId);
+          let indexCategoria = busquedaArray.indexOf(categoriaEncontrada.nombre)
+          busquedaArray.splice(indexCategoria, 1)
+          busqueda = busquedaArray.join(' ')
+          if (busqueda.length > 0) {
+            return db.Producto.findAll({
+              include: ['categoria'],
+              where: {
+                tipo_id: tipoId,
+                categoria_id: categoriaId,
+                [Op.or]: {
+                  nombreDelProducto: sequelize.where(sequelize.fn('LOWER', sequelize.col('nombreDelProducto')), 'LIKE', busqueda + "%"),
+                  descripcion: sequelize.where(sequelize.fn('LOWER', sequelize.col('descripcion')), 'LIKE', "%" + busqueda + "%"),
+                  color: sequelize.where(sequelize.fn('LOWER', sequelize.col('color')), 'LIKE', "%" + busqueda + "%")
+                }
+              }, order: [
+                ['id', 'DESC']
+              ]
+            })
+          }
+
+          else {
+            return db.Producto.findAll({
+              include: ['categoria'],
+              where: {
+                tipo_id: tipoId,
+                categoria_id: categoriaId
+              }, order: [
+                ['id', 'DESC']
+              ]
+            })
+          }
+
         }
         else {
           return db.Producto.findAll({
@@ -316,29 +360,55 @@ const productsController = {
               [Op.or]: {
                 nombreDelProducto: sequelize.where(sequelize.fn('LOWER', sequelize.col('nombreDelProducto')), 'LIKE', "%" + busqueda + "%"),
                 descripcion: sequelize.where(sequelize.fn('LOWER', sequelize.col('descripcion')), 'LIKE', "%" + busqueda + "%"),
-                color: sequelize.where(sequelize.fn('LOWER', sequelize.col('color')), 'LIKE', "%" + busqueda + "%")
+                color: sequelize.where(sequelize.fn('LOWER', sequelize.col('color')), 'LIKE', "%" + busqueda + "%"),
+                [Op.and]: {
+                  nombreDelProducto: sequelize.where(sequelize.fn('LOWER', sequelize.col('nombreDelProducto')), { [Op.regexp]: busquedaArray.join('|') }),
+                  descripcion: sequelize.where(sequelize.fn('LOWER', sequelize.col('descripcion')), { [Op.regexp]: busquedaArray.join('|') }),
+                  color: sequelize.where(sequelize.fn('LOWER', sequelize.col('color')), { [Op.regexp]: busquedaArray.join('|') })
+                }
               }
             }, order: [
-            ['id', 'DESC']
-          ]
-      })
-    }})
+              ['id', 'DESC']
+            ]
+          })
+        }
+      })    
       .then(productos => {
 
         if (productos.length > 0) {
           res.render('busqueda', { productos, toThousand })
-
-
         }
         else {
-          res.send("No se encontraron resultados")
-        }
-
-
+          return db.Producto.findAll({
+            include: ['categoria'],
+            order: [
+              ['id', 'DESC']
+            ]
+        })
+      }})
+        .then(productos => {
+           let errores = true
+            res.render('busqueda', { productos, errores, toThousand })
+    
       }
       )
+    }
+    else{
+      return db.Producto.findAll({
+        include: ['categoria'],
+        order: [
+          ['id', 'DESC']
+        ]
+    })
+    .then(productos => {
 
-  },
+      
+        res.render('busqueda', { productos, toThousand })
+  
+
+  })
+}
+},
 
   destroy: (req, res) => {
 

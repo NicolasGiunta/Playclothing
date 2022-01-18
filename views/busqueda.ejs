@@ -13,9 +13,10 @@
         <%- include ('./partials/header') %>
 
             <main>
+                <% if(locals.errores && errores) {  %>
+                    <h4 class ="error">No se encontraron resultados</h4>
+                    <% } %> 
                 <div class=productos>
-
-
                         <% for (let i=0; i < productos.length; i++){ %>
                             <div class='imagenYdescripcion'><a
                                     href="/producto/<%=productos[i].categoria.nombre%>/<%= productos[i].id %>"> <img class='foto'

@@ -1,7 +1,9 @@
 
-
+main{
+  margin-top: 98px;
+}
 .productos{
-  margin-top: 22%;
+  /*margin-top: 22%;*/
   display: flex;
 }
 
@@ -35,13 +37,7 @@ main{
 }
 } */
 
-@media (min-width: 426px) {
- 
-    
- main .productos{
-      margin-top: 13%;
-}
-}
+
 @media (min-width:1023px) {
   h4{
     font-size: 20px;
