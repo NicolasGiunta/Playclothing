@@ -20,8 +20,8 @@ let storage = multer.diskStorage({
 const upload = multer ({storage:storage})
 
 const validations = [
-  body('nombreDelProducto').notEmpty().withMessage('Escribe el nombre del producto'),
-  body('descripcion').notEmpty().withMessage('Escribe una descripción del producto'),
+  body('nombreDelProducto').notEmpty().withMessage('Escribe el nombre del producto').bail().isLength({min:5}),
+  body('descripcion').notEmpty().withMessage('Escribe una descripción del producto').bail().isLength({min:20}),
   body('precio').notEmpty().withMessage('Escribe final del producto').bail().isInt().withMessage('Debes ser un número entero superior a 0'),
   body('color').notEmpty().withMessage('Escribe el color del producto'),
   body('talla').notEmpty().withMessage('Elige las tallas del producto'),
@@ -42,9 +42,8 @@ const validations = [
        }
        return true
    })
-
-]
-
+  
+  ]
 
 router.get('/', productController.search)
 router.get('/mujer', productController.mujer)
