@@ -89,6 +89,7 @@
                   id="password"
                   name="password"
                   class="control"
+                  autocomplete="off"
                 >
                 <div class="erroresContraseña coloresErrores">
                 <% if (locals.errors && errors.password){  %>
@@ -108,14 +109,15 @@
                   id="confirmPassword"
                   name="confirmPassword"
                   class="control"
+                  autocomplete="off"
                 >
-
+                <div class="erroresConfirmarContraseña coloresErrores">
                 <% if (locals.errors && errors.confirmPassword){  %>
                   <div  style="color:rgb(255,0,0);">
                     <small><%= errors.confirmPassword.msg %> </small> 
                   </div>
                   <% } %> 
-
+                </div>
               </p>
             </div>
             <div class="control-formulario">
@@ -125,13 +127,14 @@
                     <input type="radio" id="mujer" name="sexo" class="control sexo" value="mujer" <%= locals.old && (old.sexo === "mujer") ? "selected" : "" %> >
                     <label for="hombre" >Hombre</label>
                     <input type="radio" id="hombre" name="sexo" class="control sexo" value="hombre" <%= locals.old && (old.sexo === "hombre") ? "selected" : "" %>>
-                
+                    
+                    <div class="erroresSexo coloresErrores">
                     <% if (locals.errors && errors.sexo){  %>
                       <div  style="color:rgb(255,0,0);">
                        <small> <%= errors.sexo.msg   %> </small>
                       </div>
                       <% } %> 
-
+                    </div>
                 </p>
             </div>
 
