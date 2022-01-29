@@ -20,9 +20,9 @@ let storage = multer.diskStorage({
 const upload = multer ({storage:storage})
 
 const validations = [
-  body('nombreDelProducto').notEmpty().withMessage('Escribe el nombre del producto').bail().isLength({min:5}),
-  body('descripcion').notEmpty().withMessage('Escribe una descripción del producto').bail().isLength({min:20}),
-  body('precio').notEmpty().withMessage('Escribe final del producto').bail().isInt().withMessage('Debes ser un número entero superior a 0'),
+  body('nombreDelProducto').notEmpty().withMessage('Escribe el nombre del producto').bail().isLength({min:5}).withMessage("Debe contener al menos cinco caracteres"),
+  body('descripcion').notEmpty().withMessage('Escribe una descripción del producto').bail().isLength({min:20}).withMessage("Debe contener al menos veinte caracteres"),
+  body('precio').notEmpty().withMessage('Escribe el precio final del producto').bail().isInt().withMessage('Debes ser un número entero superior a 0'),
   body('color').notEmpty().withMessage('Escribe el color del producto'),
   body('talla').notEmpty().withMessage('Elige las tallas del producto'),
   body('categoria').notEmpty().withMessage('Elige la categoría a la que pertenece el producto'),

@@ -18,8 +18,8 @@
             <p>
                 <label for="email" >Email *</label>
                 <input type="email" id="email" name="email" class="control"
-                value=<%= locals.old && old.email ? old.email : " " %>
-                >
+                value=<%= locals.old && old.email ? old.email : " " %>>
+                <div class="erroresEmail coloresErrores">
 
                 <% if (locals.errors && errors.email){  %>
                   <div  style="color:rgb(255,0,0);">
@@ -27,20 +27,21 @@
                   </div>
                   <% } %> 
 
-
+                </div>
             </p>
             </div>
             <div class="control-formulario">
                 <p>
                     <label for="password" >Contraseña *</label>
                     <input type="password" id="password" name="password" class="control">
+                    <div class="erroresContraseña coloresErrores">
 
                     <% if (locals.errors && errors.password){  %>
                         <div  style="color:rgb(255,0,0);">
                           <%= errors.password.msg   %> 
                         </div>
                         <% } %> 
-
+                    </div>
                 </p>
             </div>
             <div>
@@ -69,5 +70,5 @@
     <!--FOOTER-->
     <%- include ('./partials/footer') %>
 
-
+    <script src="/js/login.js"></script>
     </body>

@@ -61,5 +61,15 @@
   
 <numero>**4.** **Hacer menos - Dejar de hacer:** no dejarnos llevar por la frustración.
   
+   ## Retrospectiva del Sprint 7:
+
+<numero>**1.** **Comenzar a hacer:** comentar el código.
+
+<numero>**2.** **Hacer más:** ejercitar buenas prácticas.
+  
+<numero>**3.** **Continuar haciendo:** reuniones periódicas.
+  
+<numero>**4.** **Hacer menos - Dejar de hacer:** no dejarnos llevar por la frustración. 
+  
   
   

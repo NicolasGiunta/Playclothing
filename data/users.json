@@ -1,32 +1,41 @@
 [
-    {
-        "id": "user-cg54zvi6kwtontmw",
-        "nombre": "julian",
-        "apellido": "galante",
-        "email": "galante.julian@gmail.com",
-        "sexo": "hombre",
-        "password": "$2b$10$ghzTd.6D2Cz5iE0jJ.sROuq.cT.AyA5/71nkRAprSh1c4GR3tTh.q",
-        "imagen": "userDefault.png",
-        "perfil": "administrador"
-    },
-    {
-        "id": "user-cg54zvjrkwtop010",
-        "nombre": "nicolas",
-        "apellido": "giunta",
-        "email": "nicolas.giunta1@gmail.com",
-        "sexo": "hombre",
-        "password": "$2b$10$ltYxA2a81aXOosOfytCqBeVwgTbnOfjEq/T2GoD1WRHDY38sXgism",
-        "imagen": "userDefault.png",
-        "perfil": "administrador"
-    },
-    {
-        "id": "user-cg54zvkxkwtopu0m",
-        "nombre": "diana",
-        "apellido": "polanco",
-        "email": "dianacarolina.polanco@gmail.com",
-        "sexo": "mujer",
-        "password": "$2b$10$L96OcfhItBg.qFuEk8nMl.Qo8SkwVVok3sTAuocq5Ur/ShYhglIVS",
-        "imagen": "userDefault.png",
-        "perfil": "administrador"
-    }
+ {
+  "id": "user-cg54zvi6kwtontmw",
+  "nombre": "julian",
+  "apellido": "galante",
+  "email": "galante.julian@gmail.com",
+  "sexo": "hombre",
+  "password": "$2b$10$ghzTd.6D2Cz5iE0jJ.sROuq.cT.AyA5/71nkRAprSh1c4GR3tTh.q",
+  "imagen": "userDefault.png",
+  "perfil": "administrador"
+ },
+ {
+  "id": "user-cg54zvjrkwtop010",
+  "nombre": "nicolas",
+  "apellido": "giunta",
+  "email": "nicolas.giunta1@gmail.com",
+  "sexo": "hombre",
+  "password": "$2b$10$ltYxA2a81aXOosOfytCqBeVwgTbnOfjEq/T2GoD1WRHDY38sXgism",
+  "imagen": "userDefault.png",
+  "perfil": "administrador"
+ },
+ {
+  "id": "user-cg54zvkxkwtopu0m",
+  "nombre": "diana",
+  "apellido": "polanco",
+  "email": "dianacarolina.polanco@gmail.com",
+  "sexo": "mujer",
+  "password": "$2b$10$L96OcfhItBg.qFuEk8nMl.Qo8SkwVVok3sTAuocq5Ur/ShYhglIVS",
+  "imagen": "userDefault.png",
+  "perfil": "administrador"
+ },
+ {
+  "id": "user-cg54z1pw8kxtm0d7a",
+  "nombre": "joaco",
+  "apellido": "taba",
+  "email": "joaco@taba.com",
+  "sexo": "mujer",
+  "password": "$2b$10$sZLzCPbzQBw4kWVhwNs1KOLhROibHwRfwkbJsqlZALxqzsKN/F9Qq",
+  "imagen": "userDefault.png"
+ }
 ]

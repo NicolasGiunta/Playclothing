@@ -31,7 +31,6 @@ let erroresSex = [];
 if(nombre.value == ""){
     errorsName.push('Escribe tu nombre')
    
-
 }else if(nombre.value.length < 2){
     errorsName.push("Debe contener al menos dos caracteres")
 }
@@ -46,6 +45,8 @@ if (errorsName.length > 0  ){
     });       
 
     
+}else{
+    erroresNombre.innerHTML = "" 
 }
 
 
@@ -65,6 +66,8 @@ if (errorsLastName.length > 0  ){
     }); 
 
    
+}else{
+    erroresApellido.innerHTML = "" 
 }
 
 
@@ -94,6 +97,8 @@ if (errorsEmail.length > 0  ){
     
             
        
+    }else{
+        erroresEmail.innerHTML = "" 
     }
 
     //validar  contraseña
@@ -110,11 +115,6 @@ errorsPassword.push("Escribe tu contraseña")
     errorsPassword.push('La contraseña debe tener como minimo 8')
 }
 
-
-// else if (validacionContraseña == false) {
-//     errorsPassword.push('La contraseña debe tener como mínimo 8 caractéres, incluídos 1 letra mayúscula, 1 minúscula y 1 caracter especial')
-    
-// }
  
 if (errorsPassword.length > 0  ){
     
@@ -122,9 +122,8 @@ if (errorsPassword.length > 0  ){
         errorsPassword.forEach(error => {
             erroresContraseña.innerHTML = "<p> <small>" + error + "</small> </p>" 
         }); 
-    
-            
-       
+    }else{
+        erroresContraseña.innerHTML = "" 
     }
 
     let contra = password.value
@@ -143,6 +142,8 @@ if (errorsPassword.length > 0  ){
     
             
        
+    }else{
+        erroresConfirmarContraseña.innerHTML = "" 
     }
 
     
@@ -155,18 +156,17 @@ if (errorsPassword.length > 0  ){
             erroresSexo.innerHTML ="<p> <small>" + error + "</small> </p>"
     
         })
+    }else{
+        erroresSexo.innerHTML = "" 
     }
-
-
     
-        // var fileInput = document.getElementById('file');
-        // var filePath = fileInput.value;
-        // var allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
-        // if(!allowedExtensions.exec(filePath)){
-        //     alert('Please upload file having extensions .jpeg/.jpg/.png/.gif only.');
-        //     fileInput.value = '';
-        //     return false;
-        // }
+
+        if(errorsName.length == 0 && errorsLastName.length == 0 && errorsEmail.length == 0 && errorsPassword.length == 0 && errorsConfirmPassword.length == 0 && erroresSex.length == 0){
+            form.submit()
+        }
+        
+
+
 
 })
 
