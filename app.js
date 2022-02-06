@@ -6,6 +6,8 @@ const productRoutes = require("./routes/productsRoutes");
 const mainRoutes = require("./routes/mainRoutes");
 const usersRoutes = require("./routes/usersRoutes");
 const shopRoutes = require("./routes/shopRoutes");
+const usersAPIRoutes = require("./routes/apiRoutes/usersAPIRoutes");
+const productsAPIRoutes = require("./routes/apiRoutes/productsAPIRoutes");
 const userLoggedMiddleware = require('./middlewares/userLogged')
 const session = require('express-session')
 const cookieParser = require('cookie-parser')
@@ -30,6 +32,12 @@ app.use(express.static("public"));
 
 app.set("view engine", "ejs");
 app.use(userLoggedMiddleware)
+
+// Rutas de API
+app.use("/api/users", usersAPIRoutes)
+app.use("/api/products", productsAPIRoutes)
+
+// Rutas de navegador
 
 app.use("/", mainRoutes);
 

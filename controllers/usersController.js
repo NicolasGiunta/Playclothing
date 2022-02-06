@@ -40,7 +40,7 @@ const usersController = {
               email: req.body.email,
               sexo: req.body.sexo,
               password: bcryptjs.hashSync(req.body.password, 10),
-              imagen: req.file === undefined ? "userDefault.png" : req.file.filename
+              imagen: req.file === undefined ? "/image/users/userDefault.png" : "/image/users/"+req.file.filename
             })
             return res.redirect('/cuenta')
 
