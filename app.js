@@ -1,7 +1,9 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const PUERTO = 3000;
+const cors = require("cors")
+
+const PUERTO = 3004;
 const productRoutes = require("./routes/productsRoutes");
 const mainRoutes = require("./routes/mainRoutes");
 const usersRoutes = require("./routes/usersRoutes");
@@ -12,6 +14,11 @@ const userLoggedMiddleware = require('./middlewares/userLogged')
 const session = require('express-session')
 const cookieParser = require('cookie-parser')
 const methodOverride = require ("method-override");
+
+
+app.use(
+  cors()
+)
 
 
 app.use(express.urlencoded({extended: false}));
