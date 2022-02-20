@@ -1,14 +1,31 @@
 
 main{
   margin-top: 98px;
+  width: 100%;
+  display:block;
 }
-.productos{
-  /*margin-top: 22%;*/
-  display: flex;
+body{
+  width: 100%;
+  display: block;
 }
 
+.imagenYdescripcion{
+  display: contents;
+  width: 50%;
+  padding-left: 1px;
+  padding-right: 1px ;
+}
+
+.productos{
+  margin-top: 70px;
+  width:100%;
+  flex-wrap: wrap;
+}
+
+
+
 .foto {
-  height: 78%;
+ 
   width: 100%;
 }
 
@@ -38,18 +55,49 @@ main{
 } */
 
 
-@media (min-width:1023px) {
+@media (min-width:428px) {
   h4{
     font-size: 20px;
   }
   h6{
     font-size: 15px;
   }
-  main
-    .productos{margin-top: 8.5%} 
-    .foto {
-      height: 85%;
-    }
+
+.productos{
+  margin-top: 70px;
+  display:flex;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+} 
+.foto {
+  height: 85%;
+}
     
+    
+    
+.imagenYdescripcion{
+   display: block;
+   width: 50%;
+   margin-bottom: 10%;
+   padding-left: 2px;
+  padding-right: 2px ;
+}
+
+
+}
+
+@media (min-width:769px){
+
+  .imagenYdescripcion{
+    width: 25%;
+    padding-left: 3px;
+  padding-right: 3px ;
+  margin-bottom: 10px;
+  }
+  .productos{
+    margin-top: 70px;
+  
+    margin-bottom: 25px;
    
+  } 
 }

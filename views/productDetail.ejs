@@ -24,10 +24,10 @@
 
 
                 <descripcion>
-                    <h4>
+                    <h4 class="nombreDelProducto">
                         <%= producto.nombreDelProducto%>
                     </h4>
-                    <h6>
+                    <h6 class="precio">
                         <% if(producto.precio >= 1000) { %>$<%=toThousand(producto.precio)%>
                                 <% } else { %>$<%= producto.precio%>
                                         <% } %>
@@ -49,7 +49,12 @@
                             <% }) %>
 
                                 <br>
-                                <button>Añadir al Carrito</button>
+                                
+                                <form action="/carrito"  method="POST">
+                                    <button class="button-log" value="<%= producto.id %>" name="boton" type="submit">AGREGAR AL CARRITO</button>
+                                </form>
+
+
                     </div>
                     <br>
 
@@ -80,12 +85,13 @@
                         </div>
                         <% } %>
                     </div>
-
+<!-- whatsapp -->
+<%- include ('./partials/whatsapp') %>
         </main>
 
         <!--FOOTER-->
         <%- include ('./partials/footer') %>
-
+        <script src="/js/carrito.js"></script>
 </body>
 
 </html>

@@ -1,10 +1,11 @@
 
-/* product */
-
+main{
+  margin-top: 120px
+}
 .producto1 {
   border-bottom: dotted 1px silver;
-  height: 45vh;
-  margin-top: 120px;
+  height: 19vh;
+ 
 }
 
 .product {
@@ -31,7 +32,7 @@ h2 {
   color: silver;
 }
 
-#foto1 {
+#foto {
   width: 23%;
   height: 18vh;
   float: left;
@@ -81,7 +82,7 @@ h2 {
   margin-right: 11%;
 }
 
-/* footer */
+/* footerCarrito */
 
 .total {
   display: flex;
@@ -101,10 +102,103 @@ h2 {
   margin-right: 7%;
 }
 
-.footer {
+.footerCarrito {
   margin-top: 2%;
   padding-bottom: 5%;
 }
+
+.fa-plus{
+  position: relative;
+  width: 35px;
+  height: 35px;
+  background: #fff;
+  cursor: pointer;
+  border: 2px solid #000000;
+
+  /* Mittig */
+  top: 50%;
+  left: 50%;
+ 
+}
+.fa-plus:after{
+  content: '';
+  position: absolute;
+  transform: translate(-50%, -50%);
+  height: 4px;
+  width: 50%;
+  background: #095776;
+  top: 50%;
+  left: 50%;
+}
+
+.fa-plus:before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #000000;
+  height: 50%;
+  width: 4px;
+}
+.fa-plus:hover:before,
+.fa-plus:hover:after {
+  background: #fff;
+  transition: 0.2s;
+}
+
+.fa-plus:hover {
+  background-color: #000000;
+  transition: 0.2s;
+}
+
+
+
+.fa-minus{
+  position: relative;
+  width: 35px;
+  height: 35px;
+  background: #fff;
+  cursor: pointer;
+  border: 2px solid #000000;
+
+  /* Mittig */
+  top: 50%;
+  
+ 
+}
+.fa-minus:after{
+  content: '';
+  position: absolute;
+  transform: translate(-50%, -50%);
+  height: 4px;
+  width: 50%;
+  background: #000000;
+  top: 50%;
+  left: 50%;
+}
+
+.fa-minus:before{
+  content: '';
+  
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #000000;
+  height: 50%;
+  width: 4px;
+}
+.fa-minus:hover:before,
+.fa-minus:hover:after {
+  background: #fff;
+  transition: 0.2s;
+}
+
+.fa-minus:hover {
+  background-color: #000000;
+  transition: 0.2s;
+}
+
 
 .button {
   color: white;
@@ -119,7 +213,7 @@ h2 {
 }
 
 @media (min-width: 768px) {
-  #foto1 {
+  #foto {
     height: 25vh;
   }
   .tacho {
@@ -132,7 +226,7 @@ h2 {
     margin-left: 5.8%;
   }
   .producto1{
-    height: 60vh;
+    height: 25vh;
     margin-top: 20vh;
   }
 
@@ -140,7 +234,7 @@ h2 {
     margin-top: 1.5%;
     margin-right: 7%;
   }
-  #foto1 {
+  #foto {
     width: 17%;
     height: 45vh;
   }

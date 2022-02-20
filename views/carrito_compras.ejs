@@ -10,48 +10,89 @@
     <%- include ('./partials/header') %>
 
     <main>
-    <!-- producto 1 -->
-    <div class="producto1">
-      <img
-        id="foto1"
-        src="./image/carrito_compras/REMERA-CROP-JANE-NEGRA-PORTADA.jpeg"
-        alt="remera"
-      />
+      <div class="vacio"></div>    
+<% if(productos.length == 0){ %> 
+
+  <div>No hay productos en tu carrito</div>
+
+    <% }else{ %> 
+    <% productos.forEach(element => { %>
+      
+       <div class="producto1">
+         <img
+          id="foto"
+          src="<%= element.imagen_producto %> "
+          alt="remera" />
+
+     
+    
       <div class="product">
-        <!-- <div class="informacion-producto"> -->
+        <div class="informacion-producto">
         <div class="foto_tacho">
-          <h2>Polo Kendall</h2>
-          <div class="tacho"><i id="tacho" class="fas fa-trash-alt"></i></div>
+          <h2 class="nombreProducto"><%=element.producto_nombre %> </h2>
+          <div class="tacho">
+        <form action="/carrito/eliminar?_method=DELETE"  method="POST">
+          <button  id="tacho" value=<%= element.producto_id %> name="botonEliminar" class="fas fa-trash-alt"></button>
+        </form>
+        </div> 
         </div>
-        <div class="descripcion">
-          <p>Color:</p>
-          <p>Talla:</p>
-        </div>
+        
         <div class="cantidad_precio">
           <div class="cantidad_total">
-            <i class="fas menos fa-minus"></i>
-            <p>1</p>
-            <i class="fas mas fa-plus"></i>
+            <form action="/carrito/menos" method="POST">
+              <button value=<%= element.producto_id %>  name="botonMenos" type="submit" id="menos" class="fas menos fa-minus"></button>
+              </form>
+              
+            <p><%= element.cantidad %> </p>
+            <form action="/carrito/mas" method="POST">
+              <button value=<%= element.producto_id %> name="botonMas" type="submit" id="mas" class="fas meas fa-plus"></button>
+              </form> 
+              
           </div>
           <div class="precio_total">
-            <p>$XXXXXX</p>
+            
+            <p>$<%= toThousand(element.cantidad*element.precio_producto) %> </p>
           </div>
         </div>
       </div>
-    </div>
-    <div class="footer">
+    </div> 
+    
+    
+    <% }); %>
+
+
+    <div class="footerCarrito">
     <div class="finalizar-compra">
+
+      <% let suma=[] 
+      let operacion = productos.map(element => {
+       suma.push(element.precio_producto*element.cantidad)
+       
+        
+      }) %>
+       
       <div class="total">
         <h1 id="total-finalizar">Total</h1>
-        <p id="precio-finalizar">XXXXXXXX</p>
+
+        <% let totalProductos= suma.reduce((
+          previousValue, currentValue) => previousValue + currentValue
+          ); %>
+        <p id="precio-finalizar"> $<%= toThousand(totalProductos) %>  </p>
       </div>
     </div>
-    <button class="button">Finalizar Compra</button>
+    <form action="/carrito/checkout?_method=DELETE"  method="POST">
+      <button id="finalizarCompra"  name="botonCheckout" >  Finalizar Compra </button>
+    </form>
+    <% }%>
   </main>
+      <footer>
       <!--FOOTER-->
       <%- include ('./partials/footer') %>
+    </footer>
+      
   
   </body>
   
 </div>
 </html>
+

@@ -11,6 +11,7 @@ const shopRoutes = require("./routes/shopRoutes");
 const usersAPIRoutes = require("./routes/apiRoutes/usersAPIRoutes");
 const productsAPIRoutes = require("./routes/apiRoutes/productsAPIRoutes");
 const userLoggedMiddleware = require('./middlewares/userLogged')
+const carritoMiddleware = require ('./middlewares/carrito')
 const session = require('express-session')
 const cookieParser = require('cookie-parser')
 const methodOverride = require ("method-override");
@@ -39,6 +40,7 @@ app.use(express.static("public"));
 
 app.set("view engine", "ejs");
 app.use(userLoggedMiddleware)
+app.use(carritoMiddleware)
 
 // Rutas de API
 app.use("/api/users", usersAPIRoutes)
