@@ -25,17 +25,17 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const productsController = {
 
-//   listado : function (req, res) {
-//     db.Producto.findAll({
-//       include: ['categoria'],
-//       order: [
-//         ['id', 'DESC']
-//       ]
-//   })
-//   .then(productos => {
-//       res.render('busqueda', { productos, toThousand })
-// })
-//   },
+  //   listado : function (req, res) {
+  //     db.Producto.findAll({
+  //       include: ['categoria'],
+  //       order: [
+  //         ['id', 'DESC']
+  //       ]
+  //   })
+  //   .then(productos => {
+  //       res.render('busqueda', { productos, toThousand })
+  // })
+  //   },
 
   mujer: function (req, res) {
     db.Producto.findAll()
@@ -51,6 +51,52 @@ const productsController = {
         res.render('hombre', { productos, toThousand })
       })
 
+  },
+
+  remeras: function (req, res) {
+
+    let url = req.path
+    let categoriaMujer
+    let categoriaHombre
+
+    db.Producto.findAll({
+      where: {
+        tipo_id:2
+      }
+    })
+    .then(productos => {
+       if(url == "/mujer-remeras"){
+         categoriaHombre = 0
+       }
+       else if (url == "/hombre-remeras"){
+        categoriaMujer = 0
+       }
+
+       res.render('remeras', { categoriaMujer,  categoriaHombre, productos, toThousand})
+    })
+  },
+
+  camisas: function (req, res) {
+
+    let url = req.path
+    let categoriaMujer
+    let categoriaHombre
+
+    db.Producto.findAll({
+      where: {
+        tipo_id:3
+      }
+    })
+    .then(productos => {
+       if(url == "/mujer-camisas"){
+         categoriaHombre = 0
+       }
+       else if (url == "/hombre-camisas"){
+        categoriaMujer = 0
+       }
+
+       res.render('camisas', { categoriaMujer,  categoriaHombre, productos, toThousand})
+    })
   },
 
 
@@ -83,6 +129,21 @@ const productsController = {
 
       })
 
+
+  },
+
+  detalleTipos: function (req, res) {
+
+    let id = req.params.id
+
+    db.Producto.findByPk(id,
+      {
+        include: [{ association: "tallas" }, { association: "categoria" }]
+      })
+
+    .then(producto =>{
+      res.render('productDetail', { producto, toThousand })
+    }) 
 
   },
 
@@ -231,6 +292,8 @@ const productsController = {
 
 
   search: (req, res) => {
+  // console.log(req.query.busqueda)
+
     // res.send(req.query.busqueda)
 
     if(req.query.busqueda){
@@ -402,13 +465,13 @@ const productsController = {
     })
     .then(productos => {
 
-      
         res.render('busqueda', { productos, toThousand })
   
 
   })
 }
-},
+
+  },
 
   destroy: (req, res) => {
 

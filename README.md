@@ -31,3 +31,6 @@ https://trello.com/b/psou7tSx/sprint-2
 https://trello.com/b/7L3RVW90/sprint-3
 https://trello.com/b/9RvVRV8M/sprint-4
 https://trello.com/b/5rebgSEe/sprint-5
+https://trello.com/b/k7zp19D0/sprint-6
+https://trello.com/b/9Rd4fdex/sprint-7
+https://trello.com/b/cNtoHzaF/sprint-8

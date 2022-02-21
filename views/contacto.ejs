@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!--HEAD-->
+<%- include ('./partials/head') %>
+    <link rel="stylesheet" href="/css/stylesContacto.css">
+    <body>
+
+        <!--HEADER-->
+        <%- include ('./partials/header') %>
+
+            <main>
+
+                <div class="container-contact-text">
+                    <h2>Escríbenos</h2>
+                    <h4>Si tienes dudas o quieres saber más de nosotros. Dejános todos tus datos en el siguiente
+                        formulario y nos pondremos en contacto contigo.</h4>
+                </div>
+                <div class="container-form-contact">
+                    <form class="contact-form">
+
+                        <label for="name">Nombre *</label>
+                        <div class="coloresErrores erroresNombre"></div>
+                        <input id="name" type="text" name="nombre" class="name">
+
+                        <label for="email">Email *</label>
+                        <div class="coloresErrores erroresEmail"></div>
+                        <input id="email" type="text" name="email" class="email">
+
+                        <label for="subject">Asunto *</label>
+                        <div class="coloresErrores erroresAsunto"></div>
+
+                        <select name="subject" id="subject" class="subject">
+                            <option>---</option>
+                            <option value="cliente">Atención al cliente</option>
+                            <option value="pedido">Pedidos y devoluciones</option>
+                            <option value="proovedores">Proveedores</option>
+                            <option value="distribuidor">Quiero ser distribuidor</option>
+                        </select>
+
+                        <label for="message">Mensaje *</label>
+                        <div class="coloresErrores erroresMensaje"></div>
+                        
+                        <textarea id="message" name="mensaje" class="message" rows="8"
+                            cols="10" placeholder="Escribe aqui tu mensaje"></textarea>
+
+                        <div>
+                            <button class="button-log" type="submit">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- whatsapp -->
+                <%- include ('./partials/whatsapp') %>
+
+            </main>
+
+            <!--FOOTER-->
+            <%- include ('./partials/footer') %>
+            <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+            <script src="/js/contacto.js"></script>
+    </body>
+
+
+</html>

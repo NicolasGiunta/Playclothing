@@ -1,4 +1,4 @@
-const emailer = require('../config/emailer')
+const emailer = require('../config/emailer');
 
 const mainController = {
     index: function (req, res) {
@@ -18,7 +18,11 @@ const mainController = {
          res.render('preguntas')
      },
 
-    newsLetter: function(req,res){
+     contacto: function(req, res) {
+         res.render('contacto')
+     },
+
+     newsLetter: function(req,res){
         try{
             let email = req.body.email;
             console.log(email)
@@ -28,6 +32,8 @@ const mainController = {
           }
           res.redirect ('/')
     }
+
+
 }
 
 

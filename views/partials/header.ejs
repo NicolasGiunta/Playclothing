@@ -1,61 +1,113 @@
-<link rel="stylesheet" href="/css/stylesheader.css">
+<!DOCTYPE html>
+<html lang="es">
 
-<header>
-        
-    <div class="contenedor">
+<!--HEAD-->
+</head>
+<%- include ('./head') %>
+    <script src="https://kit.fontawesome.com/461a06d86e.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/stylesheader.css">
 
-        <!--banner animado-->
-        <div class="banner">
-            <ul class=lista>
-                <li>¡Envío GRATIS a todo el país!</li>
-                <li>10% OFF en tu primera compra</li>
-                <li>Nueva colección ¡Muy pronto!</li>
-            </ul>
-        </div>
+    </head>
 
-        <section>
-            <!--menu de navegación-->
-            <div>
-                <input type="checkbox" class="checkbox-menu" id="checkbox-menu">
-                <label for="checkbox-menu" class="checkbox-menu"><i class="fas fa-bars"></i></label>
+    <header>
+
+        <div class="contenedor">
+
+            <!--banner animado-->
+            <div class="banner">
+                <ul class=lista>
+                    <li>¡Envío GRATIS a todo el país!</li>
+                    <li>10% OFF en tu primera compra</li>
+                    <li>Nueva colección ¡Muy pronto!</li>
+                </ul>
+            </div>
+
+            <section>
+                <!--menu de navegación-->
                 <nav>
-                    <label for="checkbox-menu" class="checkbox-menu-salir"><i class="fas fa-times"></i></label>
+                    <input type="checkbox" class="checkbox-menu" id="burguer-menu">
+                    <label for="burguer-menu" class="checkbox-menu"><i class="fas fa-bars"></i></label>
+
                     <ul class="categorias">
-                        <li class="categoria1"><a href="/producto/hombre">Hombre</a></li>
-                        <li class="categoria2"><a href="/producto/mujer">Mujer</a></li>
+
+                        <label for="burguer-menu"><i class="fas fa-times"></i></label>
+
+                        <li class="categoria1 categorias-genero">
+                            <a href="/producto/mujer">Mujer</a>
+                            <input type="checkbox" id="submenu-checkbox1" class="submenu-checkbox">
+                            <label for="submenu-checkbox1" class="submenu-icono"><i class="fas fa-angle-down"></i><i
+                                    class="fas fa-angle-up"></i></label>
+                            <ul class="menu-tipos menu-categoria1">
+                                <li class="texto-tipo1"><a href="/producto/mujer-remeras">Remeras</a></li>
+                                <li class="imagen-tipo1"><a href="/producto/mujer-remeras"><img
+                                            src="/image/menu/mujer/remera-mujer.jpg" alt="Remera mujer" width="200px">
+                                        <p class="remeras">Remeras</p>
+                                    </a></li>
+                                <li class="texto-tipo2"><a href="/producto/mujer-camisas">Camisas</a></li>
+                                <li class="imagen-tipo2"><a href="/producto/mujer-camisas"><img
+                                            src="/image/menu/mujer/camisa-mujer.jpg" alt="Camisa mujer" width="200px">
+                                        <p class="camisas">Camisas</p>
+                                    </a></li>
+                            </ul>
+                        </li>
+                        <li class="categoria2 categorias-genero"><a href="/producto/hombre">Hombre</a>
+                            <input type="checkbox" id="submenu-checkbox2" class="submenu-checkbox">
+                            <label for="submenu-checkbox2" class="submenu-icono"><i class="fas fa-angle-down"></i><i
+                                    class="fas fa-angle-up"></i></label>
+                            <ul class="menu-tipos menu-categoria2">
+                                <li class="texto-tipo1"><a href="/producto/hombre-remeras">Remeras</a></li>
+                                <li class="imagen-tipo1"><a href="/producto/hombre-remeras"><img
+                                            src="/image/menu/hombre/remera-hombre.jpg" alt="Remera hombre"
+                                            width="200px">
+                                        <p class="remeras">Remeras</p>
+                                    </a></li>
+                                <li class="texto-tipo2"><a href="/producto/hombre-camisas">Camisas</a></li>
+                                <li class="imagen-tipo2"><a href="/producto/hombre-camisas"><img
+                                            src="/image/menu/hombre/camisa-hombre.jpg" alt="Camisa hombre"
+                                            width="200px">
+                                        <p class="camisas">Camisas</p>
+                                    </a></li>
+                            </ul>
+                        </li>
+
                     </ul>
                 </nav>
-            </div>
 
-            <!--logo cabezote-->
-            <a href="/" class="logo"><img class="logo" src="/image/logo.jpg" alt="Logo"></a>
 
-            <!--iconos del header-->
-            <div class="iconos">
-                <!--usuario/cuenta-->
-                <% if (locals.isLogged) { %>
-                    <a href="/cuenta/micuenta"><b><%= locals.userLogged.nombre %> </b></a>
-                    <% } else { %>
-                <a href="/cuenta" class=""><i class="fas fa-user-alt"></i></a>
-                <% } %>
-                <!--barra de busqueda-->
-                <input type="checkbox" id="checkbox-search" class="checkbox-search">
-                <label for="checkbox-search"><i class="fas fa-search"></i></label>
-                <div class="buscador">
-                    <form action="/producto" method="GET" class="barra">
-                        <input type="search" name="busqueda" placeholder="¿Qué buscas?" autocomplete="on">
-                        <button type="submit"><i class="fas fa-search"></i></button>
-                        <label for="checkbox-search" class="checkbox-salir"><i class="fas fa-times"></i></label>
-                    </form>
+                <!--logo cabezote-->
+                <a href="/" class="logo"><img class="logo" src="/image/logo.jpg" alt="Logo"></a>
+
+                <!--iconos del header-->
+                <div class="iconos">
+                    <!--usuario/cuenta-->
+                    <% if (locals.isLogged) { %>
+                        <a href="/cuenta/micuenta"><b>
+                                <%= locals.userLogged.nombre %>
+                            </b></a>
+                        <% } else { %>
+                            <a href="/cuenta" class=""><i class="fas fa-user-alt"></i></a>
+                            <% } %>
+                                <!--barra de busqueda-->
+                                <input type="checkbox" id="checkbox-search" class="checkbox-search">
+                                <label for="checkbox-search"><i class="fas fa-search"></i></label>
+                                <div class="buscador">
+                                    <form action="/producto" method="GET" class="barra">
+                                        <input type="search" name="busqueda" placeholder="¿Qué buscas?"
+                                            autocomplete="on">
+                                        <button type="submit"><i class="fas fa-search"></i></button>
+                                        <label for="checkbox-search" class="checkbox-salir"><i
+                                                class="fas fa-times"></i></label>
+                                    </form>
+                                </div>
+                                <!--lleva al carrito-->
+                                <% if (locals.isCarrito) {%><a href="/carrito"><i class="fas fa-cart-plus"></i></a> <% } 
+                                else {%>
+                                     <a href="/carrito"><i class="fas fa-shopping-cart"></i></a> <% } %>
+                                       
                 </div>
-                <!--lleva al carrito-->
-                <% if(locals.isCarrito){ %> 
-                    <a href="/carrito">carrito</a>
-                <% }else{ %>
+            </section>
+        </div>
+    </header>
 
-                  <a href="/carrito"><i class="fas fa-shopping-cart"></i></a>
-                <% } %>
-            </div>
-        </section>
-    </div>
-</header>
+</html>

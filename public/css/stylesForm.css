@@ -1,105 +1,146 @@
 * {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-}
-
-body{
-    font-family: 'Roboto', sans-serif;
- 
-}
-
-main {
-  margin-top: 130px;
-  margin-bottom: 30px;
-}
-main h1{
-    font-size: 36px;
-    padding: 0 15px;
-}
-
-main h5{
-    font-size: 18px;
-    padding: 0 15px;
-    margin-bottom: 30px;
-}
-
-
-
-main .create-form {
-    padding: 0 15px;
-}
-
-main .checkbox{
-    font-size: 13px;
-    justify-content: space-between;
-    display: flex;
-}
-
-main .control-formulario label{
-    margin-bottom: 15px;
-    display: block
-}
-
-main .control{
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
-    width: 100%;
-    padding: 7px 15px;
-}
-
-main .sr_button{
-    padding: 2px 0;
-    color: #000!important;
-    font-weight: bolder;
-}
-
-main .button-log {
-    font-size: 13px;
-    line-height: 16px;
-    display: inline-block;
-    padding: 12px 30px;
-    max-width: 100%;
-    cursor: pointer;
-    text-align: center;
+  }
+  
+  body{
+      font-family: 'Roboto', sans-serif;
+   
+  }
+  
+  main {
+    margin-top: 140px;
     margin-bottom: 30px;
-    color: #fff;
-    background: #000;
-    border: 1px solid #000;
-    margin-top: 30px;
-    
-}
-
-main .Policy{
-    font-size: .85em;
-    line-height: 1.5em;
-    margin-top: 30px;
-    max-width: 500px;
-    opacity: 0.5;
-}
-
-main .tablet {
-    font-family: 'Roboto', sans-serif;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-
-}
-
-main .caja1{
-    display: block;
-    margin-top: 55px;
-
-}
-main .caja2{
-    display: block;
-    margin-top: 55px;
-
-}
-
-/*@media (max-width: 425px){
-    .tablet {
-        display: block;
-        flex-wrap: wrap;
-    }
-}*/
-
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+  }
+  
+  main .titlo-editar-cuenta{
+      font-size: 36px;
+      padding: 0 15px;
+      font-weight: bold;
+  }
+  
+  .titlo-editar-cuenta a{
+      font-weight: bold;
+  }
+  
+  main h5{
+      font-size: 20px;
+      padding: 0 15px;
+      margin-bottom: 30px;
+  }
+  
+  
+  main .create-form {
+      padding: 0 15px;
+  }
+  
+  
+  
+  main .checkbox{
+      margin-top: 8px;
+      font-size: 13px;
+      justify-content: space-between;
+      display: flex;
+  }
+  
+  div.contenedor-select{
+      margin-bottom: 30px;
+  }
+  
+  main .control-formulario label{
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-size: 1rem;
+      display: block
+  }
+  
+  main form label.form-select{
+      margin: 18px 0 8px;
+      padding-left: 15px;
+  }
+  
+  main label input.control-select{
+      padding: 5px;
+   }
+  
+  main .control:not(.control-select){
+      box-sizing: border-box;
+      width: 100%;
+      padding: 12px 10px;
+      border: rgb(221, 218, 218) 1px solid;
+  }
+  
+  .control-select-sexo{
+      margin-bottom: 20px;
+  }
+  
+  
+  label span{
+      padding-left: 10px;
+      font-size: 0.9rem;
+  }
+  
+  div.coloresErrores{
+      color: red;
+  }
+  
+  main .sr_button{
+      padding: 2px 0;
+      color: #000!important;
+      font-weight: bolder;
+  }
+  
+  main .button-log {
+      font-size: 13px;
+      line-height: 16px;
+      display: inline-block;
+      padding: 12px 30px;
+      max-width: 100%;
+      cursor: pointer;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #fff;
+      background: #000;
+      border: 1px solid #000;
+      margin-top: 30px;
+      
+  }
+  
+  main .Policy{
+      font-size: .85em;
+      line-height: 1.5em;
+      margin-top: 30px;
+      max-width: 500px;
+      opacity: 0.7;
+  }
+  
+  main .tablet {
+      padding: 0 10px;
+      font-family: 'Roboto', sans-serif;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+  
+  }
+  
+  main .caja1{
+      display: block;
+      margin-top: 55px;
+  
+  }
+  main .caja2{
+      display: block;
+      margin-top: 45px;
+  
+  }
+  
+  /*@media (max-width: 425px){
+      .tablet {
+          display: block;
+          flex-wrap: wrap;
+      }
+  }*/

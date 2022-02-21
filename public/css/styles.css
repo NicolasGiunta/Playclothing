@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-banner div {
+.banner div {
   background-color: black;
   color:white;
   width: 100%;
@@ -39,7 +39,7 @@ footer{
 h5{
   width: 50%;
 }
-}
+
 .fa-bars{
 color: gray;
 }

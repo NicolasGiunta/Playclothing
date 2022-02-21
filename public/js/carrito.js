@@ -64,7 +64,7 @@ window.addEventListener ("load", function(){
             //    localStorage.setItem("carrito",JSON.stringify(carrito))
        }
       
-       console.log(localStorage.carrito)
+       
           
           //console.log(localStorage.carrito)
       //  if(repetido.length===0){

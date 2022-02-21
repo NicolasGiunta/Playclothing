@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include ('./partials/head') %>
+
+        <link href="/css/stylesForm.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!--HEADER-->
+    <%- include ('./partials/header') %>
+
+        <main>
+            <h1 class="titlo-editar-cuenta"><a href="/cuenta/micuenta">Mi cuenta</a></h1>
+            <div class="tablet">
+                <div class="caja2">
+                    <h5>
+                        <%= userLogged.nombre %>, edita tu cuenta:
+                    </h5>
+
+                    <form action="/cuenta/micuenta/editar?_method=PUT" method="POST" class="create-form"
+                        enctype="multipart/form-data">
+                        <div class="control-formulario">
+                            <p>
+                                <label for="nombre">Nombre *</label>
+                                <input type="text" id="nombre" name="nombre" class="control nombre"
+                                    value="<%= userLogged.nombre %>">
+
+                            <div class="erroresNombre coloresErrores">
+                                <% if (locals.errors && errors.nombre){ %>
+                                    <div style="color:rgb(255,0,0);">
+
+                                        <small>
+                                            <%= errors.nombre.msg %>
+                                        </small>
+                                    </div>
+                                    <% } %>
+                            </div>
+
+                            </p>
+                        </div>
+
+                        <div class="control-formulario">
+                            <p>
+                                <label for="apellido">Apellido *</label>
+                                <input type="text" id="apellido" name="apellido" class="control apellido"
+                                    value="<%= userLogged.apellido %>">
+
+                            <div class="erroresApellido coloresErrores">
+                                <% if (locals.errors && errors.apellido){ %>
+                                    <div style="color:rgb(255,0,0);">
+                                        <small>
+                                            <%= errors.apellido.msg %>
+                                        </small>
+                                    </div>
+                                    <% } %>
+                            </div>
+                            </p>
+                        </div>
+
+                        <div class="control-formulario">
+                            <p>
+                                <label for="reg_email">Email *</label>
+                                <input type="text" id="reg_email" name="email" class="control"
+                                    value="<%= userLogged.email %>">
+
+                            <div class="erroresEmail coloresErrores">
+                                <% if (locals.errors && errors.email){ %>
+                                    <div style="color:rgb(255,0,0);">
+                                        <small>
+                                            <%= errors.email.msg %>
+                                        </small>
+                                    </div>
+                                    <% } %>
+                            </div>
+                            </p>
+                        </div>
+
+                        <div class="control-formulario">
+                            <p>
+                                <label for="currentPassword">Contraseña actual *</label>
+                                <input type="password" id="currentPassword" name="currentPassword" class="control"
+                                    autocomplete="off">
+                            <div class="erroresContraseña coloresErrores">
+                                <% if (locals.errors && errors.currentPassword){ %>
+                                    <div style="color:rgb(255,0,0);">
+                                        <small>
+                                            <%= errors.currentPassword.msg %>
+                                        </small>
+                                    </div>
+                                    <% } %>
+                            </div>
+
+                            </p>
+                        </div>
+
+                        <div class="control-formulario">
+                            <p>
+                                <label for="contraseña">Nueva contraseña *</label>
+                                <input type="password" id="password" name="password" class="control" autocomplete="off">
+                            <div class="erroresContraseña coloresErrores">
+                                <% if (locals.errors && errors.password){ %>
+                                    <div style="color:rgb(255,0,0);">
+                                        <small>
+                                            <%= errors.password.msg %>
+                                        </small>
+                                    </div>
+                                    <% } %>
+                            </div>
+
+                            </p>
+                        </div>
+                        <div class="control-formulario">
+                            <p>
+                                <label for="confirmPassword">Confirmar nueva contraseña *</label>
+                                <input type="password" id="confirmPassword" name="confirmPassword" class="control"
+                                    autocomplete="off">
+                            <div class="erroresConfirmarContraseña coloresErrores">
+                                <% if (locals.errors && errors.confirmPassword){ %>
+                                    <div style="color:rgb(255,0,0);">
+                                        <small>
+                                            <%= errors.confirmPassword.msg %>
+                                        </small>
+                                    </div>
+                                    <% } %>
+                            </div>
+                            </p>
+                        </div>
+                        <div class="control-formulario">
+
+                            <label>Sexo: *</label>
+                            <div class="erroresSexo coloresErrores">
+                                <% if (locals.errors && errors.sexo){ %>
+                                    <div style="color:rgb(255,0,0);">
+                                        <small>
+                                            <%= errors.sexo.msg %>
+                                        </small>
+                                    </div>
+                                    <% } %>
+                            </div>
+                            <label class="form-select"><input type="radio" id="mujer" name="sexo"
+                                    class="control control-select" value="<%=(userLogged.sexo == "mujer") ?
+                                    userLogged.sexo : "" %>" <% if(userLogged.sexo=="mujer" ) {%> checked <%}%>
+                                        ><span>Mujer</span> </label>
+
+                            <label class="form-select"><input type="radio" id="hombre" name="sexo"
+                                    class="control control-select" value="<%=(userLogged.sexo == "hombre") ?
+                                    userLogged.sexo : "" %>" <%if(userLogged.sexo=="hombre" ) {%> checked <%}%>
+                                        ><span>Hombre</span></label>
+
+
+                        </div>
+
+
+
+                        <div class="col-12 col-md-6">
+                            <label for="imagen" class="control-formulario">Imagen de perfil </label>
+                            <input type="file" id="imagen" name="imagen" class="control-formulario">
+                            <div class="col-12">
+                                <div>
+                                    <p>
+                                        <button class="button-log" type="submit">Editar perfil</button>
+                                    </p>
+                                </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- whatsapp -->
+            <%- include ('./partials/whatsapp') %>
+        </main>
+        <!--FOOTER-->
+        <%- include ('./partials/footer') %>
+
+</body>
+
+</html>

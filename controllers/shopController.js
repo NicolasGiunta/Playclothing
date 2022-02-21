@@ -16,11 +16,10 @@ const shopController = {
             }
         })
         
-        console.log(productos)
         if(productos.length>0){
             req.session.carritoSession= 1
         }else{
-            req.session.destroy()
+            delete req.session.carritoSession;
         }
         
         res.render("carrito_compras",{
@@ -145,9 +144,11 @@ const shopController = {
             }
         })
 
+        delete req.session.carritoSession
+
         res.redirect('/cuenta')
 
-        req.session.destroy()
+        
     }
 
     

@@ -1,48 +1,55 @@
-!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 
 <!--traigo el head-->
-<%- include ('./partials/head') %>
 
-    <!--traigo el css-->
-    <link rel="stylesheet" href="/css/stylesHombre.css">
+<head>
+    <%- include ('./partials/head') %>
 
-    <body>
+        <!--traigo el css-->
+        <link rel="stylesheet" href="/css/stylesHombre.css">
+</head>
 
-        <!--HEADER-->
-        <%- include ('./partials/header') %>
+<body>
 
-            <main>
-                <% if(locals.errores && errores) {  %>
-                    <h4 class ="error">No se encontraron resultados</h4>
-                    <% } %> 
-                <div class=productos>
-                        <% for (let i=0; i < productos.length; i++){ %>
+    <!--HEADER-->
+    <%- include ('./partials/header') %>
+
+        <main>
+            <% if(locals.errores && errores) { %>
+                <h4 class="error">No se encontraron resultados exactos de tu busqueda</h4>
+                <% } %>
+                    <div class=productos>
+                        <% productos.forEach(element => { %>
                             <div class='imagenYdescripcion'><a
-                                    href="/producto/<%=productos[i].categoria.nombre%>/<%= productos[i].id %>"> <img class='foto'
-                                        src=<%=productos[i].imagen%> > </a>
+                                    href="/producto/<%=element.categoria.nombre%>/<%= element.id %>"> <img
+                                        class='foto' src=<%=element.imagen%> > </a>
                                 <h4>
-                                    <%= productos[i].nombreDelProducto%>
+                                    <%= element.nombreDelProducto%>
                                 </h4>
                                 <h6>
-                                    <%if(productos[i].precio>= 1000) { %> $
-                                        <%=toThousand(productos[i].precio)%>
+                                    <%if(element.precio>= 1000) { %> $
+                                        <%=toThousand(element.precio)%>
                                             <% } else { %> $
-                                                    <%=productos[i].precio%>
-                                          <%  } %>
+                                                <%=element.precio%>
+                                                    <% } %>
                                 </h6>
 
 
                             </div>
-                            <% } %>
-                </div>
+                            <% }) %>
 
+                      
+                    </div>
+                    
+                    <!-- whatsapp -->
+                    <%- include ('./partials/whatsapp') %>
 
-            </main>
+        </main>
 
-            <!--FOOTER-->
-            <%- include ('./partials/footer') %>
+        <!--FOOTER-->
+        <%- include ('./partials/footer') %>
 
-    </body>
+</body>
 
 </html>

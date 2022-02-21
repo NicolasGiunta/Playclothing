@@ -1,460 +1,689 @@
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+i{
+  font-size: 1.3rem;
+  color:#303028;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+a, p{
+  font-weight: 500;
+}
+
+i, a:hover{
+  cursor: pointer;
+}
+
+li{
+  list-style: none;
+}
+
+/*HEADER*/
+header{
+width: 100%;
+z-index: 1;
+position: fixed;
+top: 0;
+}
+
+.contenedor {
+  position: relative;
+  background-color: white;
+}
+
+.banner{
+  background-color: black;
+  overflow: hidden;
+  height: 30px;
+  display: block;
+  margin: auto;
+  width: 100%;
+}
+
+.lista{
+  color:black;
+  text-align: center;
+  line-height: 30px;
+  animation: animacion 10s 0.5s infinite;
+}
+
+.lista li{
+  font-size: 0.9rem;
+  list-style: none;
+  border-bottom: solid 20px black;
+}
+  
+/*animación del banner header*/
+@keyframes animacion {
+  0% {
+    transform: translateY(15%);
+  }
+
+  10%{
+    transform: translateY(0%);
+    color: white;
+  }
+
+  20% {
+    transform: translateY(0%);
+    color: white;
+  }
+
+  30%{
+    transform: translateY(-15%);
+    color:black;
+  } 
+
+  40% {
+    transform: translateY(-33.5%);
+    color: white;  
   }
   
-  body {
-    font-family: 'Roboto', sans-serif;
+  55%{
+    transform: translateY(-33.5%);
+    color:white;
   }
-  
-  i{
-    font-size: 1.3rem;
-    color:#303028;
-  }
-  
-  a{
-    text-decoration: none;
+
+  65%{
+    transform: translateY(-50%);
     color: black;
   }
-  
-  a, p{
-    font-weight: 500;
+
+  75%{
+    transform: translateY(-67%);
+    color: white
   }
-  
-  i, a:hover{
-    cursor: pointer;
+
+  90%{
+    transform: translateY(-67%);
+    color:white;
   }
-  
-  /*HEADER*/
-  header{
+
+  100%{
+    transform: translateY(-85%);
+  }
+}
+
+header section{
+  display: flex;
   width: 100%;
+  padding: 15px 12px 15px 10px;
+}
+
+.checkbox-menu i{
+  margin: 10px 5px;
+}
+
+header nav .categorias{
+  visibility: hidden;
+  height: 0;
+  position: absolute;
+  margin-top: 16px;
   z-index: 1;
-  position: fixed;
-  top: 0;
-  }
+  width: 200px; 
+  background-color: white;
+  left: 0;
+  justify-content: space-between;
+  padding: 0;
+  color: black;
+  font-size: 0rem;
+  transition: height 0.6s ease-in, visibility 0.6s, font-size 0.4s;
+}
+
+ nav li.categoria1, nav li.categoria2{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between;
+  padding: 25px;
+  border-bottom: 0;
+ 
+} 
+
+.categorias li.categoria1{
+  width: 100%;
+  margin-top: 15px;
+ 
+}
+
+nav .categorias .submenu-icono{
+ align-self: center;
+}
+
+.menu-tipos .imagen-tipo1, .menu-tipos .imagen-tipo2{
+ display:none;
+}
+
+nav .categorias i.fa-angle-up{
+display: none;
+
+}
+
+nav .categorias .fas{
+  font-size: 0;
+  padding-top: 2px;
+  transition: all 0.4s
+} 
+
+nav .categorias .fa-times{
+  font-size: 0;
+  padding: 15px 15px 0 0;
+  position: absolute;
+  right: 0;
+  transition: all 0.4s
+}
+
+.menu-tipos{
+  height: 0px;
+  overflow: hidden;
+  width: 100%;
+  font-size: 0;
+  transition: all 0.5s linear;
+
+}
   
-  .contenedor {
-    position: relative;
-    background-color: white;
+.menu-tipos li{
+  font-size:0;
+  overflow: hidden;
+}
+
+.menu-tipos .texto-tipo1{
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+#burguer-menu, .submenu-checkbox{
+  display: none;
+}
+
+#burguer-menu:checked ~ .categorias{
+  visibility: visible;
+  height:50vh;
+  font-size: 1.2rem;
+}
+
+#burguer-menu:checked ~ .categorias .fa-times{
+  font-size: 1.2rem;
+  color: #303028
+}
+
+
+#burguer-menu:checked ~ .categorias .categoria1{
+  border-bottom: rgb(221, 218, 218) 0.5px solid;
+}  
+
+#burguer-menu:checked ~ .categorias .categoria2{
+  border-bottom: rgb(221, 218, 218) 0.5px solid;
+}  
+
+#burguer-menu:checked ~ .categorias .fa-angle-down{
+  font-size: 1rem;
+  color: #8f8f79;
+  padding-top: 2px;
+}  
+
+#burguer-menu:checked ~ .categorias .fa-angle-up{
+  font-size: 1rem;
+  color: #8f8f79;
+  padding-top: 2px;
+}  
+
+ #burguer-menu:checked ~ .checkbox-menu-salir{
+  visibility: visible;
+  position: absolute;
+  top: 0px;
+  right:0;
+  padding-top: 15px;
+  padding-right: 10px;
+  font-size: 1.3rem;
+  color:#303028;
+}
+
+#burguer-menu:checked ~ .categorias .menu-tipos li{
+  font-size: 1rem;
+}
+
+nav .categorias input:checked ~ .menu-tipos{
+  height:auto;
+  padding: 10px 10px 0px 10px;
+
+}
+
+nav .categorias input:checked ~ .menu-tipos li{
+  border-bottom: 0;
+  visibility: visible;
+}
+
+nav .categorias input:checked ~ label i.fa-angle-down{
+  display: none
+} 
+
+nav .categorias input:checked ~ label i.fa-angle-up{
+  display: block;
+} 
+
+
+
+.logo{
+  width: 130px;
+}
+
+header .logo{
+  margin: 0 5px; 
+}
+
+header .iconos{
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  font-weight: lighter;
+  align-items: center;
+}
+
+.iconos i{
+  padding: 0 0 0 10px;
+}
+
+#checkbox-search{
+  display: none;
+}
+
+.buscador{
+ position: absolute;
+ visibility: hidden;
+ background-color: transparent;
+ right: 0;
+ top: 95%;
+ width: 0%;
+ height: 30px;
+ z-index:1;
+ transition: width 0.9s linear;
+}
+
+.buscador .barra{
+  position: relative;
+ }
+
+.barra input{
+  border:none;
+  width: 0%;
+  outline: none;
+  visibility: hidden;
+  background-color:transparent;
+  font-size: 0px;
+  padding-left: 20px;
+  transition: width background-color 0.9s; 
+}
+
+.checkbox-salir i{
+  position: absolute;
+  right:0px;
+  top: 2px;
+  font-size:0;
+}
+
+
+.buscador button {
+  background-color:transparent;
+  border: none;
+  position: absolute;
+  left: 0px;
+  padding: 0 3px 0px 0px;
+  top: 15%;
+}
+
+.buscador button i {
+  padding: 0px;
+  font-size: 0;
+  color: transparent;
+  background-color: transparent;
+  transition: color 1s;
+}
+
+.buscador button .fa-search {
+  position: absolute;
+  left:0;
+  margin-bottom: 2px;
+}
+
+.checkbox-search:checked ~ button {
+  left: 0px;
+}
+
+.checkbox-search:checked ~ .buscador i{
+  color:#303028;
+  visibility: visible;
+  background-color: white;
+  font-size: 1rem;
+}
+
+.checkbox-search:checked ~ .buscador input{
+  visibility: visible;
+  font-size: 0.9rem;
+  width: 100%;
+}
+ 
+.checkbox-search:checked ~ .buscador{
+  border: rgb(221, 218, 218) 0.5px solid;
+  background-color: white;
+  visibility: visible;
+  width: 100%;
+  height: 50px;
+  padding: 15px 10px;
+}
+
+
+@media (max-width: 319px) {
+
+  i{
+    font-size: 1rem;
   }
-  
+
+  header section{
+    padding: 10px 10px 12px 5px;
+  }
+
+}
+
+
+@media (min-height: 730px) and (max-width: 425px) {
+
   .banner{
-    background-color: black;
-    overflow: hidden;
-    height: 30px;
-    display: block;
-    margin: auto;
-    width: 100%;
-  }
-  
-  .lista{
-    color:black;
-    text-align: center;
-    line-height: 30px;
-    animation: animacion 10s 0.5s infinite;
+    height: 35px;
   }
   
   .lista li{
     font-size: 0.9rem;
-    list-style: none;
-    border-bottom: solid 20px black;
   }
-    
-  /*animación del banner header*/
+  
   @keyframes animacion {
     0% {
-      transform: translateY(15%);
+      transform: translateY(17%);
     }
   
     10%{
-      transform: translateY(0%);
+      transform: translateY(1%);
       color: white;
     }
   
     20% {
-      transform: translateY(0%);
+      transform: translateY(1%);
       color: white;
     }
   
     30%{
-      transform: translateY(-15%);
+      transform: translateY(-13%);
       color:black;
     } 
   
     40% {
-      transform: translateY(-33.5%);
+      transform: translateY(-30.5%);
       color: white;  
     }
     
     55%{
-      transform: translateY(-33.5%);
+      transform: translateY(-30.5%);
       color:white;
     }
   
     65%{
-      transform: translateY(-50%);
+      transform: translateY(-48%);
       color: black;
     }
   
     75%{
-      transform: translateY(-67%);
+      transform: translateY(-64%);
       color: white
     }
   
     90%{
-      transform: translateY(-67%);
+      transform: translateY(-64%);
       color:white;
     }
   
     100%{
-      transform: translateY(-85%);
+      transform: translateY(-83%);
     }
-  }
-  
-  header section{
-    display: flex;
-    width: 100%;
-    padding: 15px 12px 15px 10px;
-  }
-  
-  .checkbox-menu i{
-    margin: 10px 5px;
-  }
-  
-  header nav{
-    visibility: hidden;
+  } 
+}
+
+
+@media (min-width: 768px) {
+
+#burguer-menu:checked ~ .categorias {
     height: 0;
-    position: absolute;
-    z-index: 1;
-    top: 100%;
-    width: 50%; 
-    background-color: white;
-    left: 0;
-    transition: all 0.7s linear; 
-  }
-  
-  nav li{
-    width: 0%;
-    list-style: none;
-    border-bottom: none;
-    padding:20px;
-    transition: all 0.7s linear;
-  }
-  
-  nav li a{
-    color: none;
-    font-size: 0px;
-    transition: all 0.5s;
-  }
-  
-  nav .fa-times{
-    position: absolute;
-    font-size:0px;
-    visibility: hidden;
-    background-color: none;
-    color: transparent;
-    transition: color 1.8s;
-  }
-  
-  #checkbox-menu{
-    display: none;
-  }
-  
-  .checkbox-menu:checked ~ nav .fa-times{
-    visibility: visible;
-    position: absolute;
-    top: 0px;
-    right:0;
-    padding-top: 15px;
-    padding-right: 10px;
-    font-size: 1.3rem;
-    color:#303028;
-  }
-  
-  .checkbox-menu:checked ~ nav li{
-    border-bottom: rgb(221, 218, 218) 0.5px solid;
-    width: 100%;
-  }
-  
-  .checkbox-menu:checked ~ nav li a{
-    color: black;
-    font-size: 1rem
-  }
-  
-  .checkbox-menu:checked ~ nav{
-    visibility: visible;
-    padding: 10px 5px 0 5px;
-    height:50vh;
-    border-top: 0.5px black solid;
-  }
-  
-  .logo{
-    width: 130px;
-  }
-  
-  header .logo{
-    margin: 0 5px; 
-  }
-  
-  header .iconos{
-    flex-grow: 1;
-    display: flex;
-    justify-content: flex-end;
-    font-weight: lighter;
-    align-items: center;
-  }
-  
-  .iconos i{
-    padding: 0 0 0 10px;
-  }
-  
-  #checkbox-search{
-    display: none;
-  }
-  
-  .buscador{
-   position: absolute;
-   visibility: hidden;
-   background-color: transparent;
-   right: 0;
-   top: 95%;
-   width: 0%;
-   height: 30px;
-   z-index:1;
-   transition: width 0.9s linear;
-  }
-  
-  .buscador .barra{
-    position: relative;
-   }
-  
-  .barra input{
-    border:none;
-    width: 0%;
-    outline: none;
-    visibility: hidden;
-    background-color:transparent;
-    font-size: 0px;
-    padding-left: 20px;
-    transition: width background-color 0.9s; 
-  }
-  
-  .checkbox-salir i{
-    position: absolute;
-    right:0px;
-    top: 2px;
-    font-size:0;
-  }
-
-  
-  .buscador button {
-    background-color:transparent;
-    border: none;
-    position: absolute;
-    left: 0px;
-    padding: 0 3px 0px 0px;
-    top: 15%;
-  }
-  
-  .buscador button i {
-    padding: 0px;
     font-size: 0;
-    color: transparent;
-    background-color: transparent;
-    transition: color 1s;
-  }
-  
-  .checkbox-search:checked ~ button {
-    left: 0px;
-  }
-  
-  .checkbox-search:checked ~ .buscador i{
-    color:#303028;
+
+}
+
+#burguer-menu:checked ~ .categorias .categoria2{
+  border-bottom: 0;
+} 
+
+#burguer-menu:checked ~ .categorias .categoria1{
+  border-bottom: 0;
+} 
+
+
+#burguer-menu:checked ~ .categorias .fas{
+ display:none;
+} 
+
+#burguer-menu:checked ~ .categorias .menu-tipos .texto-tipo1{
+  display:none;
+ } 
+
+ #burguer-menu:checked ~ .categorias .menu-tipos .texto-tipo2{
+  display:none;
+ } 
+
+nav .categorias input:checked ~ .menu-tipos {
+  height: 440px;
+  padding-top: 40px;
+
+ }
+
+
+header nav .categorias{
+  transition: height 0s, visibility 0s;
+}
+
+.categorias .fas{
+ display:none
+}
+
+.checkbox-menu{
+  display: none;
+}
+
+nav .fa-times{
+  display: none
+ }
+
+header section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 25px 20px 15px;
+    
+  } 
+
+.logo{
+  width: 170px;
+ }
+
+header .logo{
+  order: -1;
+  margin-right: 20px;
+ }  
+
+header nav {
     visibility: visible;
-    background-color: white;
-    font-size: 1rem;
-  }
-  
-  .checkbox-search:checked ~ .buscador input{
-    visibility: visible;
-    font-size: 0.9rem;
     width: 100%;
-  }
-   
-  .checkbox-search:checked ~ .buscador{
-    border: rgb(221, 218, 218) 0.5px solid;
-    background-color: white;
-    visibility: visible;
+    position: relative;
+    flex-grow: 1;
+    padding: 0 0 28px 0;       
+ }
+
+ 
+ nav li{
+  visibility: visible;
+}
+
+.menu-tipos .texto-tipo1, .menu-tipos .texto-tipo2{
+  display:none;
+ }
+
+
+
+header nav .categorias{
+ margin-left:10px;
+ display: flex;
+ width: 100px;
+}
+
+.categorias li.categoria1, .categorias li.categoria2{
+  display: flex;
+  
+}
+
+.categorias li.categoria1{
+  margin-top:0;
+  padding-left: 10px;  
+ }
+
+nav li.categoria2{
+  padding-left: 5px;
+}
+
+
+nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ 
+/* nav li{
+    align-self: center;
     width: 100%;
-    height: 50px;
-    padding: 15px 10px;
-  }
+    padding: 0 20px 0px 0;
+    background-color: white;
+    align-self: center;
+ } */
+
+.categorias .categoria1 a, .categorias .categoria2 a{
+  text-decoration: none;
+  color: black ;
+  font-size: 1.3rem;
+  font-weight: bold;
+ }
+
+.categorias .menu-tipos{
+  position: absolute;
+  top: 10px;
+
+
+}
+
+.categorias .menu-tipos a{
+  padding: 0 20px;
+
+}
+
+.categorias .menu-tipos li{
+  padding-bottom: 10px;
+  padding-top:20px;
+
+}
+
+.menu-categoria1{
+ background-color: white;
+ height: 440px;
+ width: 600px;
+ display:none;
+ align-items: flex-start;
+ justify-content:center;
+ text-align: center;
+ padding: 40px 40px 0 30px
+}
+
+.menu-categoria2{
+  background-color: white;
+  height: 440px;
+  width: 600px;
+  display:none;
+  align-items: flex-start;
+  justify-content:center;
+  text-align: center;
+  text-align: center;
+  padding: 40px 40px 0 30px
+ }
+
+.menu-tipos .imagen-tipo1, .menu-tipos .imagen-tipo2{
+  width: 50%;
+  display:block;
+ }
+
+.menu-tipos p.remeras{
+  position: absolute;
+  left: 54px;
+  padding: 4px 5px;
+  font-size: 0.9rem;
+  font-weight: lighter;
+
+ }
+
+ .menu-tipos p.camisas{
+  position: absolute;
+  right: 211px;
+  padding: 5px;
+  font-size: 0.9rem;
+  font-weight: lighter;
+
+ }
+
+
+.categoria1:hover .menu-categoria1{
+ display:flex;
+}
+
+.categoria2:hover .menu-categoria2{
+  display:flex;
+ }
+
+
+.iconos i{
+    padding: 0 0 0 15px;
+ }
   
 
-  @media (max-width: 319px) {
-  
-    i{
-      font-size: 1rem;
-    }
-  
-    header section{
-      padding: 10px 10px 12px 5px;
-    }
-  
+}
+
+
+@media (min-width:1023px) {
+
+  .banner{
+    height: 32px;
   }
   
-  
-  @media (min-height: 730px) and (max-width: 425px) {
-  
-    .banner{
-      height: 35px;
-    }
-    
-    .lista li{
-      font-size: 0.9rem;
-    }
-    
-    @keyframes animacion {
-      0% {
-        transform: translateY(17%);
-      }
-    
-      10%{
-        transform: translateY(1%);
-        color: white;
-      }
-    
-      20% {
-        transform: translateY(1%);
-        color: white;
-      }
-    
-      30%{
-        transform: translateY(-13%);
-        color:black;
-      } 
-    
-      40% {
-        transform: translateY(-30.5%);
-        color: white;  
-      }
-      
-      55%{
-        transform: translateY(-30.5%);
-        color:white;
-      }
-    
-      65%{
-        transform: translateY(-48%);
-        color: black;
-      }
-    
-      75%{
-        transform: translateY(-64%);
-        color: white
-      }
-    
-      90%{
-        transform: translateY(-64%);
-        color:white;
-      }
-    
-      100%{
-        transform: translateY(-83%);
-      }
-    } 
+  .lista li{
+    font-size: 0.9rem;
   }
-  
-  
-  @media (min-width: 768px) {
-  
-  header section{
-      display: flex;
-      justify-items: center;
-      align-items: center;
-      padding: 20px 25px 20px 15px;
-    }
-  
-  .checkbox-menu{
-      display: none;
-    }
-   
-  .checkbox-menu:checked ~ nav{
-      height: 0;
-      border-top: none;
-      display: flex
-   }
-  
-  .checkbox-menu:checked ~ nav li{
-    border-bottom: none;
-    padding: 0px 20px 15px 0px;  
-   }
-  
-  .checkbox-menu:checked ~ nav li a{
-    border-bottom: none;
-    font-size: 1.3rem;
-   }
-  
-  .logo{
-    width: 170px;
-   }
-  
-  header .logo{
-    order: -1;
-    margin-right: 20px;
-   }  
-  
-  header nav {
-      visibility: visible;
-      width: 100%;
-      position: relative;
-      flex-grow: 1;
-      padding: 0 0 28px 0;       
-   }
-  
-  nav .fa-times{
-    display: none
-   }
-  
-  nav ul{
-      display: flex;
-   }
-  
-  nav li{
-      align-self: center;
-      width: 100%;
-      padding: 0 20px 0px 0;
-      background-color: white;
-   }
-  
-  .categorias .categoria1 a, .categorias .categoria2 a{
-    text-decoration: none;
-    color: black ;
-    font-size: 1.3rem;
-    font-weight: bold;
-   }
-  
   .iconos i{
-      padding: 0 0 0 15px;
-   }
-    
-  
+    padding: 0 0 0 20px;
   }
-  
-  
-  @media (min-width:1023px) {
-  
-    .banner{
-      height: 32px;
-    }
-    
-    .lista li{
-      font-size: 0.9rem;
-    }
-    .iconos i{
-      padding: 0 0 0 20px;
-    }
-  
- 
-  }
+
+
+}

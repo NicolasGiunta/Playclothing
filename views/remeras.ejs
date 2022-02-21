@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!--HEAD-->
+
+<head>
+
+    <!--traigo el head-->
+    <%- include ('./partials/head') %>
+
+        <!--traigo el css-->
+        <link rel="stylesheet" href="/css/stylesHombre.css">
+</head>
+<!DOCTYPE html>
+<html lang="es">
+
+<!--HEAD-->
+
+<head>
+
+    <!--traigo el head-->
+    <%- include ('./partials/head') %>
+
+</head>
+
+<!--traigo el css-->
+<link rel="stylesheet" href="/css/stylesHombre.css">
+
+<body>
+
+    <!--HEADER-->
+    <header>
+        <%- include ('./partials/header') %>
+    </header>
+    <main>
+        <div class=productos>
+
+            <% if(categoriaMujer==0) {%>
+
+                <% let listaDeProductosHombre=productos.filter(element=> element.categoria_id == 1) %>
+
+                    <% for (let i=0; i < listaDeProductosHombre.length; i++){ %>
+                        <div class='imagenYdescripcion'><a href="/producto/hombre-remeras/<%= listaDeProductosHombre[i].id %>">
+                                <img class='foto' src=<%=listaDeProductosHombre[i].imagen%> > </a>
+                            <h4>
+                                <%= listaDeProductosHombre[i].nombreDelProducto%>
+                            </h4>
+                            <h6>
+                                <%if(listaDeProductosHombre[i].precio>= 1000) { %> $
+                                    <%=toThousand(listaDeProductosHombre[i].precio)%>
+                                        <% } else { %> $
+                                            <%=listaDeProductosHombre[i].precio%>
+                                                <% } %>
+                            </h6>
+
+
+                        </div>
+                        <% } %>
+                            <% } else if (categoriaHombre==0){ %>
+                                <% let listaDeProductosMujer=productos.filter(element=> element.categoria_id == 2) %>
+
+                                    <% for (let i=0; i < listaDeProductosMujer.length; i++){ %>
+                                        <div class='imagenYdescripcion'><a
+                                                href="/producto/mujer-remeras/<%= listaDeProductosMujer[i].id %>"> <img
+                                                    class='foto' src=<%=listaDeProductosMujer[i].imagen%> > </a>
+                                            <h4>
+                                                <%= listaDeProductosMujer[i].nombreDelProducto%>
+                                            </h4>
+                                            <h6>
+                                                <%if(listaDeProductosMujer[i].precio>= 1000) { %> $
+                                                    <%=toThousand(listaDeProductosMujer[i].precio)%>
+                                                        <% } else { %> $
+                                                            <%=listaDeProductosMujer[i].precio%>
+                                                                <% } %>
+                                            </h6>
+
+
+                                        </div>
+                                        <% } %>
+                                            <%}%>
+        </div>
+
+        <!-- whatsapp -->
+        <%- include ('./partials/whatsapp') %>
+    </main>
+
+    <!--FOOTER-->
+    <footer>
+        <%- include ('./partials/footer') %>
+    </footer>
+</body>
+
+</html>

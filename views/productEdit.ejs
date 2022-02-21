@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <%- include ('./partials/head') %>
@@ -23,133 +23,144 @@
                         <div class="control-formulario">
                             <p>
                                 <label for="nombreDelProducto">Nombre del producto</label>
-                                <input type="text" id="nombreDelProducto" name="nombreDelProducto" class="control" value="<%= producto.nombreDelProducto %>" required>
+                                <input type="text" id="nombreDelProducto" name="nombreDelProducto" class="control"
+                                    value="<%= producto.nombreDelProducto %>">
                             </p>
-                            <% if (locals.errors && errors.nombreDelProducto){  %>
-                                <div  style="color:rgb(255,0,0);">
-                                  <%= errors.nombreDelProducto.msg %> 
+                            <% if (locals.errors && errors.nombreDelProducto){ %>
+                                <div style="color:rgb(255,0,0);">
+                                    <%= errors.nombreDelProducto.msg %>
                                 </div>
-                                <% } %> 
+                                <% } %>
 
-                                </p>
+                                    </p>
                         </div>
                         <div class="control-formulario">
                             <p>
                                 <label for="descripcion">Descripción</label>
-                                <input type="text" id="descripcion" name="descripcion" class="control" value="<%= producto.descripcion%>">
+                                <input type="text" id="descripcion" name="descripcion" class="control"
+                                    value="<%= producto.descripcion%>">
                             </p>
-                            <% if (locals.errors && errors.descripcion){  %>
-                                <div  style="color:rgb(255,0,0);">
-                                  <%= errors.descripcion.msg %> 
+                            <% if (locals.errors && errors.descripcion){ %>
+                                <div style="color:rgb(255,0,0);">
+                                    <%= errors.descripcion.msg %>
                                 </div>
-                                <% } %> 
+                                <% } %>
                         </div>
                         <div class="control-formulario">
                             <p>
                                 <label for="precio">Precio</label>
-                                <input type="number" id="precio" name="precio" class="control" value="<%= producto.precio%>">
+                                <input type="number" id="precio" name="precio" class="control"
+                                    value="<%= producto.precio%>">
                             </p>
-                            <% if (locals.errors && errors.precio){  %>
-                                <div  style="color:rgb(255,0,0);">
-                                  <%= errors.precio.msg %> 
+                            <% if (locals.errors && errors.precio){ %>
+                                <div style="color:rgb(255,0,0);">
+                                    <%= errors.precio.msg %>
                                 </div>
-                                <% } %> 
+                                <% } %>
                         </div>
                         <div class="control-formulario">
                             <p>
                                 <label for="color">Colores</label>
                                 <input type="text" id="color" name="color" class="control" value="<%= producto.color%>">
                             </p>
-                            <% if (locals.errors && errors.color){  %>
-                                <div  style="color:rgb(255,0,0);">
-                                  <%= errors.color.msg %> 
+                            <% if (locals.errors && errors.color){ %>
+                                <div style="color:rgb(255,0,0);">
+                                    <%= errors.color.msg %>
                                 </div>
-                                <% } %> 
+                                <% } %>
                         </div>
-                        <div class="control-formulario">
-                            <p>
-                            <p>Tallas:</p>
-                            <% tallas.forEach(talla=> { %>
-                                <label>
-                                    <%=talla.valor%>
-                                </label>
-                                <input type="checkbox" name="talla" class="control" value="<%=talla.id%>">
+                        <div class="control-formulario contenedor-select">
 
-                                <% }) %>
-
-                                    </p>
-                                    <% if (locals.errors && errors.talla){  %>
-                                        <div  style="color:rgb(255,0,0);">
-                                          <%= errors.talla.msg %> 
+                            <label>Tallas: (Elige las tallas que aplican para el producto) *<label>
+                                    <% if (locals.errors && errors.talla){ %>
+                                        <div style="color:rgb(255,0,0);">
+                                            <%= errors.talla.msg %>
                                         </div>
-                                        <% } %> 
+                                        <% } %>
+                                            <% tallas.forEach(talla=> { %>
+                                                <% if (talla.id==producto.tallas.talla_id) {%>
+                                                    <label class="form-select">
+                                                        <input type="checkbox" name="talla"
+                                                            class="control control-select" value="<%=talla.id%>"
+                                                            checked><span>
+                                                            <%=talla.valor%>
+                                                        </span></label>
+                                                    <% } else {%>
+                                                        <label class="form-select">
+                                                            <input type="checkbox" name="talla"
+                                                                class="control control-select"
+                                                                value="<%=talla.id%>"><span>
+                                                                <%=talla.valor%>
+                                                            </span></label>
+                                                        <% } %>
+                                                            <% }) %>
                         </div>
 
-                        <div class="control-formulario">
-                            <p>
-                            <p>Catgeoria:</p>
+                        <div class="control-formulario contenedor-select">
+                            <label>Categoria: (Elige la categoria del producto) *</label>
+                            <div class="erroresCategoria coloresErrores">
+                                <% if (locals.errors && errors.categoria){  %>
+                                    <div  style="color:rgb(255,0,0);">
+                                      <%= errors.categoria.msg %> 
+                                    </div>
+                                    <% } %> 
+                                </div>
                             <% categorias.forEach(categoria=> { %>
                                 <% if (categoria.id==producto.categoria_id) {%>
-                                    <label>
-                                        <%=categoria.nombre%>
-                                    </label>
-                                    <input type="radio" name="categoria" class="control" value="<%=categoria.id%>" checked>
+                                    <label class="form-select">
+                                    <input type="radio" name="categoria" class="control control-select" value="<%=categoria.id%>"
+                                        checked><span><%=categoria.nombre.charAt(0).toUpperCase()+categoria.nombre.slice(1)%></span></label>
                                     <% } else {%>
-                                        <label>
-                                            <%=categoria.nombre%>
-                                        </label>
-                                        <input type="radio" name="categoria" class="control" value="<%=categoria.id%>">
-                                        <% } %>
-                                        <% }) %>
-                                            </p>
-                                            <% if (locals.errors && errors.categoria){  %>
-                                                <div  style="color:rgb(255,0,0);">
-                                                  <%= errors.categoria.msg %> 
-                                                </div>
-                                                <% } %> 
-                        </div>
-
-                        <div class="control-formulario">
-                            <p>
-                            <p>Tipo:</p>
-                            <% tipos.forEach(tipo=> { %>
-                                <% if (tipo.id==producto.tipo_id) {%>
-                                    <label>
-                                        <%=tipo.nombre%>
-                                    </label>
-                                    <input type="radio" name="tipo" class="control" value="<%=tipo.id%>" checked>
-                                    <% } else {%>
-                                        <label>
-                                            <%=tipo.nombre%>
-                                        </label>
-                                        <input type="radio" name="tipo" class="control" value="<%=tipo.id%>">
+                                        <label class="form-select">
+                                            <input type="radio" name="categoria" class="control control-select" value="<%=categoria.id%>">
+                                                <span>
+                                                    <%=categoria.nombre.charAt(0).toUpperCase()+categoria.nombre.slice(1)%>
+                                                </span></label>
                                         <% } %>
                                             <% }) %>
+                                                
+                        </div>
 
-                                                </p>
-                                                <% if (locals.errors && errors.tipo){  %>
-                                                    <div  style="color:rgb(255,0,0);">
-                                                      <%= errors.tipo.msg %> 
-                                                    </div>
-                                                    <% } %> 
+                        <div class="control-formulario contenedor-select">          
+                            <label>Tipo: (Elige el tipo de producto) *</label>
+                            <div class="erroresTipo coloresErrores">
+                                <% if (locals.errors && errors.tipo){  %>
+                                    <div  style="color:rgb(255,0,0);">
+                                      <%= errors.tipo.msg %> 
+                                    </div>
+                                    <% } %> 
+                                </div>
+                            <% tipos.forEach(tipo=> { %>
+                                <% if (tipo.id==producto.tipo_id) {%>
+                                    <label class="form-select">
+                                    <input type="radio" name="tipo" class="control control-select" value="<%=tipo.id%>" checked><span>
+                                        <%=tipo.nombre%>
+                                    </span></label>
+                                    <% } else {%>
+                                        <label class="form-select">
+                                            <input type="radio" name="tipo" class="control control-select" value="<%=tipo.id%>"><span>
+                                                <%=tipo.nombre%>
+                                            </span></label>
+                                        <% } %>
+                                            <% }) %>
                         </div>
 
 
                         <div class="col-12 col-md-6">
-                            <label for="imagen" class="control-formulario">imagen</label>
+                            <label for="imagen" class="control-formulario">Imagen del producto *</label>
                             <input type="file" id="imagen" name="imagen" class="control-formulario">
                             <div class="col-12">
-                                <% if (locals.errors && errors.imagen){  %>
-                                    <div  style="color:rgb(255,0,0);">
-                                      <%= errors.imagen.msg %> 
+                                <% if (locals.errors && errors.imagen){ %>
+                                    <div style="color:rgb(255,0,0);">
+                                        <%= errors.imagen.msg %>
                                     </div>
-                                    <% } %> 
+                                    <% } %>
 
-                                <div>
-                                    <p>
-                                        <button class="button-log" type="submit">Editar</button>
-                                    </p>
-                                </div>
+                                        <div>
+                                            <p>
+                                                <button class="button-log" type="submit">Editar</button>
+                                            </p>
+                                        </div>
                     </form>
                 </div>
 
@@ -161,3 +172,5 @@
         <%- include ('./partials/footer') %>
 
 </body>
+
+</html>

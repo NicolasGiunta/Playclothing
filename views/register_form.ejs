@@ -1,171 +1,165 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <%- include ('./partials/head') %>
+<html lang="es">
+
+<head>
+  <%- include ('./partials/head') %>
 
     <link href="/css/stylesForm.css" rel="stylesheet" />
-  </head>
-  <body>
-    
-    <!--HEADER-->
-    <%- include ('./partials/header') %>
+</head>
+
+<body>
+
+  <!--HEADER-->
+  <%- include ('./partials/header') %>
 
     <main>
       <h1>Registro</h1>
       <div class="tablet">
         <div class="caja2">
-          <h5>Crear cuenta</h5>
+          <h5>Crea una cuenta</h5>
 
-          <form action="/cuenta/Registro" method="post"  class="create-form" enctype="multipart/form-data">
+          <form action="/cuenta/Registro" method="post" class="create-form" enctype="multipart/form-data">
             <div class="control-formulario">
               <p>
-                <label for="nombre">Nombre</label>
-                <input
-                  type="text"
-                  id="nombre"
-                  name="nombre"
-                  class="nombre"
-                  value=<%= locals.old && old.nombre ? old.nombre : " " %>
+                <label for="nombre">Nombre *</label>
+                <input type="text" id="nombre" name="nombre" class="control nombre" value=<%=locals.old && old.nombre ?
+                  old.nombre : " " %>
                 >
-                <div class="erroresNombre coloresErrores">
-                <% if (locals.errors && errors.nombre){  %>
-                  <div  style="color:rgb(255,0,0);">
-                    
-                    <small> <%= errors.nombre.msg %> </small>
+              <div class="erroresNombre coloresErrores">
+                <% if (locals.errors && errors.nombre){ %>
+                  <div style="color:rgb(255,0,0);">
+
+                    <small>
+                      <%= errors.nombre.msg %>
+                    </small>
                   </div>
                   <% } %>
-                  </div>
+              </div>
 
               </p>
             </div>
 
             <div class="control-formulario">
               <p>
-                <label for="apellido">Apellido</label>
-                <input
-                  type="text"
-                  id="apellido"
-                  name="apellido"
-                  class="apellido"
-                  value=<%= locals.old && old.apellido ? old.apellido : " " %>
+                <label for="apellido">Apellido *</label>
+                <input type="text" id="apellido" name="apellido" class="control apellido" value=<%=locals.old &&
+                  old.apellido ? old.apellido : " " %>
                 >
 
-                <div class="erroresApellido coloresErrores">
-                <% if (locals.errors && errors.apellido){  %>
-                  <div  style="color:rgb(255,0,0);">
-                    <small><%= errors.apellido.msg   %> </small>
+              <div class="erroresApellido coloresErrores">
+                <% if (locals.errors && errors.apellido){ %>
+                  <div style="color:rgb(255,0,0);">
+                    <small>
+                      <%= errors.apellido.msg %>
+                    </small>
                   </div>
-                  <% } %> 
-                </div>
+                  <% } %>
+              </div>
               </p>
             </div>
 
             <div class="control-formulario">
               <p>
                 <label for="reg_email">Email *</label>
-                <input
-                  type="text"
-                  id="reg_email"
-                  name="email"
-                  class="control"
-                  value=<%= locals.old && old.email ? old.email : " " %>
-                  >
+                <input type="text" id="reg_email" name="email" class="control" value=<%=locals.old && old.email ?
+                  old.email : " " %>
+                >
 
-                  <div class="erroresEmail coloresErrores">
-                  <% if (locals.errors && errors.email){  %>
-                    <div  style="color:rgb(255,0,0);">
-                      <small><%= errors.email.msg   %> </small>
-                    </div>
-                    <% } %> 
+              <div class="erroresEmail coloresErrores">
+                <% if (locals.errors && errors.email){ %>
+                  <div style="color:rgb(255,0,0);">
+                    <small>
+                      <%= errors.email.msg %>
+                    </small>
                   </div>
+                  <% } %>
+              </div>
               </p>
             </div>
 
             <div class="control-formulario">
               <p>
-                <label for="contraseña">Contraseña</label>
-                <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  class="control"
-                  autocomplete="off"
-                >
-                <div class="erroresContraseña coloresErrores">
-                <% if (locals.errors && errors.password){  %>
-                  <div  style="color:rgb(255,0,0);">
-                    <small><%= errors.password.msg   %> </small>
+                <label for="contraseña">Contraseña *</label>
+                <input type="password" id="password" name="password" class="control" autocomplete="off">
+              <div class="erroresContraseña coloresErrores">
+                <% if (locals.errors && errors.password){ %>
+                  <div style="color:rgb(255,0,0);">
+                    <small>
+                      <%= errors.password.msg %>
+                    </small>
                   </div>
-                  <% } %> 
-                </div>
+                  <% } %>
+              </div>
 
               </p>
             </div>
             <div class="control-formulario">
               <p>
-                <label for="confirmPassword" > Confirmar contraseña </label>
-                <input
-                  type="password"
-                  id="confirmPassword"
-                  name="confirmPassword"
-                  class="control"
-                  autocomplete="off"
-                >
-                <div class="erroresConfirmarContraseña coloresErrores">
-                <% if (locals.errors && errors.confirmPassword){  %>
-                  <div  style="color:rgb(255,0,0);">
-                    <small><%= errors.confirmPassword.msg %> </small> 
+                <label for="confirmPassword">Confirmar contraseña *</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" class="control" autocomplete="off">
+              <div class="erroresConfirmarContraseña coloresErrores">
+                <% if (locals.errors && errors.confirmPassword){ %>
+                  <div style="color:rgb(255,0,0);">
+                    <small>
+                      <%= errors.confirmPassword.msg %>
+                    </small>
                   </div>
-                  <% } %> 
-                </div>
+                  <% } %>
+              </div>
               </p>
             </div>
-            <div class="control-formulario">
-                <p>
-                <p>Sexo:</p>
-                    <label for="mujer" >Mujer</label>
-                    <input type="radio" id="mujer" name="sexo" class="control sexo" value="mujer" <%= locals.old && (old.sexo === "mujer") ? "selected" : "" %> >
-                    <label for="hombre" >Hombre</label>
-                    <input type="radio" id="hombre" name="sexo" class="control sexo" value="hombre" <%= locals.old && (old.sexo === "hombre") ? "selected" : "" %>>
-                    
-                    <div class="erroresSexo coloresErrores">
-                    <% if (locals.errors && errors.sexo){  %>
-                      <div  style="color:rgb(255,0,0);">
-                       <small> <%= errors.sexo.msg   %> </small>
-                      </div>
-                      <% } %> 
-                    </div>
-                </p>
+            <div class="control-formulario control-select-sexo">
+
+              <label>Sexo: *</label>
+              <div class="erroresSexo coloresErrores">
+                <% if (locals.errors && errors.sexo){ %>
+                  <div style="color:rgb(255,0,0);">
+                    <small>
+                      <%= errors.sexo.msg %>
+                    </small>
+                  </div>
+                  <% } %>
+              </div>
+              <label class="form-select"><input type="radio" id="mujer" name="sexo" class="control control-select"
+                  value="mujer" <%=locals.old && (old.sexo==="mujer" ) ? "selected" : "" %>><span>Mujer</span> </label>
+
+              <label class="form-select"><input type="radio" id="hombre" name="sexo"
+                  class="control control-select control-select-sexo" value="hombre" <%=locals.old &&
+                  (old.sexo==="hombre" ) ? "selected" : "" %>><span>Hombre</span></label>
+
+
             </div>
 
 
 
             <div class="col-12 col-md-6">
-              <label for="imagen" class="control-formulario">imagen</label>
+              <label for="imagen" class="control-formulario">Imagen de perfil </label>
               <input type="file" id="imagen" name="imagen" class="control-formulario">
-          <div class="col-12">
-            
-            <div>
-              <p class="Policy">
-                Tus datos serán utilizados para ayudarte en tu experiencia de
-                compra, y para otros motivos definidos en nuestra política de
-                privacidad.
-              </p>
-            </div>
-            <div>
-              <p>
-                <button class="button-log" type="submit">Registrarse</button>
-              </p>
-            </div>
+              <div class="col-12">
+
+                <div>
+                  <p class="Policy">
+                    Tus datos serán utilizados para ayudarte en tu experiencia de
+                    compra y para otros motivos definidos en nuestra política de
+                    privacidad.
+                  </p>
+                </div>
+                <div>
+                  <p>
+                    <button class="button-log" type="submit">Registrarse</button>
+                  </p>
+                </div>
           </form>
         </div>
       </div>
+
       <!-- whatsapp -->
       <%- include ('./partials/whatsapp') %>
+
     </main>
     <!--FOOTER-->
     <%- include ('./partials/footer') %>
-  <script src="/js/register.js"></script>
-  </body>
-  
+      <script src="/js/register.js"></script>
+</body>
+
 </html>

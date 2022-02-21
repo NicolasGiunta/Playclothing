@@ -3,7 +3,7 @@
 
     <%- include ('./partials/head') %>
 
-    <link rel="stylesheet" href="./css/styles_carrito_compras.css" />
+    <link rel="stylesheet" href="/css/styles_carrito_compras.css" />
 
   <body>
     <!-- header -->
@@ -13,7 +13,7 @@
       <div class="vacio"></div>    
 <% if(productos.length == 0){ %> 
 
-  <div>No hay productos en tu carrito</div>
+  <div class="carrito-vacio">No hay productos en tu carrito</div>
 
     <% }else{ %> 
     <% productos.forEach(element => { %>

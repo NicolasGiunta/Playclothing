@@ -58,7 +58,7 @@ window.addEventListener("load", function(){
     div.innerHTML+=contenido
 
     });
-    console.log()
+   
   
     
     // `<div class="footer">

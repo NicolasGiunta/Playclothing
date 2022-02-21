@@ -48,8 +48,17 @@ const validations = [
 router.get('/', productController.search)
 router.get('/mujer', productController.mujer)
 router.get('/hombre', productController.hombre)
+router.get('/mujer-remeras', productController.remeras)
+router.get('/mujer-camisas', productController.camisas)
+router.get('/hombre-remeras', productController.remeras)
+router.get('/hombre-camisas', productController.camisas)
 router.get('/hombre/:id', productController.detalle)
 router.get('/mujer/:id', productController.detalle)
+router.get('/mujer-remeras/:id', productController.detalleTipos)
+router.get('/mujer-camisas/:id', productController.detalleTipos)
+router.get('/hombre-remeras/:id', productController.detalleTipos)
+router.get('/hombre-camisas/:id', productController.detalleTipos)
+
 
 
 router.get('/create', userGuest, admin, productController.create)

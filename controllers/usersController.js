@@ -69,9 +69,9 @@ const usersController = {
       .then(userToLogin => {
         console.log(userToLogin)
         if(userToLogin == null){
-          return res.render('sigIn-signOut-Form', { errors: { email: { msg: "este mail no se encuentra registrado" } } })
+          return res.render('sigIn-signOut-Form', { errors: { email: { msg: "Este mail no se encuentra registrado" } } })
         } else if (!bcryptjs.compareSync(req.body.password, userToLogin.password)) {
-          return res.render('sigIn-signOut-Form', { errors: { password: { msg: "las credenciales no coinciden" } } })
+          return res.render('sigIn-signOut-Form', { errors: { password: { msg: "Las credenciales no coinciden" } } })
         }
         else {
           delete userToLogin.password;
@@ -95,9 +95,62 @@ const usersController = {
     let userLogged = req.session.userLogged;
     res.render('miCuenta', { userLogged })
   },
+
+  edit: (req, res) => {
+
+    let userLogged = req.session.userLogged;
+    res.render('userEdit', { userLogged })
+
+
+  },
+
+  update:(req, res) =>{
+
+    let userLogged = req.session.userLogged;
+    let userId = userLogged.id;
+    let errors = validationResult(req);
+
+    console.log(req.session)
+
+    db.Usuario.findOne({
+      where: {
+        id: userId 
+      }
+    })
+    .then(usuario => {
+      if (!errors.isEmpty()) {
+        res.render('userEdit', { errors: errors.mapped(), old: req.body })
+      } else if (!bcryptjs.compareSync(req.body.currentPassword, usuario.password)) {
+        return res.render('userEdit', { errors: { currentPassword: { msg: "La contraseña es inválida" } } })
+        
+        }else {
+          req.session.destroy();
+          db.Usuario.update({
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            categoria: req.body.categoria,
+            email: req.body.email,
+            sexo: req.body.sexo,
+            password: bcryptjs.hashSync(req.body.password, 10),
+            imagen: req.file === undefined ? "/image/users/userDefault.png" : "/image/users/"+req.file.filename
+          },
+          {
+            where: {
+              id: userId 
+            }
+          })
+          return res.redirect('/cuenta')
+        }
+          
+    })
+    
+    
+      
+  },
+
   logout: function (req, res) {
     res.clearCookie('recordarme')
-    req.session.destroy();
+    delete req.session.userLogged;
     return res.redirect('/')
   },
 
@@ -108,7 +161,7 @@ const usersController = {
         }
     })
     res.clearCookie("email")
-    req.session.destroy();
+    delete req.session.userLogged;
     res.redirect("/cuenta")
 }
 }

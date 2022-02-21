@@ -1,25 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<html lang="es">
+
+<!--HEAD-->
 </head>
-<body>
-    <h3><%= userLogged.nombre %></h3>
-    <img src="<%=userLogged.imagen%>">
+<%- include ('./partials/head') %>
+    <link rel="stylesheet" href="/css/stylesMiCuenta.css">
+    </head>
 
-<div>
-        <button class="button-log" type="submit" name='logout'><a href="/cuenta/logout">Logout</a></button>
-</div>
+    <!--HEADER-->
+    <%- include ('./partials/header') %>
 
-<div>
-    <form action="/cuenta/micuenta/<%=userLogged.id%>?_method=DELETE" method="POST">
-        <button class="button-log" type="submit">Eliminar usuario</button>
-    </form>
-</div>
-<!-- whatsapp -->
-<%- include ('./partials/whatsapp') %>
-</body>
+        <body>
+            <main>
+                <h1 class="titulo-micuenta">Mi cuenta</h1>
+                <h3 class="subtitulo-micuenta">
+                    ¡<%=(userLogged.sexo==="mujer") ? "Bienvenida" : "Bienvenido" %>,
+                        <%= userLogged.nombre.charAt(0).toUpperCase() + userLogged.nombre.slice(1) %>!
+                </h3>
+                <div class="contenedor-perfil">
+                    <img src="<%=userLogged.imagen%>">
+                    <ul class="botones-usuario-perfil">
+                        <li><a href="/cuenta/micuenta/editar">
+                                <p class="mi-cuenta-link">Detalles de la cuenta</p>
+                            </a></li>
+                        <li> <a href="/cuenta/logout">
+                                <p class="mi-cuenta-link">Logout</p>
+                            </a></li>
+                        <li>
+                            <form action="/cuenta/micuenta/<%=userLogged.id%>?_method=DELETE" method="POST">
+                                <button class="button-log" type="submit">
+                                    <p class="mi-cuenta-link">Eliminar usuario</p>
+                                </button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- whatsapp -->
+                <%- include ('./partials/whatsapp') %>
+            </main>
+            <!--FOOTER-->
+            <%- include ('./partials/footer') %>
+        </body>
+
 </html>
